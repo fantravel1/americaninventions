@@ -477,6 +477,11 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+        
+        /* Hide header when viewing individual inventor */
+        body.viewing-inventor header {
+            display: none;
+        }
 
         .back-btn {
             position: fixed;
@@ -1271,6 +1276,9 @@
         function showInventorDetail(inventor) {
             // Hide main page
             document.querySelector('main').style.display = 'none';
+
+            // Hide header section
+            document.body.classList.add('viewing-inventor');
             
             // Show detail page
             inventorDetail.classList.add('active');
@@ -1392,6 +1400,8 @@
         // Show main page
         function showMainPage() {
             document.querySelector('main').style.display = 'block';
+            // Show header section again
+            document.body.classList.remove('viewing-inventor');
             inventorDetail.classList.remove('active');
             window.scrollTo(0, 0);
         }
