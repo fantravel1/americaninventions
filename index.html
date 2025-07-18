@@ -405,27 +405,275 @@
 
         /* Footer */
         footer {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
             color: #fff;
-            padding: 3rem 0;
-            text-align: center;
+            padding: 5rem 0 0;
+            position: relative;
+            overflow: hidden;
         }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #333, #666, #333);
         }
-
-        .footer-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            align-items: start;
         }
-
-        .footer-text {
+        
+        .footer-brand {
+            max-width: 400px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .footer-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #666;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-section a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+        
+        .footer-section a::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 1px;
+            background: #666;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-section a:hover::before {
+            width: 5px;
+        }
+        
+        .footer-contact {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
             opacity: 0.8;
-            line-height: 1.8;
         }
-
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-info span {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-section h5 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .newsletter-signup {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .newsletter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .newsletter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .footer-bottom-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .footer-bottom a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+        
+        .footer-legal {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .nav-container {
@@ -449,6 +697,78 @@
             .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
                 max-width: 600px;
+            }
+        }
+
+        /* Mobile responsive for footer */
+        @media (max-width: 1024px) {
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        
+            .footer-brand {
+                max-width: none;
+            }
+        
+            .footer-contact {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            footer {
+                padding: 3rem 0 0;
+            }
+        
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        
+            .footer-brand h3 {
+                font-size: 1.5rem;
+            }
+        
+            .footer-contact {
+                padding: 1.5rem;
+            }
+        
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+        
+            .footer-bottom-left,
+            .footer-bottom-right {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        
+            .newsletter-signup {
+                flex-direction: column;
+            }
+        
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        
+            .footer-section h4 {
+                font-size: 1rem;
             }
         }
 
@@ -577,15 +897,98 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <h3 class="footer-title">Honoring Innovation</h3>
-                <p class="footer-text">
-                    Every invention tells a story of perseverance, creativity, and brilliance. 
-                    These heroes of innovation have shaped our world and continue to inspire 
-                    future generations of inventors, engineers, and dreamers across the Americas.
-                </p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Heroes of Innovation</h3>
+                    <p class="footer-description">
+                        Celebrating the revolutionary contributions of Black and Brown inventors across the Americas. Discover the untold stories of innovation that shaped our modern world and continue to inspire future generations.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#north-america">North America</a></li>
+                        <li><a href="#south-america">South America</a></li>
+                        <li><a href="#caribbean">Caribbean</a></li>
+                        <li><a href="#central-america">Central America</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Featured Stories</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#educators">For Educators</a></li>
+                        <li><a href="#students">For Students</a></li>
+                        <li><a href="#research">Research Hub</a></li>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#citations">Citations</a></li>
+                        <li><a href="#submit">Submit Inventor</a></li>
+                        <li><a href="#about">About Project</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-contact">
+                    <h4>Connect With Us</h4>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <strong>General Inquiries</strong>
+                            <span>info@heroesofinnovation.com</span>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div class="contact-info">
+                            <strong>Educational Partnerships</strong>
+                            <span>education@heroesofinnovation.com</span>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item">
+                        <div class="contact-icon">📰</div>
+                        <div class="contact-info">
+                            <strong>Media Relations</strong>
+                            <span>media@heroesofinnovation.com</span>
+                        </div>
+                    </div>
+    
+                    <div class="newsletter-section">
+                        <h5>Stay Updated</h5>
+                        <div class="newsletter-signup">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button class="newsletter-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <div class="footer-legal">© 2025 Play4Tomorrow. All rights reserved.</div>
+                    <div>Heroes of Innovation Project</div>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#accessibility">Accessibility</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
