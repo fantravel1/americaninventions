@@ -74,23 +74,24 @@
 
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Changed from 250px to 200px */
+            gap: 1.5rem; /* Reduced from 2rem */
             margin-top: 3rem;
             justify-items: center;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 10px; /* Added padding to prevent edge cutoff */
         }
 
         .stat-item {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 1.5rem 1rem; /* Reduced padding */
             border: 2px solid #333;
             transition: all 0.3s ease;
             width: 100%;
             max-width: 250px;
-            min-height: 180px;
+            min-height: 140px; /* Reduced from 180px */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -103,14 +104,14 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem); /* Made responsive */
             font-weight: 700;
             display: block;
             margin-bottom: 0.5rem;
         }
-
+        
         .stat-label {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem); /* Made responsive */
             opacity: 0.8;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -428,6 +429,25 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-top: 2rem;
+                padding: 0 5px;
+            }
+            
+            .stat-item {
+                min-height: 120px;
+                padding: 1rem 0.5rem;
+            }
             .nav-container {
                 gap: 1rem;
             }
@@ -445,10 +465,20 @@
                 margin: 0 auto;
                 max-width: 400px;
             }
-            
+        }
+
+        /* Very Small Responsive */
+        @media (max-width: 480px) {
             .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 600px;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 280px;
+            }
+            
+            .stat-item {
+                max-width: 100%;
+                min-height: 100px;
+                padding: 1rem;
             }
         }
 
