@@ -433,8 +433,11 @@
         .ad-image {
             max-width: 100%;
             height: auto;
+            opacity: 0;
+            border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-out forwards;
         }
         
         .ad-image:hover {
