@@ -117,7 +117,15 @@
         }
 
         /* Navigation */
+        /* Navigation */
         nav {
+            background: #1a1a1a;
+            padding: 1rem 0;
+            border-bottom: 2px solid #333;
+            text-align: center;
+        }
+        
+        .search-nav {
             background: #1a1a1a;
             padding: 1rem 0;
             position: sticky;
@@ -831,20 +839,22 @@
             </div>
         </div>
     </header>
-
+        <div class="search-nav">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search inventors, inventions, or countries..." id="searchInput">
+            </div>
+        </div>
+    </div>
+    
     <nav>
         <div class="container">
-            <div class="nav-container">
-                <div class="search-container">
-                    <input type="text" class="search-box" placeholder="Search inventors, inventions, or countries..." id="searchInput">
-                </div>
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="north-america">North America</button>
-                    <button class="filter-btn" data-filter="central-america">Central America</button>
-                    <button class="filter-btn" data-filter="south-america">South America</button>
-                    <button class="filter-btn" data-filter="caribbean">Caribbean</button>
-                </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="north-america">North America</button>
+                <button class="filter-btn" data-filter="central-america">Central America</button>
+                <button class="filter-btn" data-filter="south-america">South America</button>
+                <button class="filter-btn" data-filter="caribbean">Caribbean</button>
             </div>
         </div>
     </nav>
