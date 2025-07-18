@@ -405,6 +405,79 @@
             font-weight: bold;
         }
 
+        /* Similar Inventors Section */
+        .similar-inventors-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid #eee;
+        }
+        
+        .similar-inventors-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #000;
+        }
+        
+        .similar-inventors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .similar-inventor-tile {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .similar-inventor-tile:hover {
+            transform: translateY(-3px);
+            border-color: #000;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        .similar-tile-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .similar-tile-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+        
+        .similar-tile-invention {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .similar-tile-country {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        .similarity-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .back-btn {
             position: fixed;
             top: 20px;
@@ -938,6 +1011,14 @@
                 <h3>Patents</h3>
                 <ul class="achievements-list" id="detailPatents"></ul>
             </div>
+
+            <!-- Similar Inventors Section -->
+            <div class="similar-inventors-section">
+                <h3>Similar Inventors & Related Innovations</h3>
+                <div class="similar-inventors-grid" id="similarInventorsGrid">
+                    <!-- Similar inventor tiles will be populated here -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1224,9 +1305,88 @@
             const portrait = document.getElementById('detailPortrait');
             portrait.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><rect width="300" height="300" fill="%23f5f5f5"/><text x="150" y="120" text-anchor="middle" font-size="60">' + inventor.inventionEmoji + '</text><text x="150" y="180" text-anchor="middle" font-size="16" fill="%23666">' + inventor.name + '</text><text x="150" y="200" text-anchor="middle" font-size="14" fill="%23888">Portrait</text></svg>';
             portrait.alt = inventor.name + ' portrait';
+
+            // Populate similar inventors
+            const similarInventors = getSimilarInventors(inventor);
+            const similarGrid = document.getElementById('similarInventorsGrid');
+            similarGrid.innerHTML = '';
             
+            similarInventors.forEach(similarInventor => {
+                const tile = createSimilarInventorTile(similarInventor);
+                similarGrid.appendChild(tile);
+            });
+            
+            // Hide section if no similar inventors found
+            const similarSection = document.querySelector('.similar-inventors-section');
+            similarSection.style.display = similarInventors.length > 0 ? 'block' : 'none';
+
             // Scroll to top
             window.scrollTo(0, 0);
+        }
+
+        // Find similar inventors based on category, region, or time period
+        function getSimilarInventors(currentInventor, limit = 4) {
+            const allInventors = inventorsDatabase.getAll();
+            const similar = [];
+            
+            // Remove current inventor from consideration
+            const otherInventors = allInventors.filter(inv => inv.id !== currentInventor.id);
+            
+            // Score inventors by similarity
+            const scoredInventors = otherInventors.map(inventor => {
+                let score = 0;
+                let reason = '';
+                
+                // Same category (highest priority)
+                if (inventor.category === currentInventor.category) {
+                    score += 100;
+                    reason = 'Same Field';
+                }
+                
+                // Same region
+                if (inventor.region === currentInventor.region) {
+                    score += 50;
+                    reason = reason || 'Same Region';
+                }
+                
+                // Similar time period (within 20 years)
+                const yearDiff = Math.abs(inventor.inventionYear - currentInventor.inventionYear);
+                if (yearDiff <= 20) {
+                    score += 30;
+                    reason = reason || 'Same Era';
+                }
+                
+                // Same country
+                if (inventor.country === currentInventor.country) {
+                    score += 70;
+                    reason = 'Same Country';
+                }
+                
+                return { ...inventor, similarityScore: score, similarityReason: reason };
+            });
+            
+            // Sort by score and return top results
+            return scoredInventors
+                .filter(inv => inv.similarityScore > 0)
+                .sort((a, b) => b.similarityScore - a.similarityScore)
+                .slice(0, limit);
+        }
+        
+        // Create similar inventor tile
+        function createSimilarInventorTile(inventor) {
+            const tile = document.createElement('div');
+            tile.className = 'similar-inventor-tile';
+            tile.onclick = () => showInventorDetail(inventor);
+            
+            tile.innerHTML = `
+                <div class="similarity-tag">${inventor.similarityReason}</div>
+                <span class="similar-tile-emoji">${inventor.inventionEmoji}</span>
+                <div class="similar-tile-name">${inventor.name}</div>
+                <div class="similar-tile-invention">${inventor.primaryInvention}</div>
+                <div class="similar-tile-country">${inventor.flag} ${inventor.country}</div>
+            `;
+            
+            return tile;
         }
 
         // Show main page
