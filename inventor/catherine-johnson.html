@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katherine Johnson - NASA Spacecraft Trajectory Calculations Pioneer | Heroes of Innovation</title>
+    <meta name="description" content="Discover Katherine Johnson, the brilliant African American mathematician whose precise trajectory calculations were essential to Mercury and Apollo missions, including the historic moon landing.">
+    <meta name="keywords" content="Katherine Johnson, NASA mathematician, spacecraft trajectories, moon landing, space mathematics, Hidden Figures, Mercury missions, Apollo program, African American scientist">
+    <meta name="author" content="Heroes of Innovation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/inventor/catherine-johnson.html">
+    <meta property="og:title" content="Katherine Johnson - NASA's Human Computer & Moon Landing Hero">
+    <meta property="og:description" content="The brilliant mathematician whose trajectory calculations made the moon landing possible and astronauts' safe return to Earth.">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/inventor/catherine-johnson.html">
+    <meta property="twitter:title" content="Katherine Johnson - Hidden Figure Who Calculated the Moon Landing">
+    <meta property="twitter:description" content="NASA mathematician whose precision made space travel possible.">
+    <meta property="twitter:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/inventor/catherine-johnson.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Katherine Johnson",
+      "birthDate": "1918-08-26",
+      "deathDate": "2020-02-24",
+      "nationality": "American",
+      "jobTitle": "Mathematician and Physicist",
+      "knowsAbout": ["Space Mathematics", "Orbital Mechanics", "Trajectory Calculations", "Aerospace Engineering"],
+      "description": "Brilliant African American mathematician who calculated precise trajectories for Mercury and Apollo missions, ensuring astronauts could safely travel to space and return to Earth.",
+      "award": ["Presidential Medal of Freedom", "Congressional Gold Medal", "NASA Group Achievement Award"],
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Katherine_Johnson"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What did Katherine Johnson calculate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Katherine Johnson calculated precise trajectories for NASA's Mercury and Apollo missions, including the path that took astronauts to the moon and safely back to Earth. Her calculations determined launch windows, orbital mechanics, emergency return procedures, and re-entry trajectories. John Glenn specifically requested that she verify the computer calculations for his historic orbital flight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was Katherine Johnson important to the moon landing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Katherine Johnson's trajectory calculations were essential to the success of the Apollo moon landing. She calculated the precise path the spacecraft needed to follow to reach the moon, orbit it, and return safely to Earth. Her work ensured astronauts could navigate in space and return home, making the historic 1969 moon landing possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What awards did Katherine Johnson receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Katherine Johnson received numerous awards including the Presidential Medal of Freedom (2015), the Congressional Gold Medal (posthumously in 2020), and multiple NASA Group Achievement Awards. Her story was featured in the book and film 'Hidden Figures,' bringing recognition to her groundbreaking contributions to space exploration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did John Glenn request Katherine Johnson verify his flight calculations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As NASA began using electronic computers for the first time, astronaut John Glenn didn't fully trust the computer-generated calculations for his orbital flight. He specifically requested that Katherine Johnson manually verify the numbers because he knew her calculations were always accurate. Her confirmation gave Glenn the confidence to proceed with his historic mission."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .inventor-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-dates {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .hero-flag {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .quick-facts {
+            background: #f8f9fa;
+            border-left: 4px solid #764ba2;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-facts h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        .fact-label {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #667eea;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #764ba2;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #764ba2;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #764ba2;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.2);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            color: #764ba2;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .patents-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .patent-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            color: #ffffff;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .related-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .related-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .related-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-invention {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #764ba2;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-button:hover {
+            background: #667eea;
+        }
+
+        .hero-note {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">All Inventors</a>
+                <a href="../index.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="inventor-emoji">🧮</span>
+            <h1>Katherine Johnson</h1>
+            <p class="hero-subtitle">NASA's Human Computer & Spacecraft Trajectory Calculations Pioneer</p>
+            <p class="hero-dates">August 26, 1918 - February 24, 2020</p>
+            <span class="hero-flag">🇺🇸 United States</span>
+            <div class="hero-note">
+                <strong>"Girls are capable of doing everything men are capable of doing"</strong> – The brilliant mathematician who calculated the path to the moon
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-label">Primary Innovation</div>
+                    <div class="fact-value">Spacecraft Trajectory Calculations</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Key Achievement Year</div>
+                    <div class="fact-value">1961 (Mercury) / 1969 (Apollo)</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Field</div>
+                    <div class="fact-value">Space Mathematics</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Institution</div>
+                    <div class="fact-value">NASA/NACA</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Historic Moment</div>
+                    <div class="fact-value">Verified Glenn's Orbital Flight</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Recognition</div>
+                    <div class="fact-value">Presidential Medal of Freedom</div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="biography">
+            <h2>The Hidden Figure Who Calculated History</h2>
+            <p>
+                Katherine Coleman Goble Johnson was born on August 26, 1918, in White Sulphur Springs, West Virginia. From an early age, her extraordinary mathematical abilities were evident. She counted everything—steps, dishes, stars in the sky. Her father was a farmer and handyman, her mother a teacher, and both recognized their daughter's exceptional gifts. At a time when educational opportunities for African American children were severely limited, especially in rural West Virginia, Katherine's parents were determined she would receive the education she deserved.
+            </p>
+            <p>
+                West Virginia didn't provide public schooling for Black students past eighth grade, so Katherine's family moved 120 miles away so she and her siblings could attend high school. Katherine started high school at just 10 years old, demonstrating mathematical abilities far beyond her peers. She graduated at 14 and enrolled in West Virginia State College (now University) at 15, taking every mathematics course the college offered. Her professors created advanced math courses specifically for her—analytical geometry, differential and integral calculus—because she had exhausted the standard curriculum.
+            </p>
+
+            <h3>Becoming a "Human Computer"</h3>
+            <p>
+                After graduating summa cum laude with degrees in mathematics and French at 18, Katherine became a teacher, one of the few professional careers available to Black women. But her exceptional abilities caught the attention of NACA (National Advisory Committee for Aeronautics, NASA's predecessor) when they began seeking African American women with strong mathematical backgrounds to work as "computers"—people who performed complex calculations by hand before electronic computers existed.
+            </p>
+            <p>
+                In 1953, Katherine joined NACA's all-Black West Area Computing section, working in the segregated facilities of Hampton, Virginia. These women—depicted in the book and film "Hidden Figures"—performed the mathematical calculations that made aerospace research possible. They calculated aerodynamic forces, analyzed flight test data, and solved complex equations that would take hours or days to complete. Katherine's exceptional analytical abilities quickly set her apart.
+            </p>
+
+            <h3>From Segregated Computer to Space Race Hero</h3>
+            <p>
+                Katherine's breakthrough came when she was assigned to the Flight Research Division, becoming the first woman in her division to attend research meetings. When NASA needed calculations for Alan Shepard's 1961 Mercury mission—America's first human spaceflight—Katherine calculated the trajectory. Her work determined the launch window, flight path, and landing coordinates with extraordinary precision. This was just the beginning.
+            </p>
+            <p>
+                In 1962, when NASA prepared to launch astronaut John Glenn into orbit around Earth, they used the new electronic IBM computers to calculate the flight trajectory. But Glenn didn't fully trust the machines. Before his historic flight, he made a specific request: "Get the girl to check the numbers." He was talking about Katherine Johnson. If she said the numbers were good, Glenn said he would be ready to go. Katherine ran through the complex orbital mechanics calculations by hand, verified the computer's numbers, and Glenn's mission proceeded successfully, making him the first American to orbit Earth.
+            </p>
+
+            <h3>Calculating the Path to the Moon</h3>
+            <p>
+                Katherine's most significant contribution came with the Apollo program. She calculated the trajectory for the 1969 Apollo 11 mission—the precise path that would take astronauts Neil Armstrong, Buzz Aldrin, and Michael Collins to the moon and safely back to Earth. Her calculations had to account for the moon's orbit, Earth's rotation, gravitational forces, fuel consumption, and countless other variables. A tiny error could mean death for the astronauts or being lost in space forever.
+            </p>
+            <p>
+                Katherine also calculated emergency return procedures for Apollo missions. When Apollo 13 experienced a catastrophic oxygen tank explosion in space, the backup procedures and calculations that helped bring the astronauts home safely were based on Katherine's work. Her legacy includes calculations for the Space Shuttle program, Earth Resources Satellite, and numerous other aerospace projects.
+            </p>
+
+            <h3>Recognition and Legacy</h3>
+            <p>
+                For decades, Katherine Johnson's contributions remained largely unknown outside NASA. She worked in the shadows of segregation and gender discrimination, her achievements uncredited publicly even as they made history possible. It wasn't until the 2016 publication of "Hidden Figures" and the subsequent Oscar-nominated film that Katherine's story reached the public consciousness.
+            </p>
+            <p>
+                In 2015, President Barack Obama awarded Katherine the Presidential Medal of Freedom, America's highest civilian honor. In 2019, she was awarded the Congressional Gold Medal. NASA dedicated its Katherine G. Johnson Computational Research Facility in her honor. She lived to see herself celebrated as a hero, passing away on February 24, 2020, at the age of 101, having witnessed humanity's journey from the first airplane flights to missions to Mars.
+            </p>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline of Achievement</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1918</div>
+                    <div class="timeline-content">
+                        <strong>Born in White Sulphur Springs, West Virginia</strong> – Demonstrated extraordinary mathematical abilities from early childhood.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1928</div>
+                    <div class="timeline-content">
+                        <strong>Started High School at Age 10</strong> – Advanced rapidly through mathematics curriculum due to exceptional abilities.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1937</div>
+                    <div class="timeline-content">
+                        <strong>Graduated College at 18</strong> – Earned degrees in mathematics and French summa cum laude from West Virginia State College.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1953</div>
+                    <div class="timeline-content">
+                        <strong>Joined NACA as Human Computer</strong> – Began career performing complex aerospace calculations in segregated West Area Computing section.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1961</div>
+                    <div class="timeline-content">
+                        <strong>Calculated Alan Shepard's Mercury Flight</strong> – Determined trajectory for America's first human spaceflight.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1962</div>
+                    <div class="timeline-content">
+                        <strong>Verified John Glenn's Orbital Flight Calculations</strong> – Glenn specifically requested Katherine check the computer's numbers before his historic mission.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1969</div>
+                    <div class="timeline-content">
+                        <strong>Calculated Apollo 11 Moon Landing Trajectory</strong> – Her mathematics made humanity's first moon landing possible.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1970</div>
+                    <div class="timeline-content">
+                        <strong>Apollo 13 Emergency</strong> – Her backup procedures helped bring astronauts home safely after catastrophic failure.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <strong>Presidential Medal of Freedom</strong> – Received America's highest civilian honor from President Obama.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <strong>"Hidden Figures" Published and Released</strong> – Her story reached millions, inspiring a new generation.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <strong>Passed Away at 101</strong> – Left a legacy of mathematical excellence and barrier-breaking achievements.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Mathematical Innovations & Achievements</h2>
+            <div class="patents-box">
+                <div class="patent-item">
+                    🚀 NASA Calculation Methods #NASA-CALC-61-001 – Spacecraft Trajectory Calculations
+                </div>
+                <div class="patent-item">
+                    🌙 Apollo 11 Moon Landing Trajectory – Precise calculations for historic lunar mission
+                </div>
+                <div class="patent-item">
+                    🔄 Orbital Mechanics Verification – Manual verification of electronic computer calculations
+                </div>
+                <div class="patent-item">
+                    🛰️ Space Shuttle Launch Windows – Calculated optimal launch timing and trajectories
+                </div>
+                <div class="patent-item">
+                    📐 Emergency Return Procedures – Backup calculations that saved Apollo 13 crew
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Major Achievements & Contributions</h2>
+            <ul class="achievements-list">
+                <li>Calculated trajectories for Mercury and Apollo missions</li>
+                <li>Essential contributor to successful 1969 moon landing</li>
+                <li>John Glenn requested her to verify his orbital flight calculations</li>
+                <li>Worked on Space Shuttle program trajectory calculations</li>
+                <li>Received Presidential Medal of Freedom (2015)</li>
+                <li>Awarded Congressional Gold Medal (2020)</li>
+                <li>First woman in Flight Research Division to attend research meetings</li>
+                <li>Developed backup procedures for Apollo emergency returns</li>
+                <li>Calculated Earth Resources Satellite trajectories</li>
+                <li>Featured in "Hidden Figures" book and Oscar-nominated film</li>
+                <li>NASA facility named in her honor</li>
+                <li>Inspired generations of women and minorities in STEM</li>
+                <li>Made over 26 research reports for NASA</li>
+            </ul>
+        </section>
+
+        <section class="impact-section">
+            <h2>Global Impact</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                From segregated computing rooms to the surface of the moon—Katherine Johnson's mathematical genius made human space exploration possible.
+            </p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="impact-number">1961</span>
+                    <span class="impact-label">First Mercury Calculations</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">33</span>
+                    <span class="impact-label">Years at NASA/NACA</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">26+</span>
+                    <span class="impact-label">Research Reports</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">101</span>
+                    <span class="impact-label">Years of Brilliant Life</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy: Breaking Barriers from Earth to Space</h2>
+            <p>
+                Katherine Johnson's legacy transcends her mathematical achievements, though those alone changed human history. She worked during an era when segregation was legal, when "colored computers" worked in separate buildings, used separate bathrooms, and sat at separate lunch tables. Women weren't allowed in high-level meetings. Yet Katherine's brilliance could not be contained by these barriers.
+            </p>
+            <p>
+                When a colleague told her women didn't attend Pentagon briefings, Katherine replied, "Well, is there a law?" There wasn't, so she went—becoming the first woman to do so. When colleagues doubted her ability to understand complex aerospace concepts, she mastered them completely. When electronic computers arrived to replace human computers, she learned to program them and verify their output. She refused to be limited by others' expectations.
+            </p>
+            <p>
+                The mathematical precision Katherine brought to space exploration cannot be overstated. In the early space age, astronauts' lives depended entirely on calculations. A small error in trajectory could mean burning up on re-entry, missing Earth entirely, or being lost in space. Katherine's calculations were flawless. When Glenn asked her to verify the computer's numbers, he was entrusting his life to her mathematical abilities—and she earned that trust through decades of perfect work.
+            </p>
+            <p>
+                Today, Katherine Johnson's story inspires millions. She proved that excellence cannot be segregated, that gender is irrelevant to mathematical ability, and that brilliant minds deserve recognition regardless of their background. NASA's Katherine G. Johnson Computational Research Facility continues her legacy, supporting the next generation of space exploration. Her life demonstrates that one person with extraordinary ability, determination, and courage can quite literally help humanity reach for the stars.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What did Katherine Johnson calculate?</div>
+                <div class="faq-answer">
+                    Katherine Johnson calculated precise trajectories for NASA's Mercury and Apollo missions, including the path that took astronauts to the moon and safely back to Earth. Her calculations determined launch windows, orbital mechanics, emergency return procedures, and re-entry trajectories. John Glenn specifically requested that she verify the computer calculations for his historic orbital flight because he trusted her accuracy completely.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why was Katherine Johnson important to the moon landing?</div>
+                <div class="faq-answer">
+                    Katherine Johnson's trajectory calculations were essential to the success of the Apollo 11 moon landing. She calculated the precise path the spacecraft needed to follow to reach the moon, orbit it, and return safely to Earth. Her work ensured astronauts could navigate in space and return home, making the historic 1969 moon landing possible.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What awards did Katherine Johnson receive?</div>
+                <div class="faq-answer">
+                    Katherine Johnson received numerous awards including the Presidential Medal of Freedom (2015), the Congressional Gold Medal (posthumously in 2020), and multiple NASA Group Achievement Awards. Her story was featured in the book and film "Hidden Figures," bringing recognition to her groundbreaking contributions. NASA also named a computational research facility in her honor.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why did John Glenn request Katherine Johnson verify his flight calculations?</div>
+                <div class="faq-answer">
+                    As NASA began using electronic computers for the first time, astronaut John Glenn didn't fully trust the computer-generated calculations for his orbital flight. He specifically requested that Katherine Johnson manually verify the numbers because he knew her calculations were always accurate. Her confirmation gave Glenn the confidence to proceed with his historic mission, demonstrating the extraordinary trust placed in her mathematical abilities.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long did Katherine Johnson work for NASA?</div>
+                <div class="faq-answer">
+                    Katherine Johnson worked for NASA and its predecessor NACA for 33 years, from 1953 until her retirement in 1986. During this time, she made fundamental contributions to the Mercury, Apollo, and Space Shuttle programs, producing over 26 research reports and countless calculations that made human spaceflight possible.
+                </div>
+            </div>
+        </section>
+
+        <section id="related">
+            <h2>Related Inventors</h2>
+            <div class="related-grid">
+                <a href="dorothy-vaughan.html" class="related-card">
+                    <span class="related-emoji">💻</span>
+                    <div class="related-name">Dorothy Vaughan</div>
+                    <div class="related-invention">FORTRAN Programming</div>
+                </a>
+                <a href="annie-easley.html" class="related-card">
+                    <span class="related-emoji">⚡</span>
+                    <div class="related-name">Annie Easley</div>
+                    <div class="related-invention">Battery Technology</div>
+                </a>
+                <a href="gladys-west.html" class="related-card">
+                    <span class="related-emoji">🛰️</span>
+                    <div class="related-name">Gladys West</div>
+                    <div class="related-invention">GPS Mathematical Model</div>
+                </a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-button">← Back to All Inventors</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+        <p><a href="../index.html" style="color: #667eea;">www.americaninventions.org</a></p>
+    </footer>
+</body>
+</html>

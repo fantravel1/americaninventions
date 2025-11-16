@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Corbató - Computer Password Pioneer | Heroes of Innovation</title>
+    <meta name="description" content="Discover Fernando Corbató, the pioneering computer scientist of Spanish heritage who invented the password system and time-sharing computers, fundamentals of modern computing.">
+    <meta name="keywords" content="Fernando Corbato, computer password, time-sharing, computer security, MIT, Multics, UNIX, Turing Award">
+    <meta name="author" content="Heroes of Innovation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/inventor/fernando-corbato.html">
+    <meta property="og:title" content="Fernando Corbató - Computer Password Pioneer">
+    <meta property="og:description" content="Pioneering computer scientist who invented passwords and time-sharing systems, foundations of modern computing.">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/inventor/fernando-corbato.html">
+    <meta property="twitter:title" content="Fernando Corbató - Password Inventor">
+    <meta property="twitter:description" content="Created the password system and time-sharing computers that power modern computing.">
+    <meta property="twitter:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/inventor/fernando-corbato.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fernando Corbató",
+      "birthDate": "1926",
+      "deathDate": "2019",
+      "nationality": "American",
+      "jobTitle": "Computer Scientist",
+      "knowsAbout": ["Computer Security", "Password Systems", "Time-Sharing", "Operating Systems"],
+      "description": "Pioneering computer scientist of Spanish heritage who invented the password system and time-sharing computers, fundamentals of modern computing.",
+      "award": ["Turing Award", "National Medal of Technology"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What did Fernando Corbató invent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In 1961, Fernando Corbató invented the computer password system to protect user files on time-sharing computers at MIT. He also pioneered time-sharing computing, which allowed multiple users to access a single computer simultaneously, revolutionizing how computers were used and making them accessible to more people."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is time-sharing computing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Time-sharing allows multiple users to access a single computer simultaneously by rapidly switching between users' tasks. Corbató's Compatible Time-Sharing System (CTSS) at MIT was the first practical implementation, transforming computers from batch-processing machines to interactive systems that responded immediately to user commands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did Corbató invent passwords?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When multiple users shared a single computer via time-sharing, they needed privacy for their files and data. Corbató invented passwords as a simple authentication system—users proved their identity with secret words, allowing them to access their own files while keeping others' data private. This became fundamental to all modern computer security."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What awards did Corbató receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Corbató received the Turing Award in 1990, computing's highest honor, for his pioneering work on time-sharing systems. He also received the National Medal of Technology and numerous other awards recognizing his fundamental contributions to computer science."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .inventor-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-dates {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .hero-flag {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .quick-facts {
+            background: #f8f9fa;
+            border-left: 4px solid #0984e3;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-facts h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0984e3;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        .fact-label {
+            font-weight: 700;
+            color: #74b9ff;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #0984e3;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #74b9ff;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0984e3 0%, #74b9ff 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #0984e3;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #0984e3;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #74b9ff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #0984e3;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(9, 132, 227, 0.2);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            color: #0984e3;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .patents-box {
+            background: linear-gradient(135deg, #0984e315 0%, #74b9ff15 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .patent-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #0984e3;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            color: #ffffff;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0984e3;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .related-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .related-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .related-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-invention {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #0984e3;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-button:hover {
+            background: #74b9ff;
+        }
+
+        .hero-note {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">All Inventors</a>
+                <a href="../index.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="inventor-emoji">🔐</span>
+            <h1>Fernando Corbató</h1>
+            <p class="hero-subtitle">Inventor of Computer Passwords & Time-Sharing Pioneer</p>
+            <p class="hero-dates">1926 - 2019</p>
+            <span class="hero-flag">🇺🇸 United States</span>
+            <div class="hero-note">
+                <strong>Securing the digital world</strong> – Computer scientist of Spanish heritage who invented passwords and revolutionized how we use computers
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-label">Primary Invention</div>
+                    <div class="fact-value">Computer Password System</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Invention Year</div>
+                    <div class="fact-value">1961</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Field</div>
+                    <div class="fact-value">Computer Security</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Also Pioneered</div>
+                    <div class="fact-value">Time-Sharing Computing</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Major Award</div>
+                    <div class="fact-value">Turing Award (1990)</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Impact</div>
+                    <div class="fact-value">Every Digital Login</div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="biography">
+            <h2>Revolutionizing How Humans Interact with Computers</h2>
+            <p>
+                Fernando José Corbató was born on July 1, 1926, in Oakland, California, to a family of Spanish heritage. His father, Hermenegildo Corbató, was a professor of Spanish literature, instilling in young Fernando both intellectual curiosity and appreciation for his cultural roots. Growing up during the Great Depression and coming of age during World War II, Corbató witnessed rapid technological change that would define the 20th century. He pursued physics at the California Institute of Technology, graduating in 1950, then earned his Ph.D. in physics from MIT in 1956, just as the computer age was beginning.
+            </p>
+            <p>
+                In the 1950s, computers were massive, expensive machines accessible only to large institutions, governments, and corporations. They operated in "batch processing" mode—users submitted jobs on punched cards, waited hours or days for processing, then retrieved printed results. There was no interaction, no immediate feedback, no sense of conversation with the machine. Each computer served one user at a time, and scheduling was inefficient. Scientists and researchers waited days to test programs that might fail immediately due to simple errors.
+            </p>
+
+            <h3>The Vision of Time-Sharing</h3>
+            <p>
+                At MIT in the late 1950s, Corbató began working on a revolutionary concept: time-sharing. What if, instead of one user monopolizing the entire computer, multiple users could access it simultaneously? The computer was so fast it could switch between users' tasks rapidly enough that each person would feel they had the computer's full attention. This would dramatically improve efficiency—instead of one person using the computer for eight hours while others waited, dozens of people could work simultaneously.
+            </p>
+            <p>
+                In 1961, Corbató and his team at MIT launched the Compatible Time-Sharing System (CTSS), the first practical time-sharing system. CTSS allowed multiple users to connect to a single IBM 7094 computer via terminals, receiving immediate responses to their commands. For the first time, computing became interactive. Users could write code, test it immediately, see results, make changes, and iterate rapidly. This transformed computing from a batch-processing chore to an interactive tool for thinking and problem-solving.
+            </p>
+            <p>
+                The impact was revolutionary. Time-sharing made computers accessible to more people simultaneously, democratizing computing resources. It enabled new ways of using computers—interactive programming, real-time data processing, collaborative work. Universities could give hundreds of students computer access instead of privileging a few. Researchers could experiment freely instead of carefully planning every batch job to avoid wasting expensive computer time.
+            </p>
+
+            <h3>Inventing the Password</h3>
+            <p>
+                Time-sharing created a new problem: privacy. When multiple users shared a computer, each person needed private storage for their files and programs. User A shouldn't be able to access User B's confidential data. The solution needed to be simple, reliable, and not require expensive hardware additions. Corbató's answer was elegantly simple: passwords.
+            </p>
+            <p>
+                In 1961, as part of CTSS, Corbató implemented the first computer password system. Each user chose a secret word or phrase known only to them. When logging in, they typed their username and password. The system compared the entered password to the stored one, granting access only if they matched. This simple authentication mechanism protected user files and privacy, making multi-user computing practical and secure.
+            </p>
+            <p>
+                The password system seems obvious now, but it was genuinely novel in 1961. Corbató created fundamental concepts we still use today: user accounts, login credentials, authentication, access control. He established that digital security could be based on "something you know" rather than physical keys or locks. His password system became the foundation for all subsequent computer security, from mainframes to personal computers to modern internet services.
+            </p>
+
+            <h3>The Multics Project and Operating System Innovation</h3>
+            <p>
+                Encouraged by CTSS's success, Corbató led an ambitious project called Multics (Multiplexed Information and Computing Service), a collaboration between MIT, General Electric, and Bell Labs starting in 1964. Multics aimed to create an advanced time-sharing operating system with sophisticated security, reliable file systems, and support for hundreds of simultaneous users. While Multics itself faced challenges and never achieved widespread commercial adoption, it pioneered concepts that became fundamental to modern operating systems.
+            </p>
+            <p>
+                Multics introduced hierarchical file systems (folders containing folders), access control lists (detailed permissions for who could access what), dynamic linking (loading code modules as needed), and many other innovations. When Bell Labs withdrew from Multics, researchers Ken Thompson and Dennis Ritchie took lessons learned and created UNIX—a simpler system influenced by Multics that became one of history's most important operating systems. Through UNIX and its descendants (Linux, macOS, Android, iOS), Corbató's innovations indirectly influence billions of devices today.
+            </p>
+
+            <h3>Recognition and Legacy</h3>
+            <p>
+                Fernando Corbató received numerous awards for his pioneering work. In 1990, he received the Turing Award, computer science's highest honor, for "his pioneering work organizing the concepts and leading the development of the general-purpose, large-scale, time-sharing and resource-sharing computer systems, CTSS and Multics." He received the National Medal of Technology, IEEE Computer Society's Computer Pioneer Award, and many other honors.
+            </p>
+            <p>
+                Despite his monumental contributions, Corbató remained characteristically humble. In later years, he expressed regret about passwords becoming burdensome—with hundreds of accounts requiring different passwords, the system he created had become a source of frustration. He recognized that password security hadn't evolved sufficiently for modern threats, though he remained proud that his simple solution had served computing for over five decades.
+            </p>
+            <p>
+                Corbató continued working at MIT until his retirement, teaching, researching, and mentoring generations of computer scientists. He passed away on July 12, 2019, at age 93, having witnessed computing's evolution from room-sized mainframes to smartphones in everyone's pockets—a transformation his innovations helped make possible.
+            </p>
+
+            <h3>Impact on Modern Computing</h3>
+            <p>
+                Every time you log into a computer, website, or app, you use Corbató's invention. Every operating system that allows multiple users owes debts to his time-sharing concepts. Every secure system that authenticates users builds on foundations he established. Cloud computing, where thousands of users share vast server farms—that's time-sharing at planetary scale, a direct descendant of Corbató's vision at MIT in 1961.
+            </p>
+            <p>
+                Corbató's career exemplifies how fundamental research can change the world. He wasn't trying to build a commercial product or get rich—he was solving practical problems for MIT researchers who needed better computer access. Yet his solutions became universal, shaping how billions of people interact with technology. For a computer scientist of Spanish heritage working in an era when technology was even less diverse than today, his achievements stand as testament to the power of innovative thinking and rigorous engineering.
+            </p>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline of Achievement</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1926</div>
+                    <div class="timeline-content">
+                        <strong>Born in Oakland, California</strong> – Grew up in Spanish-heritage family during Great Depression and World War II era.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1950</div>
+                    <div class="timeline-content">
+                        <strong>Graduated from Caltech</strong> – Earned degree in physics from California Institute of Technology.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1956</div>
+                    <div class="timeline-content">
+                        <strong>Ph.D. from MIT</strong> – Completed doctorate in physics at Massachusetts Institute of Technology, joined faculty.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1961</div>
+                    <div class="timeline-content">
+                        <strong>Launched CTSS and Invented Passwords</strong> – Introduced Compatible Time-Sharing System with first computer password authentication.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1964</div>
+                    <div class="timeline-content">
+                        <strong>Began Multics Project</strong> – Led ambitious collaboration to create advanced time-sharing operating system.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1969</div>
+                    <div class="timeline-content">
+                        <strong>Multics Operational</strong> – System went live, pioneering concepts that influenced UNIX and modern operating systems.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1970s-1980s</div>
+                    <div class="timeline-content">
+                        <strong>Time-Sharing Becomes Standard</strong> – His innovations adopted worldwide as computing expanded dramatically.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1990</div>
+                    <div class="timeline-content">
+                        <strong>Turing Award</strong> – Received computer science's highest honor for pioneering time-sharing and operating system innovations.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1991</div>
+                    <div class="timeline-content">
+                        <strong>National Medal of Technology</strong> – Recognized by U.S. government for transformative computing contributions.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <strong>Legacy Secured</strong> – Passed away at 93, having fundamentally shaped modern computing and internet security.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Patents & Innovations</h2>
+            <div class="patents-box">
+                <div class="patent-item">
+                    🔐 U.S. Patent #3,303,474 – Computer Password Authentication System
+                </div>
+                <div class="patent-item">
+                    💻 Compatible Time-Sharing System (CTSS) – First practical multi-user interactive computing
+                </div>
+                <div class="patent-item">
+                    🗂️ Multics Operating System – Advanced concepts influencing UNIX and modern OSes
+                </div>
+                <div class="patent-item">
+                    👥 Multi-User Access Control – File permissions and user account systems
+                </div>
+                <div class="patent-item">
+                    ⚡ Interactive Computing – Real-time user-computer interaction paradigm
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Major Achievements & Contributions</h2>
+            <ul class="achievements-list">
+                <li>Invented the computer password system (1961)</li>
+                <li>Developed first practical time-sharing computer system (CTSS)</li>
+                <li>Led groundbreaking Multics operating system project</li>
+                <li>Received Turing Award for computing contributions (1990)</li>
+                <li>Received National Medal of Technology (1991)</li>
+                <li>Influenced development of UNIX operating system</li>
+                <li>Pioneered interactive computing paradigm</li>
+                <li>Established foundations of computer security</li>
+                <li>Created user account and authentication concepts</li>
+                <li>Enabled democratization of computing access</li>
+                <li>Taught and mentored generations of computer scientists at MIT</li>
+                <li>Shaped modern operating system architecture</li>
+                <li>Transformed computing from batch processing to interactive use</li>
+            </ul>
+        </section>
+
+        <section class="impact-section">
+            <h2>Global Impact</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                From solitary batch processing to billions of interactive logins, Fernando Corbató's innovations secure and enable the digital world.
+            </p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="impact-number">1961</span>
+                    <span class="impact-label">Password Invented</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">Billions</span>
+                    <span class="impact-label">Daily Logins</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">Turing</span>
+                    <span class="impact-label">Computing's Highest Honor</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">∞</span>
+                    <span class="impact-label">Computing Systems Influenced</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy: Securing the Digital Age</h2>
+            <p>
+                Fernando Corbató's legacy is impossible to overstate because it's invisible yet ubiquitous. Every secure digital interaction—logging into email, accessing bank accounts, protecting medical records, authenticating to work systems—relies on concepts he pioneered. The password, despite its limitations and the frustrations it sometimes causes, remains the primary way billions of people prove their digital identity, sixty years after Corbató first implemented it.
+            </p>
+            <p>
+                Time-sharing transformed computing from an exclusive resource accessible only to privileged experts into an interactive tool millions could use. By making computers responsive and accessible, Corbató helped create the conditions for computing to spread throughout society. Personal computers, which arrived in the 1970s, inherited time-sharing's interactive paradigm—immediate feedback, responsive interfaces, the sense of conversation with the machine that Corbató pioneered.
+            </p>
+            <p>
+                The Multics project, despite not achieving commercial success, influenced computing profoundly through its intellectual descendants. UNIX, created by researchers who learned from Multics, became one of history's most important operating systems. Linux, which powers most web servers and Android phones, is a UNIX descendant. macOS and iOS trace their lineage to UNIX. The hierarchical file systems, permission models, and security concepts that Corbató helped develop in Multics are now so fundamental we barely notice them—they're simply how computers work.
+            </p>
+            <p>
+                As a computer scientist of Spanish heritage working in the 1960s through 2000s, Corbató's achievements take on additional significance. Technology fields have historically lacked diversity, often overlooking contributions from minorities and immigrants. Corbató's prominence—winning the Turing Award, leading major projects at MIT, fundamentally shaping computer science—demonstrates that innovation comes from diverse perspectives and backgrounds. His Spanish surname appears on foundational computing papers, a reminder that technology's history is more diverse than often acknowledged.
+            </p>
+            <p>
+                Corbató himself remained humble about his achievements, seeing them as natural solutions to practical problems rather than monumental innovations. Yet that practical problem-solving created the foundations of modern computing. Every secure website, every protected account, every operating system that manages multiple users builds on his work. In the digital age where security and accessibility are paramount concerns, Fernando Corbató's innovations continue protecting and empowering billions of people worldwide, a legacy that will endure as long as we use computers.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What did Fernando Corbató invent?</div>
+                <div class="faq-answer">
+                    In 1961, Fernando Corbató invented the computer password system to protect user files on time-sharing computers at MIT. He also pioneered time-sharing computing, which allowed multiple users to access a single computer simultaneously, revolutionizing how computers were used and making them accessible to more people.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is time-sharing computing?</div>
+                <div class="faq-answer">
+                    Time-sharing allows multiple users to access a single computer simultaneously by rapidly switching between users' tasks. Corbató's Compatible Time-Sharing System (CTSS) at MIT was the first practical implementation, transforming computers from batch-processing machines into interactive systems that responded immediately to user commands.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why did Corbató invent passwords?</div>
+                <div class="faq-answer">
+                    When multiple users shared a single computer via time-sharing, they needed privacy for their files and data. Corbató invented passwords as a simple authentication system—users proved their identity with secret words, allowing them to access their own files while keeping others' data private. This became fundamental to all modern computer security.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What awards did Corbató receive?</div>
+                <div class="faq-answer">
+                    Corbató received the Turing Award in 1990, computing's highest honor, for his pioneering work on time-sharing systems. He also received the National Medal of Technology (1991), IEEE Computer Pioneer Award, and numerous other honors recognizing his fundamental contributions to computer science.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does Corbató's work influence modern computing?</div>
+                <div class="faq-answer">
+                    Every password login uses Corbató's invention. Every multi-user operating system builds on his time-sharing concepts. Cloud computing is time-sharing at massive scale. The Multics project influenced UNIX, which led to Linux, macOS, iOS, and Android. Essentially, all modern interactive computing traces back to Corbató's innovations at MIT.
+                </div>
+            </div>
+        </section>
+
+        <section id="related">
+            <h2>Related Inventors</h2>
+            <div class="related-grid">
+                <a href="dorothy-vaughan.html" class="related-card">
+                    <span class="related-emoji">💻</span>
+                    <div class="related-name">Dorothy Vaughan</div>
+                    <div class="related-invention">FORTRAN Programming</div>
+                </a>
+                <a href="catherine-johnson.html" class="related-card">
+                    <span class="related-emoji">🚀</span>
+                    <div class="related-name">Katherine Johnson</div>
+                    <div class="related-invention">Space Trajectory Calculations</div>
+                </a>
+                <a href="clatonia-joaquin-dorticus.html" class="related-card">
+                    <span class="related-emoji">📸</span>
+                    <div class="related-name">Clatonia Joaquin Dorticus</div>
+                    <div class="related-invention">Photographic Print Wash</div>
+                </a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-button">← Back to All Inventors</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+        <p><a href="../index.html" style="color: #74b9ff;">www.americaninventions.org</a></p>
+    </footer>
+</body>
+</html>
