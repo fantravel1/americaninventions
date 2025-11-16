@@ -145,9 +145,15 @@
 
         .nav-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            justify-content: space-between;
             gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-link:hover {
+            background: #764ba2 !important;
         }
 
         .search-container {
@@ -976,12 +982,15 @@
     
     <nav>
         <div class="container">
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="north-america">North America</button>
-                <button class="filter-btn" data-filter="central-america">Central America</button>
-                <button class="filter-btn" data-filter="south-america">South America</button>
-                <button class="filter-btn" data-filter="caribbean">Caribbean</button>
+            <div class="nav-container">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="north-america">North America</button>
+                    <button class="filter-btn" data-filter="central-america">Central America</button>
+                    <button class="filter-btn" data-filter="south-america">South America</button>
+                    <button class="filter-btn" data-filter="caribbean">Caribbean</button>
+                </div>
+                <a href="blog/index.html" class="blog-link" style="color: #fff; text-decoration: none; padding: 0.5rem 1.5rem; background: #667eea; border-radius: 4px; font-weight: 600; transition: background 0.3s;">📚 Blog</a>
             </div>
         </div>
     </nav>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Heroes of Innovation | Stories of Black and Brown Inventors</title>
+    <meta name="description" content="Explore inspiring stories, deep dives, and fascinating histories of Black and Brown inventors who changed the world. From inventor spotlights to regional innovation hubs.">
+    <meta name="keywords" content="inventor blog, Black inventors, Latino inventors, innovation stories, STEM history, inventor spotlight, medical innovations, regional innovation">
+    <meta name="author" content="Heroes of Innovation Team">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.americaninventions.org/blog/">
+    <meta property="og:title" content="Blog - Heroes of Innovation">
+    <meta property="og:description" content="Inspiring stories of Black and Brown inventors who changed the world">
+    <meta property="og:image" content="https://www.americaninventions.org/blog/og-blog-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/blog/">
+    <meta property="twitter:title" content="Blog - Heroes of Innovation">
+    <meta property="twitter:description" content="Inspiring stories of Black and Brown inventors who changed the world">
+    <meta property="twitter:image" content="https://www.americaninventions.org/blog/twitter-blog-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/blog/">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 3px solid #333;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .back-home {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .back-home:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Category Filter */
+        .category-filter {
+            background: #f9f9f9;
+            padding: 2rem 0;
+            border-bottom: 2px solid #eee;
+            text-align: center;
+        }
+
+        .filter-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #000;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: #f9f9f9;
+            border: 3px solid #000;
+            margin-bottom: 4rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .featured-content {
+            padding: 3rem;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .featured-post h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .featured-post h2 a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .featured-post h2 a:hover {
+            opacity: 0.7;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            flex-wrap: wrap;
+        }
+
+        .post-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .read-more:hover {
+            background: #333;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: #fff;
+            border: 3px solid #000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border-bottom: 3px solid #000;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card h3 a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .blog-card h3 a:hover {
+            opacity: 0.7;
+        }
+
+        .blog-excerpt {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #fff;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-post h2 {
+                font-size: 2rem;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Heroes of Innovation Blog</h1>
+            <p class="subtitle">Stories, Deep Dives, and Histories of Black and Brown Inventors Who Changed the World</p>
+            <a href="../index.html" class="back-home">← Back to Main Site</a>
+        </div>
+    </header>
+
+    <div class="category-filter">
+        <div class="container">
+            <div class="filter-title">Filter by Category</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="inventor-spotlight">Inventor Spotlight</button>
+                <button class="filter-btn" data-category="innovation-by-category">Innovation by Category</button>
+                <button class="filter-btn" data-category="regional-hubs">Regional Hubs</button>
+                <button class="filter-btn" data-category="this-month-in-history">This Month in History</button>
+                <button class="filter-btn" data-category="listicles">Listicles</button>
+                <button class="filter-btn" data-category="educational">Educational Resources</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- Featured Post -->
+            <div class="featured-post" data-category="inventor-spotlight">
+                <div class="featured-content">
+                    <span class="featured-badge">Featured Story</span>
+                    <h2><a href="garrett-morgan-untold-hero.html">Garrett Morgan: The Untold Hero Who Saved Lives Twice</a></h2>
+                    <div class="post-meta">
+                        <span>📅 November 15, 2025</span>
+                        <span>⏱️ 10 min read</span>
+                        <span>✍️ Heroes of Innovation Team</span>
+                    </div>
+                    <p class="post-excerpt">From the son of former slaves to one of America's most influential inventors, Garrett Morgan's story is one of resilience, genius, and heroism. Discover how this self-taught inventor created the modern traffic signal, saved workers trapped in a toxic tunnel with his gas mask invention, and changed the world despite facing overwhelming racism and discrimination.</p>
+                    <div>
+                        <span class="category-tag">Inventor Spotlight</span>
+                        <span class="category-tag">Safety Innovations</span>
+                        <span class="category-tag">African American History</span>
+                    </div>
+                    <a href="garrett-morgan-untold-hero.html" class="read-more">Read Full Story →</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Latest Posts</h2>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <!-- Medical Innovations Post -->
+                <div class="blog-card" data-category="innovation-by-category" onclick="window.location.href='medical-innovations-changed-healthcare.html'">
+                    <div class="blog-image">🏥</div>
+                    <div class="blog-content">
+                        <h3><a href="medical-innovations-changed-healthcare.html">10 Medical Innovations by Black and Brown Inventors That Changed Healthcare Forever</a></h3>
+                        <div class="post-meta">
+                            <span>📅 November 10, 2025</span>
+                            <span>⏱️ 12 min read</span>
+                        </div>
+                        <p class="blog-excerpt">From laser cataract surgery to the birth control pill, discover the revolutionary medical breakthroughs by Black and Brown inventors that transformed modern healthcare and saved millions of lives.</p>
+                        <span class="category-tag">Innovation by Category</span>
+                        <span class="category-tag">Medicine</span>
+                    </div>
+                </div>
+
+                <!-- Mexico Regional Post -->
+                <div class="blog-card" data-category="regional-hubs" onclick="window.location.href='mexico-golden-age-innovation.html'">
+                    <div class="blog-image">🇲🇽</div>
+                    <div class="blog-content">
+                        <h3><a href="mexico-golden-age-innovation.html">Mexico's Golden Age of Innovation: How Mexican Inventors Changed the World</a></h3>
+                        <div class="post-meta">
+                            <span>📅 November 5, 2025</span>
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Explore Mexico's incredible legacy of innovation, from color television to the birth control pill. Discover how Mexican inventors shaped modern technology and changed the world.</p>
+                        <span class="category-tag">Regional Innovation Hub</span>
+                        <span class="category-tag">Mexico</span>
+                    </div>
+                </div>
+
+                <!-- October 1951 Post -->
+                <div class="blog-card" data-category="this-month-in-history" onclick="window.location.href='october-1951-birth-control-pill.html'">
+                    <div class="blog-image">💊</div>
+                    <div class="blog-content">
+                        <h3><a href="october-1951-birth-control-pill.html">October 15, 1951: The Day a 26-Year-Old Changed Women's History Forever</a></h3>
+                        <div class="post-meta">
+                            <span>📅 October 15, 2025</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <p class="blog-excerpt">On this day in 1951, Mexican chemist Luis Miramontes synthesized the compound that would become the birth control pill, revolutionizing women's reproductive rights worldwide.</p>
+                        <span class="category-tag">This Month in History</span>
+                        <span class="category-tag">Women's Rights</span>
+                    </div>
+                </div>
+
+                <!-- Listicle Post -->
+                <div class="blog-card" data-category="listicles" onclick="window.location.href='15-everyday-items-black-brown-inventors.html'">
+                    <div class="blog-image">💡</div>
+                    <div class="blog-content">
+                        <h3><a href="15-everyday-items-black-brown-inventors.html">15 Everyday Items You Didn't Know Were Invented by Black and Brown Innovators</a></h3>
+                        <div class="post-meta">
+                            <span>📅 November 1, 2025</span>
+                            <span>⏱️ 5 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Traffic lights, color TV, home security systems - discover the surprising everyday inventions created by Black and Brown innovators that you use without even knowing their stories.</p>
+                        <span class="category-tag">Listicle</span>
+                        <span class="category-tag">Everyday Innovation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Heroes of Innovation - American Inventions</p>
+            <p><a href="../index.html">Home</a> | <a href="index.html">Blog</a> | <a href="mailto:info@webuildpillars.com">Contact</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const featuredPost = document.querySelector('.featured-post');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                // Filter blog cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Filter featured post
+                if (category === 'all' || featuredPost.dataset.category === category) {
+                    featuredPost.classList.remove('hidden');
+                } else {
+                    featuredPost.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Heroes of Innovation Blog",
+        "description": "Stories, deep dives, and histories of Black and Brown inventors who changed the world",
+        "url": "https://www.americaninventions.org/blog/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Heroes of Innovation",
+            "url": "https://www.americaninventions.org"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.americaninventions.org/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.americaninventions.org/blog/"
+        }]
+    }
+    </script>
+</body>
+</html>
