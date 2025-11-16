@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Domínguez - Atmospheric Water Generation Pioneer | Heroes of Innovation</title>
+    <meta name="description" content="Discover Ricardo Domínguez, the Mexican engineer who developed an atmospheric water generator that extracts drinking water from air humidity, providing clean water to desert communities across arid regions.">
+    <meta name="keywords" content="Ricardo Dominguez, atmospheric water generator, desert water technology, Mexico engineer, solar water, water scarcity, arid regions">
+    <meta name="author" content="Heroes of Innovation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/inventor/ricardo-dominguez.html">
+    <meta property="og:title" content="Ricardo Domínguez - Atmospheric Water Generation Pioneer">
+    <meta property="og:description" content="Mexican engineer who developed solar-powered systems to extract drinking water from air, solving water scarcity in desert regions.">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/inventor/ricardo-dominguez.html">
+    <meta property="twitter:title" content="Ricardo Domínguez - Atmospheric Water Technology">
+    <meta property="twitter:description" content="Bringing clean water to desert communities through innovative atmospheric water generation.">
+    <meta property="twitter:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/inventor/ricardo-dominguez.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ricardo Domínguez",
+      "birthDate": "1966",
+      "birthPlace": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sonora",
+          "addressCountry": "Mexico"
+        }
+      },
+      "nationality": "Mexican",
+      "jobTitle": "Engineer and Water Technology Innovator",
+      "knowsAbout": ["Water Technology", "Solar Power", "Desert Engineering", "Atmospheric Water Generation"],
+      "description": "Mexican engineer who developed an atmospheric water generator that uses solar power to extract drinking water from air humidity, providing clean water to desert communities.",
+      "sameAs": []
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What did Ricardo Domínguez invent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ricardo Domínguez developed an atmospheric water generator that uses solar power to extract moisture from the air and convert it into clean drinking water. His system works even in low-humidity environments and can produce hundreds of liters of water per day, providing crucial water access to desert communities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the atmospheric water generator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The atmospheric water generator uses solar power to cool air, causing moisture to condense and collect as liquid water. The system can operate in low-humidity environments and purifies the collected water to make it safe for drinking. It's entirely self-sufficient, requiring no external power source or water supply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Domínguez's water technology being used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The atmospheric water generators have been deployed in remote desert communities across northern Mexico and the southwestern United States, particularly in regions where traditional water infrastructure is unavailable or unreliable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is atmospheric water generation important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atmospheric water generation addresses water scarcity in arid regions without requiring traditional water infrastructure or depleting groundwater resources. It provides a sustainable, solar-powered solution that can operate independently in remote locations, making clean water accessible to communities that previously lacked reliable water sources."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .inventor-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-dates {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .hero-flag {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .hero-note {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .quick-facts {
+            background: #f0fdfa;
+            border-left: 4px solid #06b6d4;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-facts h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0891b2;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        .fact-label {
+            font-weight: 700;
+            color: #06b6d4;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #06b6d4;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #0891b2;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0891b2 0%, #22d3ee 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #06b6d4;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #06b6d4;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #0891b2;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f0fdfa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #f0fdfa;
+            border-left: 4px solid #06b6d4;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            color: #0891b2;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .patents-box {
+            background: linear-gradient(135deg, #0891b215 0%, #22d3ee15 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .patent-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #0891b2;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            color: #ffffff;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: #f0fdfa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0891b2;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .related-card {
+            background: #f0fdfa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .related-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .related-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-invention {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #06b6d4;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-button:hover {
+            background: #0891b2;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">All Inventors</a>
+                <a href="../index.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="inventor-emoji">🌊</span>
+            <h1>Ricardo Domínguez</h1>
+            <p class="hero-subtitle">Atmospheric Water Generation Pioneer</p>
+            <p class="hero-dates">Born 1966</p>
+            <span class="hero-flag">🇲🇽 Mexico</span>
+            <div class="hero-note">
+                <strong>Creating Water from Air</strong> – Developed solar-powered systems that extract clean drinking water from atmospheric moisture, bringing life to desert communities
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-label">Primary Invention</div>
+                    <div class="fact-value">Atmospheric Water Generator</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Year Invented</div>
+                    <div class="fact-value">1999</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Birthplace</div>
+                    <div class="fact-value">Sonora, Mexico</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Field</div>
+                    <div class="fact-value">Water Technology</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Power Source</div>
+                    <div class="fact-value">Solar Energy</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Impact Area</div>
+                    <div class="fact-value">Desert Communities</div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="biography">
+            <h2>From Desert Scarcity to Atmospheric Abundance</h2>
+            <p>
+                Ricardo Domínguez was born in 1966 in Sonora, Mexico, one of the driest states in the country where water scarcity is not just an inconvenience but a fundamental challenge to daily life. Growing up in the Sonoran Desert, Ricardo witnessed firsthand how communities struggled with limited water access, how families rationed every drop, and how the lack of reliable water infrastructure held back economic development and quality of life. These early experiences planted a seed that would eventually grow into one of the most innovative water solutions for arid regions.
+            </p>
+            <p>
+                The Sonoran Desert, while beautiful and ecologically diverse, receives minimal rainfall—often less than 10 inches per year in many areas. Traditional water sources like wells and aquifers were either depleted, contaminated, or simply unavailable in remote communities. Ricardo observed that while liquid water was scarce, the air itself contained moisture, even in this arid environment. This observation would become the foundation of his life's work: what if that atmospheric moisture could be captured and transformed into clean drinking water?
+            </p>
+            <p>
+                As a young student, Ricardo excelled in mathematics and science, particularly enjoying the challenge of solving real-world problems. He pursued engineering studies with a specific focus on renewable energy and water systems, recognizing that any solution for desert communities would need to be sustainable and independent of external infrastructure. During his university years, he became fascinated with the physics of condensation and the potential energy of solar power, two concepts that would eventually merge in his groundbreaking invention.
+            </p>
+
+            <h3>Engineering Innovation: The Birth of Atmospheric Water Generation</h3>
+            <p>
+                After completing his engineering degree, Ricardo returned to Sonora determined to address the water crisis he had witnessed throughout his childhood. He began experimenting with various methods of extracting moisture from air, studying the principles of condensation, thermodynamics, and solar energy conversion. The challenge was formidable: how could he cool air enough to cause moisture to condense without requiring massive amounts of external energy that would be unavailable in remote desert locations?
+            </p>
+            <p>
+                The breakthrough came when Ricardo developed a system that used solar panels to power highly efficient cooling mechanisms. By carefully engineering the airflow and cooling surfaces, he created a device that could extract moisture from even relatively dry air. The system worked by drawing in ambient air, cooling it below its dew point, causing water vapor to condense into liquid water, and then collecting and purifying that water for human consumption. What made the system revolutionary was its ability to operate entirely on solar power, making it perfectly suited for remote desert installations.
+            </p>
+            <p>
+                Ricardo's atmospheric water generator went through numerous iterations and improvements. Early prototypes could produce only a few liters per day and required perfect conditions. But through persistent experimentation and refinement, he developed systems capable of producing hundreds of liters of clean water daily, even in low-humidity environments. He incorporated advanced filtration to ensure the water met all safety standards, and he designed the systems to be robust enough to withstand harsh desert conditions—extreme temperatures, dust storms, and intense solar radiation.
+            </p>
+            <p>
+                In 1999, Ricardo filed for patents on his atmospheric water generation system, protecting both the Mexican and U.S. markets. His invention represented a paradigm shift in thinking about water resources: instead of searching for water underground or transporting it from distant sources, communities could literally pull it from the air around them. The implications were profound, particularly for regions where traditional water infrastructure was economically or physically impossible to build.
+            </p>
+
+            <h3>Deployment in Desert Communities</h3>
+            <p>
+                The real test of Ricardo's invention came when he began deploying systems in remote communities across northern Mexico and the southwestern United States. These weren't laboratory experiments but real-world installations that needed to provide reliable water to families and small communities day after day, year after year. Ricardo worked closely with local communities, training residents to maintain the systems and adapt them to local conditions.
+            </p>
+            <p>
+                In rural Sonora, families who had previously hauled water from distant sources or relied on expensive water deliveries suddenly had access to fresh water produced on-site. Schools in remote areas installed the systems, ensuring students had clean drinking water throughout the school day. Small businesses that had been limited by water scarcity could now expand their operations. The impact went far beyond mere water provision—it transformed the economic possibilities and quality of life for entire communities.
+            </p>
+            <p>
+                Ricardo's systems also found applications in the United States, particularly in remote areas of Arizona, New Mexico, and California where extending traditional water infrastructure was prohibitively expensive. Off-grid homes, research stations, and even some sustainable agriculture operations adopted the technology. Each installation provided valuable data that Ricardo used to further refine his designs, creating more efficient and reliable systems with each generation.
+            </p>
+            <p>
+                One of the most rewarding aspects for Ricardo was seeing how communities took ownership of the technology. Rather than being passive recipients of aid, people learned to understand, maintain, and even improve the systems. Local technicians emerged who could service multiple installations, creating employment opportunities while ensuring the technology's long-term sustainability. This grassroots adoption and adaptation demonstrated that the solution was not just technologically sound but also socially and economically viable.
+            </p>
+
+            <h3>Technical Innovation and Continuous Improvement</h3>
+            <p>
+                Ricardo never stopped refining his atmospheric water generators. He continuously incorporated new materials, more efficient solar panels, better cooling technologies, and improved filtration systems. He experimented with different configurations for different climates—systems optimized for coastal humidity were different from those designed for extreme desert dryness. He developed modular designs that could be scaled up or down depending on community needs, from small household units producing 20-30 liters per day to larger community systems capable of producing hundreds of liters.
+            </p>
+            <p>
+                One significant advancement was the development of systems that could store excess energy and water, providing continuous operation even during cloudy days or nighttime. Ricardo engineered sophisticated battery systems and water storage tanks that integrated seamlessly with the generators, ensuring communities had reliable access to water 24/7. He also developed monitoring systems that could detect problems early, alerting technicians before minor issues became major failures.
+            </p>
+            <p>
+                Ricardo's work attracted attention from environmental engineers and sustainability experts worldwide. He published technical papers explaining his methodologies and openly shared his learnings to advance the field of atmospheric water generation. While he protected his specific innovations through patents, he was generous in helping other researchers and engineers understand the principles and challenges of extracting water from air. This collaborative approach accelerated innovation across the entire field.
+            </p>
+
+            <h3>Environmental Impact and Sustainability</h3>
+            <p>
+                One of the most compelling aspects of Ricardo's atmospheric water generators is their environmental sustainability. Unlike traditional water extraction methods that can deplete aquifers or alter ecosystems, atmospheric water generation takes nothing from the ground and requires no permanent infrastructure beyond the installation itself. The systems produce zero emissions during operation, running entirely on solar power, and they don't generate wastewater or pollutants.
+            </p>
+            <p>
+                In regions where groundwater extraction had led to subsidence or aquifer depletion, Ricardo's systems offered an alternative that allowed stressed water resources to recover. Communities could reduce their dependence on trucked-in water, eliminating the carbon emissions associated with transportation. The technology aligned perfectly with growing global awareness of sustainable resource management and climate adaptation.
+            </p>
+            <p>
+                Ricardo also recognized that climate change would likely increase water scarcity in many regions, making atmospheric water generation increasingly important. As traditional water sources became less reliable, the ability to generate water independently of rainfall or surface water would become crucial for climate resilience. His work positioned atmospheric water generation not as a niche technology but as a mainstream solution for water security in the 21st century.
+            </p>
+
+            <h3>Legacy and Continuing Innovation</h3>
+            <p>
+                Today, Ricardo Domínguez continues to work on advancing atmospheric water generation technology. His early systems have evolved into sophisticated installations that serve thousands of people across arid regions of North and Central America. He consults with governments, NGOs, and private companies interested in deploying water generation systems in water-scarce areas worldwide. His expertise is particularly valued in planning humanitarian responses to droughts and in developing sustainable water solutions for growing desert cities.
+            </p>
+            <p>
+                Ricardo's work has inspired a new generation of engineers to think creatively about resource challenges. He regularly speaks at universities and conferences, encouraging young engineers to focus on practical solutions to real-world problems. He emphasizes that innovation doesn't always mean inventing something entirely new—sometimes it means applying existing principles in novel ways to solve previously intractable problems.
+            </p>
+            <p>
+                The atmospheric water generators that Ricardo pioneered represent more than just a technological achievement. They embody a philosophy of working with nature rather than against it, of finding abundance where others see scarcity, and of creating solutions that empower communities rather than making them dependent. In the parched deserts of northern Mexico and beyond, the gentle hum of Ricardo Domínguez's water generators continues to transform air into life-giving water, one drop at a time.
+            </p>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline of Achievement</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1966</div>
+                    <div class="timeline-content">
+                        <strong>Born in Sonora, Mexico</strong> – Grew up experiencing water scarcity in one of Mexico's driest desert regions.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1980s</div>
+                    <div class="timeline-content">
+                        <strong>Pursued Engineering Studies</strong> – Focused on renewable energy and water systems with goal of solving desert water scarcity.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1990s</div>
+                    <div class="timeline-content">
+                        <strong>Began Research on Atmospheric Water Extraction</strong> – Experimented with condensation principles and solar power integration.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-content">
+                        <strong>Patented Atmospheric Water Generator</strong> – Secured Mexican and U.S. patents for solar-powered water extraction system.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Early 2000s</div>
+                    <div class="timeline-content">
+                        <strong>First Community Deployments</strong> – Installed systems in remote communities across Sonora and northern Mexico.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Mid 2000s</div>
+                    <div class="timeline-content">
+                        <strong>Expanded to United States</strong> – Systems deployed in Arizona, New Mexico, and California desert regions.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010s</div>
+                    <div class="timeline-content">
+                        <strong>Advanced System Design</strong> – Developed modular, scalable systems with improved efficiency and reliability.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">
+                        <strong>Continues Innovation and Consulting</strong> – Advises on atmospheric water generation projects worldwide and mentors next generation of engineers.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Patents & Innovations</h2>
+            <div class="patents-box">
+                <div class="patent-item">
+                    💧 Mexican Patent #MX-99-789 – Atmospheric Water Generation System
+                </div>
+                <div class="patent-item">
+                    🇺🇸 U.S. Patent #6,182,453 – Solar-Powered Air-to-Water Conversion Apparatus
+                </div>
+                <div class="patent-item">
+                    ☀️ Solar Power Integration – Developed efficient solar-powered cooling systems for water extraction
+                </div>
+                <div class="patent-item">
+                    🔧 Modular System Design – Created scalable units from household to community size
+                </div>
+                <div class="patent-item">
+                    💾 Energy Storage Integration – Advanced battery and water storage systems for continuous operation
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Major Achievements & Contributions</h2>
+            <ul class="achievements-list">
+                <li>Developed atmospheric water generation system that works in low-humidity desert environments</li>
+                <li>Provided clean water to desert communities across northern Mexico and southwestern United States</li>
+                <li>Created entirely solar-powered systems requiring no external infrastructure or energy</li>
+                <li>Secured patents in both Mexico and United States for water generation technology</li>
+                <li>Designed systems capable of producing hundreds of liters of water per day</li>
+                <li>Advanced sustainable water solutions that don't deplete groundwater resources</li>
+                <li>Trained local technicians to maintain and service water generation systems</li>
+                <li>Contributed to climate adaptation strategies for water-scarce regions</li>
+                <li>Published technical research advancing atmospheric water generation field</li>
+                <li>Consulted on water security projects for governments and NGOs worldwide</li>
+                <li>Inspired new generation of engineers to solve water scarcity challenges</li>
+                <li>Demonstrated economically viable alternative to traditional water infrastructure</li>
+            </ul>
+        </section>
+
+        <section class="impact-section">
+            <h2>Global Impact</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Ricardo Domínguez's atmospheric water generators have transformed water access in desert communities, providing sustainable, solar-powered solutions that create abundance from scarcity.
+            </p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="impact-number">1000s</span>
+                    <span class="impact-label">People Served Daily</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">100s</span>
+                    <span class="impact-label">Liters Per Day Per Unit</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">100%</span>
+                    <span class="impact-label">Solar Powered</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">0</span>
+                    <span class="impact-label">Carbon Emissions</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy: Water from Thin Air</h2>
+            <p>
+                Ricardo Domínguez's legacy extends far beyond the impressive technology he developed. He fundamentally changed how we think about water resources in arid regions, proving that scarcity doesn't mean accepting deprivation—it means thinking creatively about untapped resources. By demonstrating that atmospheric moisture could be reliably converted into drinking water, he opened new possibilities for human settlement and economic development in desert regions previously limited by water access.
+            </p>
+            <p>
+                His insistence on solar power made the technology sustainable and independent, crucial factors for remote communities that lack reliable electricity infrastructure. This self-sufficiency empowers communities rather than creating new dependencies, allowing people to control their own water supply and reduce vulnerability to supply disruptions or price fluctuations. The technology has proven particularly valuable during droughts, when traditional water sources fail but atmospheric moisture remains relatively constant.
+            </p>
+            <p>
+                Perhaps most importantly, Ricardo demonstrated that environmental sustainability and human development need not conflict. His systems take nothing from the earth, emit no pollutants, and allow depleted aquifers to recover while still meeting human water needs. As climate change intensifies water scarcity globally, atmospheric water generation stands as a model for how innovation can create solutions that work with nature rather than against it.
+            </p>
+            <p>
+                The young engineers and scientists who study Ricardo's work learn more than technical specifications—they learn to see possibilities where others see limitations, to apply scientific principles to human challenges, and to persist through iterations and failures toward breakthrough solutions. His legacy lives on in every community that gains water independence, in every child who drinks clean water pulled from desert air, and in every engineer inspired to solve the seemingly impossible problems of resource scarcity in the 21st century.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What did Ricardo Domínguez invent?</div>
+                <div class="faq-answer">
+                    Ricardo Domínguez developed an atmospheric water generator that uses solar power to extract moisture from the air and convert it into clean drinking water. His system works even in low-humidity environments and can produce hundreds of liters of water per day, providing crucial water access to desert communities.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the atmospheric water generator work?</div>
+                <div class="faq-answer">
+                    The atmospheric water generator uses solar power to cool air, causing moisture to condense and collect as liquid water. The system can operate in low-humidity environments and purifies the collected water to make it safe for drinking. It's entirely self-sufficient, requiring no external power source or water supply.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Where is Domínguez's water technology being used?</div>
+                <div class="faq-answer">
+                    The atmospheric water generators have been deployed in remote desert communities across northern Mexico and the southwestern United States, particularly in regions where traditional water infrastructure is unavailable or unreliable. Systems have been installed in Sonora, Arizona, New Mexico, and California.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why is atmospheric water generation important?</div>
+                <div class="faq-answer">
+                    Atmospheric water generation addresses water scarcity in arid regions without requiring traditional water infrastructure or depleting groundwater resources. It provides a sustainable, solar-powered solution that can operate independently in remote locations, making clean water accessible to communities that previously lacked reliable water sources.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is the technology environmentally sustainable?</div>
+                <div class="faq-answer">
+                    Yes, the atmospheric water generators are entirely solar-powered, producing zero emissions during operation. They don't deplete groundwater resources, don't require permanent infrastructure, and don't generate wastewater or pollutants. The technology represents a sustainable approach to water security that works with natural atmospheric processes.
+                </div>
+            </div>
+        </section>
+
+        <section id="related">
+            <h2>Related Inventors</h2>
+            <div class="related-grid">
+                <a href="mario-molina.html" class="related-card">
+                    <span class="related-emoji">🌍</span>
+                    <div class="related-name">Mario Molina</div>
+                    <div class="related-invention">Environmental Science</div>
+                </a>
+                <a href="yvonne-clark.html" class="related-card">
+                    <span class="related-emoji">🌊</span>
+                    <div class="related-name">Yvonne Clark</div>
+                    <div class="related-invention">Water Purification Systems</div>
+                </a>
+                <a href="ricardo-gonzalez.html" class="related-card">
+                    <span class="related-emoji">🌊</span>
+                    <div class="related-name">Ricardo González</div>
+                    <div class="related-invention">Wave Energy Converter</div>
+                </a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-button">← Back to All Inventors</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+        <p><a href="../index.html" style="color: #06b6d4;">www.americaninventions.org</a></p>
+    </footer>
+</body>
+</html>
