@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Boone - Improved Ironing Board Inventor | Heroes of Innovation</title>
+    <meta name="description" content="Discover Sarah Boone, African American woman inventor who improved the ironing board design in 1892, making it one of the first patents issued to a Black woman in US history.">
+    <meta name="keywords" content="Sarah Boone, ironing board inventor, African American woman inventor, Black woman patent, 1892 invention, women inventors, domestic innovation, slavery history">
+    <meta name="author" content="Heroes of Innovation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/inventor/sarah-boone.html">
+    <meta property="og:title" content="Sarah Boone - Ironing Board Pioneer">
+    <meta property="og:description" content="Born enslaved, became one of first Black women to receive US patent for improved ironing board.">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/inventor/sarah-boone.html">
+    <meta property="twitter:title" content="Sarah Boone - Barrier-Breaking Inventor">
+    <meta property="twitter:description" content="From slavery to patent-holder - Revolutionary ironing board design that changed domestic work.">
+    <meta property="twitter:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/inventor/sarah-boone.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sarah Boone",
+      "birthDate": "1832-01-01",
+      "deathDate": "1904-01-01",
+      "birthPlace": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Craven County",
+          "addressRegion": "North Carolina",
+          "addressCountry": "United States"
+        }
+      },
+      "nationality": "American",
+      "jobTitle": "Inventor and Dressmaker",
+      "knowsAbout": ["Garment Care", "Domestic Innovation", "Textile Work"],
+      "description": "African American woman inventor who improved the ironing board design with a narrow, curved board for sleeves in 1892, becoming one of the first Black women to receive a U.S. patent.",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Sarah_Boone"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What did Sarah Boone invent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sarah Boone invented an improved ironing board design in 1892, featuring a narrow, curved board specifically designed for ironing sleeves and fitted garments. Her design was more practical and efficient than the wide, flat boards previously used."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was Sarah Boone born into slavery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Sarah Boone was born enslaved in 1832 in Craven County, North Carolina. She lived through slavery, the Civil War, and emancipation, eventually becoming one of the first African American women to receive a U.S. patent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was Sarah Boone's ironing board important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boone's ironing board design revolutionized garment care by featuring a narrow, curved surface perfect for ironing sleeves, curved seams, and fitted clothing. The design became the standard for modern ironing boards and is still used today, over 130 years later."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .inventor-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-dates {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .hero-flag {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .hero-note {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .quick-facts {
+            background: #f8f9fa;
+            border-left: 4px solid #be185d;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-facts h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #be185d;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        .fact-label {
+            font-weight: 700;
+            color: #ec4899;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #be185d;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #ec4899;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #ec4899 0%, #be185d 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #be185d;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #be185d;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #ec4899;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #be185d;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(190, 24, 93, 0.2);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            color: #be185d;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .patents-box {
+            background: linear-gradient(135deg, #ec489915 0%, #be185d15 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .patent-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #ec4899;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            color: #ffffff;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ec4899;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .related-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .related-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .related-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-invention {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #be185d;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-button:hover {
+            background: #ec4899;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">All Inventors</a>
+                <a href="../index.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="inventor-emoji">👗</span>
+            <h1>Sarah Boone</h1>
+            <p class="hero-subtitle">Pioneer Woman Inventor of Improved Ironing Board</p>
+            <p class="hero-dates">1832 – 1904</p>
+            <span class="hero-flag">🇺🇸 United States</span>
+            <div class="hero-note">
+                <strong>From Slavery to Patent-Holder</strong> – One of first African American women to receive US patent, revolutionizing domestic work
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-label">Primary Invention</div>
+                    <div class="fact-value">Improved Ironing Board</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Patent Year</div>
+                    <div class="fact-value">1892</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Field</div>
+                    <div class="fact-value">Domestic Innovation</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Birth Status</div>
+                    <div class="fact-value">Born Enslaved</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Historic Achievement</div>
+                    <div class="fact-value">One of First Black Women with US Patent</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Legacy</div>
+                    <div class="fact-value">Modern Ironing Board Standard</div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="biography">
+            <h2>From Bondage to Innovation</h2>
+            <p>
+                Sarah Boone was born enslaved in 1832 in Craven County, North Carolina. Her exact birth date is unknown—like many enslaved people, her birth was not officially recorded. She was born Sarah Marshall, living the first decades of her life in bondage, experiencing the cruelty and dehumanization of American slavery. The details of her early life remain largely lost to history, as the lives of enslaved people were rarely documented except in property records.
+            </p>
+            <p>
+                What we know is that Sarah survived slavery, lived through the Civil War, and witnessed emancipation. At some point, she married James Boone, a freed Black man who worked as a brick mason. Together they had eight children. The Boone family eventually relocated to New Haven, Connecticut, seeking better opportunities in the North and hoping to build a life free from the immediate threats and restrictions of the post-war South.
+            </p>
+            <p>
+                In New Haven, Sarah Boone worked as a dressmaker—a skilled profession that required precision, attention to detail, and expertise with fabrics and garments. Dressmaking was one of the few professions available to Black women that offered some independence and required genuine skill. Boone became accomplished in her craft, gaining a deep understanding of how garments were constructed and how they needed to be cared for to maintain their quality and appearance.
+            </p>
+
+            <h3>The Problem with Ironing</h3>
+            <p>
+                In the late 19th century, ironing was an essential but challenging household task. Clothing was made primarily from cotton and linen, both of which wrinkled easily and required careful pressing. The standard ironing boards of the era were simply wide, flat boards—basically planks of wood covered with cloth. While these boards worked adequately for flat items like bed linens and tablecloths, they were poorly designed for the fitted garments women wore in the Victorian era.
+            </p>
+            <p>
+                Women's clothing in the 1890s featured elaborate sleeves with curves, gathers, and intricate details. Men's shirts had fitted sleeves and shoulders. These curved, three-dimensional garments were extremely difficult to iron on a flat board. The fabric would bunch up, creating new wrinkles even as old ones were pressed out. Sleeves were particularly problematic—ironing them required constant repositioning and often left creases in the wrong places.
+            </p>
+            <p>
+                As a professional dressmaker, Sarah Boone encountered these ironing challenges daily. She needed her finished garments to look impeccable, but the tools available made achieving professional results unnecessarily difficult and time-consuming. Rather than accept this inefficiency, Boone applied her problem-solving skills to design a better solution.
+            </p>
+
+            <h3>A Revolutionary Design</h3>
+            <p>
+                Boone's improved ironing board featured a narrow, curved surface—revolutionary departures from the standard flat, wide boards. The narrow width was perfect for ironing sleeves, allowing them to be slipped over the board and pressed smoothly on all sides without bunching. The curved shape matched the natural curves of the human body and garments designed to fit it, enabling better pressing of fitted clothing.
+            </p>
+            <p>
+                Her design also featured padded sides that could be opened or closed depending on the task. This versatility allowed the board to be adjusted for different types of garments. The overall construction was sturdy yet lightweight, making it practical for regular use. Every aspect of Boone's design reflected her professional experience and understanding of garment care.
+            </p>
+            <p>
+                On April 26, 1892, Sarah Boone received U.S. Patent No. 473,653 for her "Improvement in Ironing Boards." She was one of the first African American women to receive a U.S. patent, a remarkable achievement considering the multiple barriers she faced: racism, sexism, and her background as a formerly enslaved person with likely limited formal education.
+            </p>
+            <p>
+                Her patent application demonstrated technical knowledge and clear communication. She wrote: "The purpose of my invention is to produce a cheap, simple, convenient and highly effective device, particularly adapted to be used in ironing the sleeves and bodies of ladies' garments." This straightforward description showed her focus on practicality and her intended market—other women performing domestic work.
+            </p>
+
+            <h3>Impact and Legacy</h3>
+            <p>
+                Boone's ironing board design became the standard. Modern ironing boards—over 130 years later—still reflect her innovations. The narrow, tapered shape, the curved surface, the padded cover—these features that we take for granted in contemporary ironing boards all originated with Sarah Boone's 1892 patent. Every time someone irons a sleeve or a fitted garment using a modern ironing board, they are benefiting from Sarah Boone's ingenuity.
+            </p>
+            <p>
+                Boone's achievement was particularly significant given the intersecting discrimination she faced. In the 1890s, women had extremely limited legal rights. Black Americans faced segregation, violence, and systematic exclusion from economic opportunities. Formerly enslaved people were often denied education and systematically kept in poverty. For someone who had been born into slavery—literally treated as property rather than a person—to receive a federal patent recognizing her intellectual property was extraordinary.
+            </p>
+            <p>
+                Sarah Boone died in 1904 in New Haven, Connecticut, at approximately age 72. While specific details of her later life remain scarce, she left an indelible mark on domestic technology. Her story exemplifies how innovation often comes from people closest to a problem—in this case, a professional dressmaker who understood exactly what was needed to improve garment care.
+            </p>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline of Achievement</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1832</div>
+                    <div class="timeline-content">
+                        <strong>Born into Slavery</strong> – Born Sarah Marshall in Craven County, North Carolina; exact date unknown.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1832-1865</div>
+                    <div class="timeline-content">
+                        <strong>Life in Bondage</strong> – Lived as enslaved person for approximately 33 years; details of early life largely unrecorded.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1865</div>
+                    <div class="timeline-content">
+                        <strong>Emancipation</strong> – Freed with passage of 13th Amendment ending slavery; began life as free woman at age 33.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">c. 1870s</div>
+                    <div class="timeline-content">
+                        <strong>Married James Boone</strong> – Married freed Black man who worked as brick mason; had eight children together.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">c. 1880s</div>
+                    <div class="timeline-content">
+                        <strong>Moved to New Haven, Connecticut</strong> – Relocated family seeking better opportunities; established dressmaking business.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1880s-1890s</div>
+                    <div class="timeline-content">
+                        <strong>Professional Dressmaker</strong> – Worked as skilled dressmaker; identified ironing challenges in daily work.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1892</div>
+                    <div class="timeline-content">
+                        <strong>Patent Granted (Age 60)</strong> – April 26, received U.S. Patent No. 473,653 for improved ironing board design.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1892</div>
+                    <div class="timeline-content">
+                        <strong>Historic Achievement</strong> – Became one of first African American women to receive US patent.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1904</div>
+                    <div class="timeline-content">
+                        <strong>Death in New Haven (Age 72)</strong> – Died in New Haven, Connecticut; left legacy of practical innovation.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Present Day</div>
+                    <div class="timeline-content">
+                        <strong>Lasting Impact</strong> – Her ironing board design remains standard worldwide; honored during Black History Month.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Patents & Inventions</h2>
+            <div class="patents-box">
+                <div class="patent-item">
+                    👗 U.S. Patent 473,653 (April 26, 1892) – Improvement in Ironing Boards
+                </div>
+                <div class="patent-item">
+                    📐 Design Features: Narrow, curved board specifically for sleeves and fitted garments
+                </div>
+                <div class="patent-item">
+                    🎯 Innovation: Padded, adjustable sides for different garment types
+                </div>
+                <div class="patent-item">
+                    ✨ Impact: Became standard design for all modern ironing boards
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Major Achievements & Contributions</h2>
+            <ul class="achievements-list">
+                <li>Invented improved ironing board with narrow, curved design perfect for sleeves (1892)</li>
+                <li>One of first African American women to receive U.S. patent</li>
+                <li>Revolutionized domestic work and garment care for millions</li>
+                <li>Created design that became standard for modern ironing boards worldwide</li>
+                <li>Overcame slavery, racism, sexism, and limited education to achieve patent</li>
+                <li>Demonstrated practical problem-solving from professional dressmaking experience</li>
+                <li>Built successful dressmaking business in New Haven, Connecticut</li>
+                <li>Raised eight children while pursuing professional career</li>
+                <li>Served as inspiration for future Black women inventors</li>
+                <li>Her innovation still used in every household worldwide over 130 years later</li>
+            </ul>
+        </section>
+
+        <section class="impact-section">
+            <h2>Global Impact</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Sarah Boone's ironing board design transformed domestic work, making garment care easier and more efficient for millions of people. Her innovation remains the standard design used worldwide.
+            </p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="impact-number">1892</span>
+                    <span class="impact-label">Patent Granted</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">130+</span>
+                    <span class="impact-label">Years of Use</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">1st</span>
+                    <span class="impact-label">Black Woman Patent-Holders</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">∞</span>
+                    <span class="impact-label">Lives Made Easier</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy">
+            <h2>Breaking Barriers Through Innovation</h2>
+            <p>
+                Sarah Boone's story embodies resilience, ingenuity, and the power of practical problem-solving. Born into slavery—a system that treated her as property rather than a person—she nevertheless built a life as a skilled professional, raised eight children, and created an invention that would benefit millions of people across generations.
+            </p>
+            <p>
+                Her achievement was particularly remarkable given the intersecting barriers she faced. In 1892, women could not vote and had limited legal rights in most states. Black Americans faced segregation, disenfranchisement, and systematic economic exclusion. Formerly enslaved people often lacked formal education and were deliberately kept from economic opportunities. For someone facing all these obstacles to receive a federal patent was extraordinary.
+            </p>
+            <p>
+                Boone's invention also challenges common misconceptions about innovation. Great inventions don't always come from university laboratories or wealthy corporations. Sometimes they come from working people who understand a problem intimately because they encounter it every day. Boone's ironing board wasn't a flashy technological breakthrough—it was a practical solution to a real problem faced by millions of people doing essential domestic work.
+            </p>
+            <p>
+                Today, Sarah Boone is recognized as a pioneer and inspiration. Her narrow, curved ironing board design is still standard worldwide, found in virtually every household. During Black History Month and Women's History Month, her story is celebrated as an example of innovation overcoming adversity. She paved the way for future generations of Black women inventors, scientists, and entrepreneurs, proving that creativity, skill, and determination could overcome even the most daunting obstacles.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What did Sarah Boone invent?</div>
+                <div class="faq-answer">
+                    Sarah Boone invented an improved ironing board design in 1892, featuring a narrow, curved board specifically designed for ironing sleeves and fitted garments. Her design was much more practical and efficient than the wide, flat boards previously used, and it became the standard for modern ironing boards that we still use today.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Was Sarah Boone born into slavery?</div>
+                <div class="faq-answer">
+                    Yes, Sarah Boone was born enslaved in 1832 in Craven County, North Carolina. She lived the first 33 years of her life in bondage, experiencing the cruelty of American slavery. She was freed with the passage of the 13th Amendment in 1865 and went on to become a skilled dressmaker and one of the first African American women to receive a U.S. patent.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why was Sarah Boone's ironing board important?</div>
+                <div class="faq-answer">
+                    Boone's ironing board design revolutionized garment care by featuring a narrow, curved surface perfect for ironing sleeves, curved seams, and fitted clothing. Previous flat, wide boards made it extremely difficult to press Victorian-era garments with their elaborate sleeves and fitted designs. Her design solved this problem and became the standard that is still used worldwide over 130 years later.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Was Sarah Boone one of the first Black women to get a patent?</div>
+                <div class="faq-answer">
+                    Yes, Sarah Boone was one of the first African American women to receive a U.S. patent when she was granted Patent No. 473,653 on April 26, 1892. This was a remarkable achievement considering the multiple barriers she faced: racism, sexism, and her background as a formerly enslaved person with likely limited formal education.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does Sarah Boone's ironing board compare to modern ones?</div>
+                <div class="faq-answer">
+                    Modern ironing boards still use Sarah Boone's basic design principles: a narrow, tapered shape perfect for sleeves, a curved surface to match garment contours, and padded covering. When you iron a sleeve or fitted garment on a modern ironing board, you are directly benefiting from the innovations Sarah Boone patented in 1892. Her practical design has stood the test of time.
+                </div>
+            </div>
+        </section>
+
+        <section id="related">
+            <h2>Related Inventors</h2>
+            <div class="related-grid">
+                <a href="jan-matzeliger.html" class="related-card">
+                    <span class="related-emoji">👞</span>
+                    <div class="related-name">Jan Matzeliger</div>
+                    <div class="related-invention">Shoe Lasting Machine</div>
+                </a>
+                <a href="elijah-mccoy.html" class="related-card">
+                    <span class="related-emoji">⚙️</span>
+                    <div class="related-name">Elijah McCoy</div>
+                    <div class="related-invention">Automatic Lubricator</div>
+                </a>
+                <a href="garrett-morgan.html" class="related-card">
+                    <span class="related-emoji">🚦</span>
+                    <div class="related-name">Garrett Morgan</div>
+                    <div class="related-invention">Traffic Signal & Gas Mask</div>
+                </a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-button">← Back to All Inventors</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+        <p><a href="../index.html" style="color: #be185d;">www.americaninventions.org</a></p>
+    </footer>
+</body>
+</html>
