@@ -1262,7 +1262,27 @@
         function createInventorCard(inventor) {
             const card = document.createElement('div');
             card.className = 'inventor-card';
-            card.onclick = () => showInventorDetail(inventor);
+
+            // List of inventors with dedicated HTML pages
+            const inventorsWithPages = [
+                'guillermo-gonzalez-camarena',
+                'garrett-morgan',
+                'luis-miramontes',
+                'patricia-bath',
+                'alberto-santos-dumont',
+                'marie-van-brittan-brown',
+                'madam-cj-walker',
+                'lewis-latimer',
+                'arthur-zang',
+                'yvonne-clark'
+            ];
+
+            // If inventor has dedicated page, link to it; otherwise show detail modal
+            if (inventorsWithPages.includes(inventor.id)) {
+                card.onclick = () => window.location.href = `inventor/${inventor.id}.html`;
+            } else {
+                card.onclick = () => showInventorDetail(inventor);
+            }
 
             card.innerHTML = `
                 <div class="inventor-image">
@@ -1399,7 +1419,27 @@
         function createSimilarInventorTile(inventor) {
             const tile = document.createElement('div');
             tile.className = 'similar-inventor-tile';
-            tile.onclick = () => showInventorDetail(inventor);
+
+            // List of inventors with dedicated HTML pages
+            const inventorsWithPages = [
+                'guillermo-gonzalez-camarena',
+                'garrett-morgan',
+                'luis-miramontes',
+                'patricia-bath',
+                'alberto-santos-dumont',
+                'marie-van-brittan-brown',
+                'madam-cj-walker',
+                'lewis-latimer',
+                'arthur-zang',
+                'yvonne-clark'
+            ];
+
+            // If inventor has dedicated page, link to it; otherwise show detail modal
+            if (inventorsWithPages.includes(inventor.id)) {
+                tile.onclick = () => window.location.href = `inventor/${inventor.id}.html`;
+            } else {
+                tile.onclick = () => showInventorDetail(inventor);
+            }
             
             tile.innerHTML = `
                 <div class="similarity-tag">${inventor.similarityReason}</div>

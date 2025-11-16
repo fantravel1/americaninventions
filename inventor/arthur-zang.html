@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Zang - Inventor of Cardiopad Tablet | Heroes of Innovation</title>
+    <meta name="description" content="Discover Arthur Zang, the Cameroonian inventor who created the Cardiopad in 2011, a revolutionary tablet that enables heart examinations in remote African villages, saving lives through mobile health technology.">
+    <meta name="keywords" content="Arthur Zang, Cardiopad, Cameroon inventor, mobile health, telemedicine, African innovation, heart monitoring device, medical technology, cardiac care">
+    <meta name="author" content="Heroes of Innovation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/inventor/arthur-zang.html">
+    <meta property="og:title" content="Arthur Zang - Cardiopad Inventor">
+    <meta property="og:description" content="Young Cameroonian genius who created tablet bringing cardiac care to remote African villages.">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.americaninventions.org/inventor/arthur-zang.html">
+    <meta property="twitter:title" content="Arthur Zang - Mobile Health Pioneer">
+    <meta property="twitter:description" content="Invented Cardiopad tablet for remote heart examinations in Africa.">
+    <meta property="twitter:image" content="https://www.americaninventions.org/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/inventor/arthur-zang.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arthur Zang",
+      "birthDate": "1987",
+      "birthPlace": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Cameroon"
+        }
+      },
+      "nationality": "Cameroonian",
+      "jobTitle": "Computer Engineer and Inventor",
+      "knowsAbout": ["Medical Technology", "Telemedicine", "Mobile Health", "Cardiac Monitoring", "African Innovation"],
+      "award": ["Presidential Award of Excellence (Cameroon)", "African Innovation Prize", "Rolex Award for Enterprise"],
+      "description": "Cameroonian computer engineer who invented the Cardiopad in 2011, a portable tablet that enables heart examinations in remote areas, revolutionizing cardiac care access in Africa.",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Arthur_Zang"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Cardiopad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Cardiopad is a portable medical tablet invented by Arthur Zang in 2011 that enables healthcare workers in remote areas to perform cardiovascular examinations. It records heart activity, transmits data wirelessly to specialists in urban medical centers for diagnosis, and sends results back—bringing cardiac care to areas with limited access to cardiologists."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the Cardiopad important for Africa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Africa has a severe shortage of cardiologists and cardiac care facilities, with most specialists concentrated in urban centers. The Cardiopad allows nurses and general practitioners in rural areas to conduct heart examinations and get expert diagnoses remotely, dramatically expanding access to cardiac care for millions who would otherwise have none. It addresses a critical healthcare gap using mobile technology."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What recognition has Arthur Zang received?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Arthur Zang received Cameroon's Presidential Award of Excellence, the African Innovation Prize, the Rolex Award for Enterprise, and recognition from the World Health Organization. He became the first Cameroonian to receive a presidential award for innovation and has been celebrated across Africa as a model of homegrown technological innovation addressing local challenges."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: #1a1a1a;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .inventor-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-dates {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .hero-flag {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .hero-note {
+            background: rgba(255,255,255,0.4);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .quick-facts {
+            background: #f8f9fa;
+            border-left: 4px solid #a8e063;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quick-facts h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #56ab2f;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-item {
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        .fact-label {
+            font-weight: 700;
+            color: #56ab2f;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fact-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        section {
+            margin: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #a8e063;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #56ab2f;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #56ab2f 0%, #a8e063 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #a8e063;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 3px #a8e063;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #56ab2f;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #a8e063;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(168, 224, 99, 0.4);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            color: #56ab2f;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .patents-box {
+            background: linear-gradient(135deg, #56ab2f15 0%, #a8e06315 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .patent-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #56ab2f;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: #1a1a1a;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #56ab2f;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .related-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .related-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .related-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-invention {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #a8e063;
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 2rem 0;
+        }
+
+        .back-button:hover {
+            background: #56ab2f;
+            color: #ffffff;
+        }
+
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">All Inventors</a>
+                <a href="../index.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="inventor-emoji">❤️</span>
+            <h1>Arthur Zang</h1>
+            <p class="hero-subtitle">Inventor of the Cardiopad - Mobile Heart Care for Africa</p>
+            <p class="hero-dates">Born 1987</p>
+            <span class="hero-flag">🇨🇲 Cameroon</span>
+            <div class="hero-note">
+                <strong>Bringing Cardiac Care to Remote Villages</strong> – Created portable tablet enabling heart examinations anywhere in Africa
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="quick-facts">
+            <h2>Quick Facts</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-label">Primary Invention</div>
+                    <div class="fact-value">Cardiopad Tablet</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Invention Year</div>
+                    <div class="fact-value">2011</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Age at Invention</div>
+                    <div class="fact-value">24 years old</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Field</div>
+                    <div class="fact-value">Medical Technology & Telemedicine</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Education</div>
+                    <div class="fact-value">Computer Engineering</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-label">Impact</div>
+                    <div class="fact-value">Cardiac Care Access in Rural Africa</div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="biography">
+            <h2>Young Genius Solving Africa's Healthcare Crisis</h2>
+            <p>
+                Arthur Zang was born in 1987 in Cameroon, a country in Central Africa where, like much of the continent, access to specialized medical care is severely limited. While growing up, Zang witnessed firsthand the healthcare challenges facing his country: a critical shortage of doctors, almost no specialist physicians outside major cities, inadequate medical equipment, and infrastructure gaps that left millions without access to basic healthcare, let alone specialized cardiac treatment.
+            </p>
+            <p>
+                In Cameroon, a nation of 25 million people, there were fewer than 30 cardiologists, almost all concentrated in the two largest cities, Yaoundé and Douala. For the millions living in rural areas, seeking cardiac care meant traveling hundreds of kilometers to these urban centers—a journey that was prohibitively expensive, time-consuming, and often impossible for poor, sick, or elderly patients. Many people with treatable heart conditions simply died because they couldn't access a cardiologist.
+            </p>
+            <p>
+                Zang pursued computer engineering studies at the National Polytechnic Institute in Yaoundé, excelling in his coursework and demonstrating exceptional talent in software and hardware development. But rather than following the typical path of seeking employment abroad or in the private sector, Zang became obsessed with a question: could technology solve Cameroon's healthcare access problem? Could he create something that would bring medical expertise to patients, rather than requiring patients to travel to medical expertise?
+            </p>
+
+            <h3>The Birth of the Cardiopad</h3>
+            <p>
+                In 2009, while still a student, Arthur Zang began developing what would become the Cardiopad—a medical tablet specifically designed for cardiovascular examinations in resource-limited settings. The concept was revolutionary yet practical: create a portable, affordable device that nurses and general practitioners in rural clinics could use to perform electrocardiogram (ECG) tests, then transmit the results wirelessly to cardiologists in urban medical centers for diagnosis and treatment recommendations.
+            </p>
+            <p>
+                The technical challenges were formidable. Zang had to design custom hardware that could accurately capture cardiac signals, develop software to process and transmit the data securely, ensure the device could function in areas with unreliable electricity and internet connectivity, and make it affordable enough for widespread deployment in low-resource settings. He had no major funding, no corporate backing, and no team of engineers—just his own knowledge, determination, and vision.
+            </p>
+            <p>
+                Working in makeshift laboratories and often using his own limited funds, Zang spent two years developing the first Cardiopad prototype. In 2011, at just 24 years old, he successfully completed the device. The Cardiopad featured:
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Touch-screen tablet interface that healthcare workers could easily operate with minimal training</li>
+                    <li>Electrodes that attach to patients to capture heart activity</li>
+                    <li>Software that processes ECG data and displays results clearly</li>
+                    <li>Wireless connectivity (GPRS, 3G, WiFi) to transmit data to specialists</li>
+                    <li>Long battery life to function in areas with unreliable electricity</li>
+                    <li>Affordable price point (under $4,000) compared to traditional ECG machines</li>
+                </ul>
+            </p>
+
+            <h3>Overcoming Skepticism and Barriers</h3>
+            <p>
+                When Zang first presented his invention, he faced considerable skepticism. Many doubted that a young Cameroonian engineer with no medical background could create a viable medical device. Some questioned whether African-developed technology could meet international medical standards. Others doubted there was a market for such a device. The medical establishment, regulatory bodies, and potential investors were all initially reluctant to embrace his innovation.
+            </p>
+            <p>
+                But Zang persisted. He conducted rigorous testing, collaborated with cardiologists to validate the device's accuracy, and demonstrated the Cardiopad's effectiveness in real-world clinical settings. The results were undeniable: the Cardiopad provided accurate cardiac readings that cardiologists could use to diagnose conditions and recommend treatments, and it did so at a fraction of the cost of traditional equipment while being portable enough to use anywhere.
+            </p>
+            <p>
+                In 2012, Arthur Zang became the first Cameroonian to receive the country's Presidential Award of Excellence for Innovation, presented by President Paul Biya. This recognition brought national attention to his invention and validated his approach. International recognition followed: the African Innovation Prize, the Rolex Award for Enterprise, and acknowledgment from the World Health Organization as an example of innovative solutions to Africa's healthcare challenges.
+            </p>
+
+            <h3>Impact and Expansion</h3>
+            <p>
+                By 2014, Zang had founded Himore Medical, a company dedicated to manufacturing and distributing the Cardiopad and other medical technologies across Africa. The Cameroonian government ordered devices for deployment in rural health centers, and other African countries began expressing interest. The Cardiopad started appearing in clinics across Cameroon, enabling nurses and general practitioners to perform cardiac examinations and receive expert diagnoses within hours rather than requiring patients to travel for days.
+            </p>
+            <p>
+                The impact was profound and immediate. Patients in remote villages who would never have seen a cardiologist could now receive cardiac care. Early detection of heart conditions became possible in areas where previously, people simply died from undiagnosed and untreated cardiac problems. The Cardiopad exemplified the potential of appropriate technology—not necessarily the most advanced technology available globally, but technology specifically designed for the needs, resources, and conditions of the communities it served.
+            </p>
+            <p>
+                Zang didn't stop with the Cardiopad. His company continued developing medical technologies addressing Africa's specific healthcare needs, including devices for monitoring other vital signs and conditions. He became a prominent advocate for African innovation, arguing that Africans must develop technological solutions to African problems rather than simply importing expensive foreign technology designed for different contexts.
+            </p>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline of Achievement</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content">
+                        <strong>Born in Cameroon</strong> – Born in Central African nation facing severe healthcare access challenges.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2000s</div>
+                    <div class="timeline-content">
+                        <strong>Studied Computer Engineering</strong> – Attended National Polytechnic Institute in Yaoundé, excelling in software and hardware development.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-content">
+                        <strong>Began Developing Cardiopad (Age 22)</strong> – Started designing portable cardiac monitoring device for rural areas while still a student.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2011</div>
+                    <div class="timeline-content">
+                        <strong>Completed First Cardiopad Prototype (Age 24)</strong> – Successfully developed working medical tablet enabling remote heart examinations.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <strong>Presidential Award of Excellence</strong> – First Cameroonian to receive presidential innovation award from President Paul Biya.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-content">
+                        <strong>African Innovation Prize</strong> – Recognized across continent for innovative healthcare technology solution.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">
+                        <strong>Founded Himore Medical</strong> – Established company to manufacture and distribute Cardiopad and other medical devices across Africa.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">
+                        <strong>Government Deployment Began</strong> – Cameroonian government ordered Cardiopads for rural health centers nationwide.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <strong>Rolex Award for Enterprise</strong> – Received prestigious international recognition and funding for continued innovation.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017-Present</div>
+                    <div class="timeline-content">
+                        <strong>Continued Innovation and Expansion</strong> – Developed additional medical technologies; expanded Cardiopad deployment across multiple African countries.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents">
+            <h2>Innovations & Recognition</h2>
+            <div class="patents-box">
+                <div class="patent-item">
+                    ❤️ Cardiopad Medical Tablet (2011) – Portable device for cardiovascular examinations in remote areas
+                </div>
+                <div class="patent-item">
+                    📱 Wireless Data Transmission System – Secure transmission of ECG data to specialists via mobile networks
+                </div>
+                <div class="patent-item">
+                    🔋 Low-Power Design – Extended battery life for use in areas with unreliable electricity
+                </div>
+                <div class="patent-item">
+                    💰 Affordable Medical Technology – Under $4,000 price point for resource-limited settings
+                </div>
+                <div class="patent-item">
+                    🏥 Telemedicine Platform – Complete system connecting rural healthcare workers with urban specialists
+                </div>
+                <div class="patent-item">
+                    🔬 Continued Medical Device Development – Additional diagnostic tools for African healthcare contexts
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Major Achievements & Contributions</h2>
+            <ul class="achievements-list">
+                <li>Invented Cardiopad medical tablet at age 24, enabling remote cardiac examinations</li>
+                <li>First Cameroonian to receive Presidential Award of Excellence for Innovation (2012)</li>
+                <li>Received African Innovation Prize recognizing continent-wide impact (2013)</li>
+                <li>Awarded Rolex Award for Enterprise with funding for continued innovation (2016)</li>
+                <li>Founded Himore Medical to manufacture and distribute medical technologies across Africa</li>
+                <li>Enabled cardiac care access for millions in rural Africa lacking cardiologists</li>
+                <li>Demonstrated viability of African-developed technology for African healthcare challenges</li>
+                <li>Created affordable alternative to expensive imported medical equipment</li>
+                <li>Pioneered telemedicine solutions connecting rural health workers with urban specialists</li>
+                <li>Became role model for young African innovators and entrepreneurs</li>
+                <li>Advocated for African technological self-sufficiency and innovation</li>
+                <li>Expanded device deployment across multiple African countries through government partnerships</li>
+            </ul>
+        </section>
+
+        <section class="impact-section">
+            <h2>Global Impact</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                The Cardiopad brings life-saving cardiac care to millions in rural Africa who would otherwise have no access to cardiologists, demonstrating how locally-developed technology can solve local challenges.
+            </p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="impact-number">2011</span>
+                    <span class="impact-label">Cardiopad Invented</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">24</span>
+                    <span class="impact-label">Years Old at Invention</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">Millions</span>
+                    <span class="impact-label">Potential Beneficiaries Across Africa</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-number">$4K</span>
+                    <span class="impact-label">Affordable Price Point</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy: African Innovation for African Challenges</h2>
+            <p>
+                Arthur Zang's story represents a powerful counter-narrative to common assumptions about technology, innovation, and Africa. For too long, the dominant story has been one of Africa as a recipient of technology developed elsewhere, a continent of consumers rather than creators, problems rather than solutions. Zang's invention of the Cardiopad challenges this narrative fundamentally.
+            </p>
+            <p>
+                The Cardiopad is significant not just as a medical device, but as proof of concept: Africans can develop cutting-edge technology that addresses African needs better than imported solutions. The device works in contexts where expensive Western medical equipment often fails—areas with unreliable electricity, limited internet connectivity, few trained specialists, and severe resource constraints. It succeeds because it was designed specifically for these conditions by someone who understands them intimately.
+            </p>
+            <p>
+                Zang's work has inspired a generation of young African innovators who see that they don't need to leave the continent or work for foreign companies to make meaningful technological contributions. His success demonstrates that African engineers, working in African institutions, using African resources, can create world-class innovations that save lives and transform communities.
+            </p>
+            <p>
+                The broader impact of the Cardiopad extends beyond cardiac care. It has opened discussions about telemedicine's potential across Africa, where the ratio of doctors to patients is among the lowest in the world. If cardiac examinations can be conducted remotely with specialist consultation via wireless networks, the same model could work for other medical conditions. The Cardiopad has become a template for how mobile technology can bridge healthcare access gaps.
+            </p>
+            <p>
+                Zang has also become an advocate for supportive innovation ecosystems in Africa. He speaks publicly about the challenges he faced—lack of funding, skepticism from established institutions, regulatory hurdles, and difficulties accessing components and manufacturing capabilities. His advocacy has helped spark conversations about how African governments and institutions can better support local innovators and entrepreneurs.
+            </p>
+            <p>
+                Today, Arthur Zang continues his work through Himore Medical, developing additional medical technologies and expanding the Cardiopad's reach. His vision is clear: Africa should not merely consume technology developed elsewhere but should become a center of innovation creating solutions that work for African contexts and can potentially benefit the world. The Cardiopad is just the beginning of what he believes African innovation can achieve.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the Cardiopad?</div>
+                <div class="faq-answer">
+                    The Cardiopad is a portable medical tablet invented by Arthur Zang in 2011 that enables healthcare workers in remote areas to perform cardiovascular examinations. It records heart activity through attached electrodes, processes the data, and transmits it wirelessly to cardiologists in urban medical centers for diagnosis. The specialists then send back their diagnoses and treatment recommendations—bringing expert cardiac care to areas with no cardiologists.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why is the Cardiopad important for Africa?</div>
+                <div class="faq-answer">
+                    Africa faces a severe shortage of cardiologists and cardiac care facilities. Cameroon, with 25 million people, has fewer than 30 cardiologists, almost all in major cities. The Cardiopad allows nurses and general practitioners in rural areas to conduct heart examinations and get expert diagnoses remotely, dramatically expanding access to cardiac care for millions who would otherwise have none. It addresses a critical healthcare gap using affordable, appropriate technology designed specifically for African conditions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What recognition has Arthur Zang received?</div>
+                <div class="faq-answer">
+                    Arthur Zang received Cameroon's Presidential Award of Excellence for Innovation in 2012, becoming the first Cameroonian to receive this honor. He also won the African Innovation Prize (2013), the Rolex Award for Enterprise (2016), and recognition from the World Health Organization. His work has been celebrated across Africa and internationally as an example of homegrown technological innovation addressing local challenges.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the Cardiopad work?</div>
+                <div class="faq-answer">
+                    The Cardiopad works in four steps: (1) A healthcare worker in a rural clinic attaches electrodes to a patient and uses the tablet to record heart activity, (2) The device processes the ECG data and displays the results on its touch screen, (3) The data is transmitted wirelessly (via GPRS, 3G, or WiFi) to a cardiologist in an urban medical center, (4) The specialist analyzes the data and sends back a diagnosis and treatment recommendations. This entire process can be completed in hours rather than requiring patients to travel for days.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What challenges did Zang face creating the Cardiopad?</div>
+                <div class="faq-answer">
+                    Zang faced numerous challenges: limited funding (often using his own money), skepticism about African-developed medical technology, difficulty accessing electronic components and manufacturing capabilities, regulatory hurdles for medical device approval, and doubt from the medical establishment. Despite having no corporate backing or major funding, he persisted through two years of development, proving that the device worked and was viable for widespread deployment.
+                </div>
+            </div>
+        </section>
+
+        <section id="related">
+            <h2>Related Inventors</h2>
+            <div class="related-grid">
+                <a href="patricia-bath.html" class="related-card">
+                    <span class="related-emoji">👁️</span>
+                    <div class="related-name">Patricia Bath</div>
+                    <div class="related-invention">Laserphaco Probe</div>
+                </a>
+                <a href="yvonne-clark.html" class="related-card">
+                    <span class="related-emoji">💧</span>
+                    <div class="related-name">Yvonne Clark</div>
+                    <div class="related-invention">Water Purification System</div>
+                </a>
+                <a href="luis-miramontes.html" class="related-card">
+                    <span class="related-emoji">💊</span>
+                    <div class="related-name">Luis Miramontes</div>
+                    <div class="related-invention">Birth Control Pill</div>
+                </a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-button">← Back to All Inventors</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+        <p><a href="../index.html" style="color: #a8e063;">www.americaninventions.org</a></p>
+    </footer>
+</body>
+</html>
