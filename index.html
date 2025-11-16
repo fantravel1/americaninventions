@@ -10,17 +10,20 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://heroesofinnovation.com/">
+    <meta property="og:url" content="https://www.americaninventions.org/">
     <meta property="og:title" content="Heroes of Innovation - Black and Brown Inventors Across the Americas">
     <meta property="og:description" content="Discover revolutionary inventions by Black and Brown inventors who changed the world.">
-    <meta property="og:image" content="https://heroesofinnovation.com/og-image.jpg">
+    <meta property="og:image" content="https://www.americaninventions.org/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://heroesofinnovation.com/">
+    <meta property="twitter:url" content="https://www.americaninventions.org/">
     <meta property="twitter:title" content="Heroes of Innovation - Black and Brown Inventors">
     <meta property="twitter:description" content="Discover revolutionary inventions by Black and Brown inventors who changed the world.">
-    <meta property="twitter:image" content="https://heroesofinnovation.com/twitter-image.jpg">
+    <meta property="twitter:image" content="https://www.americaninventions.org/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.americaninventions.org/">
 
     <style>
         * {
@@ -142,9 +145,15 @@
 
         .nav-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            justify-content: space-between;
             gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-link:hover {
+            background: #764ba2 !important;
         }
 
         .search-container {
@@ -480,6 +489,13 @@
         
         /* Hide header when viewing individual inventor */
         body.viewing-inventor header {
+            display: none;
+        }
+
+        body.viewing-inventor .advanced-controls,
+        body.viewing-inventor .timeline-section,
+        body.viewing-inventor .tagcloud-section,
+        body.viewing-inventor .stats-dashboard {
             display: none;
         }
 
@@ -933,6 +949,611 @@
         .hidden {
             display: none;
         }
+
+        /* Advanced Controls Section */
+        .advanced-controls {
+            background: #f9f9f9;
+            padding: 2rem 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 200px;
+        }
+
+        .control-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #333;
+        }
+
+        .control-select, .control-input {
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            background: #fff;
+            font-size: 0.9rem;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-select:hover, .control-select:focus {
+            border-color: #666;
+            outline: none;
+        }
+
+        .lucky-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            align-self: flex-end;
+        }
+
+        .lucky-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .lucky-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Time Period Slider */
+        .time-slider-container {
+            min-width: 300px;
+        }
+
+        .time-slider {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .time-range-display {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+            font-weight: 600;
+        }
+
+        /* Category Multi-Select */
+        .category-dropdown {
+            position: relative;
+        }
+
+        .category-select-btn {
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .category-select-btn:hover {
+            border-color: #666;
+        }
+
+        .category-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-top: none;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .category-dropdown.active .category-dropdown-content {
+            display: block;
+        }
+
+        .category-option {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .category-option:hover {
+            background: #f5f5f5;
+        }
+
+        .category-option input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .clear-categories-btn {
+            padding: 0.5rem 1rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
+
+        .clear-categories-btn:hover {
+            background: #333;
+        }
+
+        /* Timeline Visualization */
+        .timeline-section {
+            background: #f9f9f9;
+            padding: 3rem 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .timeline-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 200px;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-bar {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            min-width: 20px;
+        }
+
+        .timeline-bar:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: scaleY(1.05);
+        }
+
+        .timeline-bar.active {
+            background: #000;
+        }
+
+        .timeline-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-count {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        /* Tag Cloud */
+        .tagcloud-section {
+            background: #fff;
+            padding: 3rem 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tagcloud-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .tagcloud-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .tag-item {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tag-item:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+            transform: translateY(-3px);
+        }
+
+        .tag-item.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-color: #667eea;
+        }
+
+        /* Statistics Dashboard */
+        .stats-dashboard {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 0;
+            border-bottom: 2px solid #333;
+        }
+
+        .stats-toggle {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-toggle-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #666;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stats-toggle-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .stats-content {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .stats-content.active {
+            display: block;
+            max-height: 2000px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-chart {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border: 1px solid #333;
+        }
+
+        .stat-chart h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .chart-bar {
+            margin-bottom: 1rem;
+        }
+
+        .chart-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .chart-bar-fill-container {
+            height: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s ease;
+        }
+
+        /* Favorites System */
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .favorite-btn:hover {
+            transform: scale(1.1);
+            background: #fff;
+            border-color: #000;
+        }
+
+        .favorite-btn.favorited {
+            background: #ff4757;
+            border-color: #ff4757;
+        }
+
+        .favorites-filter {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        .favorites-filter:hover,
+        .favorites-filter.active {
+            background: #fff;
+            color: #000;
+        }
+
+        .favorites-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Enhanced Search */
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .search-clear-btn:hover {
+            color: #fff;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #000;
+            border: 2px solid #333;
+            border-top: none;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .search-suggestions.active {
+            display: block;
+        }
+
+        .search-suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid #222;
+        }
+
+        .search-suggestion-item:hover {
+            background: #1a1a1a;
+        }
+
+        .search-highlight {
+            background: rgba(102, 126, 234, 0.3);
+            font-weight: 600;
+        }
+
+        .search-history {
+            padding: 0.75rem 1rem;
+            color: #666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Social Sharing */
+        .social-share {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+        }
+
+        .share-btn {
+            padding: 0.75rem 1.5rem;
+            background: #fff;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .share-btn.twitter {
+            border-color: #1DA1F2;
+            color: #1DA1F2;
+        }
+
+        .share-btn.twitter:hover {
+            background: #1DA1F2;
+            color: #fff;
+        }
+
+        .share-btn.facebook {
+            border-color: #4267B2;
+            color: #4267B2;
+        }
+
+        .share-btn.facebook:hover {
+            background: #4267B2;
+            color: #fff;
+        }
+
+        .share-btn.linkedin {
+            border-color: #0077b5;
+            color: #0077b5;
+        }
+
+        .share-btn.linkedin:hover {
+            background: #0077b5;
+            color: #fff;
+        }
+
+        .share-btn.copy {
+            border-color: #666;
+            color: #666;
+        }
+
+        .share-btn.copy:hover {
+            background: #666;
+            color: #fff;
+        }
+
+        /* Active Results Info */
+        .results-info {
+            text-align: center;
+            margin: 2rem 0 1rem;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .clear-all-filters {
+            display: inline-block;
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .clear-all-filters:hover {
+            background: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-group {
+                width: 100%;
+            }
+
+            .timeline-bars {
+                height: 150px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-share {
+                flex-wrap: wrap;
+            }
+        }
     </style>
 </head>
 <body>
@@ -966,33 +1587,131 @@
         <div class="search-nav">
         <div class="container">
             <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search inventors, inventions, or countries..." id="searchInput">
+                <div class="search-wrapper">
+                    <input type="text" class="search-box" placeholder="Search inventors, inventions, or countries..." id="searchInput">
+                    <button class="search-clear-btn hidden" id="searchClearBtn">✕</button>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <nav>
         <div class="container">
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="north-america">North America</button>
-                <button class="filter-btn" data-filter="central-america">Central America</button>
-                <button class="filter-btn" data-filter="south-america">South America</button>
-                <button class="filter-btn" data-filter="caribbean">Caribbean</button>
+            <div class="nav-container">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="north-america">North America</button>
+                    <button class="filter-btn" data-filter="central-america">Central America</button>
+                    <button class="filter-btn" data-filter="south-america">South America</button>
+                    <button class="filter-btn" data-filter="caribbean">Caribbean</button>
+                    <button class="favorites-filter" id="favoritesFilter">
+                        Favorites
+                        <span class="favorites-badge hidden" id="favoritesBadge">0</span>
+                    </button>
+                </div>
+                <a href="blog/index.html" class="blog-link" style="color: #fff; text-decoration: none; padding: 0.5rem 1.5rem; background: #667eea; border-radius: 4px; font-weight: 600; transition: background 0.3s;">📚 Blog</a>
             </div>
         </div>
     </nav>
 
+    <!-- Advanced Controls -->
+    <section class="advanced-controls">
+        <div class="container">
+            <div class="controls-container">
+                <!-- Sort Dropdown -->
+                <div class="control-group">
+                    <label class="control-label">Sort By</label>
+                    <select class="control-select" id="sortSelect">
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="year-asc">Year (Oldest First)</option>
+                        <option value="year-desc">Year (Newest First)</option>
+                        <option value="views-desc">Most Viewed</option>
+                    </select>
+                </div>
+
+                <!-- Category Multi-Select -->
+                <div class="control-group">
+                    <label class="control-label">Categories</label>
+                    <div class="category-dropdown" id="categoryDropdown">
+                        <div class="category-select-btn" id="categorySelectBtn">
+                            <span id="categorySelectText">All Categories</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="category-dropdown-content" id="categoryDropdownContent">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Period Slider -->
+                <div class="control-group time-slider-container">
+                    <label class="control-label">Time Period</label>
+                    <input type="range" class="time-slider" id="timeSliderStart" min="1800" max="2024" value="1800">
+                    <input type="range" class="time-slider" id="timeSliderEnd" min="1800" max="2024" value="2024">
+                    <div class="time-range-display" id="timeRangeDisplay">1800 - 2024</div>
+                </div>
+
+                <!-- Random Inventor Button -->
+                <button class="lucky-btn" id="luckyBtn">
+                    🎲 Feeling Lucky?
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Visualization -->
+    <section class="timeline-section" id="timelineSection">
+        <div class="container">
+            <h2>Inventions Through Time</h2>
+            <div class="timeline-container">
+                <div class="timeline-bars" id="timelineBars"></div>
+                <div class="timeline-label">
+                    <span>1800</span>
+                    <span>2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tag Cloud -->
+    <section class="tagcloud-section" id="tagcloudSection">
+        <div class="container">
+            <h2>Explore by Category</h2>
+            <div class="tagcloud-container" id="tagcloudContainer"></div>
+        </div>
+    </section>
+
+    <!-- Statistics Dashboard -->
+    <section class="stats-dashboard" id="statsDashboard">
+        <div class="container">
+            <div class="stats-toggle">
+                <button class="stats-toggle-btn" id="statsToggleBtn">
+                    📊 View Statistics Dashboard
+                </button>
+            </div>
+            <div class="stats-content" id="statsContent">
+                <div class="stats-grid" id="statsGrid"></div>
+            </div>
+        </div>
+    </section>
+
     <main>
         <div class="container">
+            <div class="results-info" id="resultsInfo">
+                <span id="resultsCount"></span>
+                <button class="clear-all-filters hidden" id="clearAllFilters">Clear All Filters</button>
+            </div>
+
             <div id="inventorsGrid" class="inventors-grid">
                 <!-- Inventor cards will be populated here -->
             </div>
-            
+
             <div class="loading hidden" id="loadingMessage">
                 Loading incredible inventors...
             </div>
-            
+
             <div class="no-results hidden" id="noResults">
                 No inventors found matching your search.
             </div>
@@ -1016,7 +1735,27 @@
                 <h3 class="invention-name" id="detailInvention"></h3>
                 <p id="detailInventionYear"></p>
             </div>
-            
+
+            <!-- Social Sharing Buttons -->
+            <div class="social-share" id="socialShare">
+                <button class="share-btn twitter" onclick="shareInventor('twitter')">
+                    <span>🐦</span>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-btn facebook" onclick="shareInventor('facebook')">
+                    <span>📘</span>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn linkedin" onclick="shareInventor('linkedin')">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </button>
+                <button class="share-btn copy" onclick="shareInventor('copy')">
+                    <span>🔗</span>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+
             <div class="detailed-bio" id="detailBio"></div>
             
             <div class="achievements-section">
@@ -1153,19 +1892,60 @@
         // DOM elements
         const inventorsGrid = document.getElementById('inventorsGrid');
         const searchInput = document.getElementById('searchInput');
+        const searchClearBtn = document.getElementById('searchClearBtn');
+        const searchSuggestions = document.getElementById('searchSuggestions');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const loadingMessage = document.getElementById('loadingMessage');
         const noResults = document.getElementById('noResults');
         const inventorDetail = document.getElementById('inventorDetail');
         const heroStats = document.getElementById('heroStats');
+        const resultsInfo = document.getElementById('resultsInfo');
+        const resultsCount = document.getElementById('resultsCount');
+        const clearAllFilters = document.getElementById('clearAllFilters');
+
+        // Advanced controls
+        const sortSelect = document.getElementById('sortSelect');
+        const categoryDropdown = document.getElementById('categoryDropdown');
+        const categorySelectBtn = document.getElementById('categorySelectBtn');
+        const categorySelectText = document.getElementById('categorySelectText');
+        const categoryDropdownContent = document.getElementById('categoryDropdownContent');
+        const timeSliderStart = document.getElementById('timeSliderStart');
+        const timeSliderEnd = document.getElementById('timeSliderEnd');
+        const timeRangeDisplay = document.getElementById('timeRangeDisplay');
+        const luckyBtn = document.getElementById('luckyBtn');
+
+        // Timeline & Tag Cloud
+        const timelineBars = document.getElementById('timelineBars');
+        const tagcloudContainer = document.getElementById('tagcloudContainer');
+
+        // Stats Dashboard
+        const statsToggleBtn = document.getElementById('statsToggleBtn');
+        const statsContent = document.getElementById('statsContent');
+        const statsGrid = document.getElementById('statsGrid');
+
+        // Favorites
+        const favoritesFilter = document.getElementById('favoritesFilter');
+        const favoritesBadge = document.getElementById('favoritesBadge');
 
         // State
         let currentFilter = 'all';
         let currentSearchTerm = '';
+        let currentSort = 'name-asc';
+        let selectedCategories = [];
+        let timeRangeStart = 1800;
+        let timeRangeEnd = 2024;
+        let showOnlyFavorites = false;
+        let searchHistory = [];
+        let currentInventor = null;
+        let activeTimelineDecade = null;
 
         // Initialize the app
         function init() {
             updateHeroStats();
+            initializeCategoryDropdown();
+            createTimeline();
+            createTagCloud();
+            loadFavorites();
             renderInventors();
             setupEventListeners();
             setupScrollDetection();
@@ -1186,10 +1966,35 @@
 
         // Setup event listeners
         function setupEventListeners() {
-            // Search functionality
+            // Enhanced search functionality
             searchInput.addEventListener('input', (e) => {
                 currentSearchTerm = e.target.value.toLowerCase();
+                searchClearBtn.classList.toggle('hidden', !currentSearchTerm);
+
+                // Show suggestions
+                if (currentSearchTerm.length >= 2) {
+                    showSearchSuggestions();
+                } else {
+                    searchSuggestions.classList.remove('active');
+                }
+
                 renderInventors();
+            });
+
+            // Search clear button
+            searchClearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                currentSearchTerm = '';
+                searchClearBtn.classList.add('hidden');
+                searchSuggestions.classList.remove('active');
+                renderInventors();
+            });
+
+            // Close search suggestions when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                    searchSuggestions.classList.remove('active');
+                }
             });
 
             // Filter buttons
@@ -1201,16 +2006,115 @@
                     renderInventors();
                 });
             });
+
+            // Sort dropdown
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                renderInventors();
+            });
+
+            // Category dropdown
+            categorySelectBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                categoryDropdown.classList.toggle('active');
+            });
+
+            // Close category dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!categoryDropdown.contains(e.target)) {
+                    categoryDropdown.classList.remove('active');
+                }
+            });
+
+            // Time sliders
+            timeSliderStart.addEventListener('input', (e) => {
+                timeRangeStart = parseInt(e.target.value);
+                if (timeRangeStart > timeRangeEnd) {
+                    timeRangeEnd = timeRangeStart;
+                    timeSliderEnd.value = timeRangeStart;
+                }
+                updateTimeRangeDisplay();
+                renderInventors();
+            });
+
+            timeSliderEnd.addEventListener('input', (e) => {
+                timeRangeEnd = parseInt(e.target.value);
+                if (timeRangeEnd < timeRangeStart) {
+                    timeRangeStart = timeRangeEnd;
+                    timeSliderStart.value = timeRangeEnd;
+                }
+                updateTimeRangeDisplay();
+                renderInventors();
+            });
+
+            // Lucky button
+            luckyBtn.addEventListener('click', showRandomInventor);
+
+            // Stats toggle
+            statsToggleBtn.addEventListener('click', () => {
+                statsContent.classList.toggle('active');
+                if (statsContent.classList.contains('active')) {
+                    statsToggleBtn.textContent = '📊 Hide Statistics Dashboard';
+                    generateStatistics();
+                } else {
+                    statsToggleBtn.textContent = '📊 View Statistics Dashboard';
+                }
+            });
+
+            // Favorites filter
+            favoritesFilter.addEventListener('click', () => {
+                showOnlyFavorites = !showOnlyFavorites;
+                favoritesFilter.classList.toggle('active', showOnlyFavorites);
+                renderInventors();
+            });
+
+            // Clear all filters
+            clearAllFilters.addEventListener('click', () => {
+                // Reset all filters
+                currentFilter = 'all';
+                currentSearchTerm = '';
+                currentSort = 'name-asc';
+                selectedCategories = [];
+                timeRangeStart = 1800;
+                timeRangeEnd = 2024;
+                showOnlyFavorites = false;
+                activeTimelineDecade = null;
+
+                // Reset UI
+                filterButtons.forEach(b => b.classList.remove('active'));
+                filterButtons[0].classList.add('active');
+                searchInput.value = '';
+                searchClearBtn.classList.add('hidden');
+                sortSelect.value = 'name-asc';
+                timeSliderStart.value = 1800;
+                timeSliderEnd.value = 2024;
+                updateTimeRangeDisplay();
+                updateCategorySelectText();
+                updateCategoryCheckboxes();
+                favoritesFilter.classList.remove('active');
+
+                // Clear timeline selection
+                document.querySelectorAll('.timeline-bar').forEach(bar => {
+                    bar.classList.remove('active');
+                });
+
+                // Clear tag cloud selection
+                document.querySelectorAll('.tag-item').forEach(tag => {
+                    tag.classList.remove('active');
+                });
+
+                renderInventors();
+            });
         }
 
         // Scroll detection for search bar border
         function setupScrollDetection() {
             const searchNav = document.querySelector('.search-nav');
             const regionsNav = document.querySelector('nav');
-            
+
             function handleScroll() {
                 const regionsRect = regionsNav.getBoundingClientRect();
-                
+
                 // If the regions section has scrolled past the search bar, add border
                 if (regionsRect.bottom <= searchNav.offsetHeight) {
                     searchNav.classList.add('scrolled');
@@ -1218,9 +2122,441 @@
                     searchNav.classList.remove('scrolled');
                 }
             }
-            
+
             window.addEventListener('scroll', handleScroll);
         }
+
+        // ========== NEW INTERACTIVE FEATURES ==========
+
+        // Initialize Category Dropdown
+        function initializeCategoryDropdown() {
+            const allInventors = inventorsDatabase.getAll();
+            const categories = [...new Set(allInventors.map(inv => inv.category))].sort();
+
+            categoryDropdownContent.innerHTML = '';
+
+            categories.forEach(category => {
+                const option = document.createElement('div');
+                option.className = 'category-option';
+                option.innerHTML = `
+                    <input type="checkbox" id="cat-${category}" value="${category}">
+                    <label for="cat-${category}">${category}</label>
+                `;
+
+                option.querySelector('input').addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        if (!selectedCategories.includes(category)) {
+                            selectedCategories.push(category);
+                        }
+                    } else {
+                        selectedCategories = selectedCategories.filter(c => c !== category);
+                    }
+                    updateCategorySelectText();
+                    renderInventors();
+                });
+
+                categoryDropdownContent.appendChild(option);
+            });
+
+            // Add clear button
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'clear-categories-btn';
+            clearBtn.textContent = 'Clear All';
+            clearBtn.addEventListener('click', () => {
+                selectedCategories = [];
+                updateCategoryCheckboxes();
+                updateCategorySelectText();
+                renderInventors();
+            });
+            categoryDropdownContent.appendChild(clearBtn);
+        }
+
+        function updateCategoryCheckboxes() {
+            const checkboxes = categoryDropdownContent.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.checked = selectedCategories.includes(cb.value);
+            });
+        }
+
+        function updateCategorySelectText() {
+            if (selectedCategories.length === 0) {
+                categorySelectText.textContent = 'All Categories';
+            } else if (selectedCategories.length === 1) {
+                categorySelectText.textContent = selectedCategories[0];
+            } else {
+                categorySelectText.textContent = `${selectedCategories.length} Categories`;
+            }
+        }
+
+        function updateTimeRangeDisplay() {
+            timeRangeDisplay.textContent = `${timeRangeStart} - ${timeRangeEnd}`;
+        }
+
+        // Create Timeline Visualization
+        function createTimeline() {
+            const allInventors = inventorsDatabase.getAll();
+            const decades = {};
+
+            // Group by decade
+            allInventors.forEach(inv => {
+                const decade = Math.floor(inv.inventionYear / 10) * 10;
+                if (!decades[decade]) decades[decade] = 0;
+                decades[decade]++;
+            });
+
+            // Find max for scaling
+            const maxCount = Math.max(...Object.values(decades));
+
+            // Create bars for each decade from 1800 to 2020
+            timelineBars.innerHTML = '';
+            for (let decade = 1800; decade <= 2020; decade += 10) {
+                const count = decades[decade] || 0;
+                const height = count > 0 ? (count / maxCount) * 100 : 2;
+
+                const bar = document.createElement('div');
+                bar.className = 'timeline-bar';
+                bar.style.height = `${height}%`;
+                bar.dataset.decade = decade;
+
+                if (count > 0) {
+                    const label = document.createElement('div');
+                    label.className = 'timeline-count';
+                    label.textContent = count;
+                    bar.appendChild(label);
+                }
+
+                bar.addEventListener('click', () => {
+                    if (activeTimelineDecade === decade) {
+                        // Deselect
+                        activeTimelineDecade = null;
+                        bar.classList.remove('active');
+                        timeRangeStart = 1800;
+                        timeRangeEnd = 2024;
+                    } else {
+                        // Select decade
+                        document.querySelectorAll('.timeline-bar').forEach(b => b.classList.remove('active'));
+                        activeTimelineDecade = decade;
+                        bar.classList.add('active');
+                        timeRangeStart = decade;
+                        timeRangeEnd = decade + 9;
+                    }
+
+                    timeSliderStart.value = timeRangeStart;
+                    timeSliderEnd.value = timeRangeEnd;
+                    updateTimeRangeDisplay();
+                    renderInventors();
+                });
+
+                timelineBars.appendChild(bar);
+            }
+        }
+
+        // Create Tag Cloud
+        function createTagCloud() {
+            const allInventors = inventorsDatabase.getAll();
+            const categoryCounts = {};
+
+            allInventors.forEach(inv => {
+                categoryCounts[inv.category] = (categoryCounts[inv.category] || 0) + 1;
+            });
+
+            const maxCount = Math.max(...Object.values(categoryCounts));
+            const minCount = Math.min(...Object.values(categoryCounts));
+
+            tagcloudContainer.innerHTML = '';
+
+            Object.entries(categoryCounts)
+                .sort((a, b) => b[1] - a[1])
+                .forEach(([category, count]) => {
+                    const tag = document.createElement('div');
+                    tag.className = 'tag-item';
+
+                    // Size based on count
+                    const sizeRatio = (count - minCount) / (maxCount - minCount);
+                    const fontSize = 0.85 + (sizeRatio * 0.6);
+                    tag.style.fontSize = `${fontSize}rem`;
+
+                    tag.textContent = `${category} (${count})`;
+
+                    tag.addEventListener('click', () => {
+                        if (selectedCategories.includes(category)) {
+                            selectedCategories = selectedCategories.filter(c => c !== category);
+                            tag.classList.remove('active');
+                        } else {
+                            selectedCategories = [category]; // Single select for tag cloud
+                            document.querySelectorAll('.tag-item').forEach(t => t.classList.remove('active'));
+                            tag.classList.add('active');
+                        }
+
+                        updateCategoryCheckboxes();
+                        updateCategorySelectText();
+                        renderInventors();
+                    });
+
+                    tagcloudContainer.appendChild(tag);
+                });
+        }
+
+        // Show Random Inventor
+        function showRandomInventor() {
+            const allInventors = inventorsDatabase.getAll();
+            const randomInventor = allInventors[Math.floor(Math.random() * allInventors.length)];
+
+            // Add animation
+            luckyBtn.style.transform = 'rotate(360deg) scale(1.2)';
+            setTimeout(() => {
+                luckyBtn.style.transform = '';
+            }, 300);
+
+            // Show inventor detail
+            const inventorsWithPages = [
+                'guillermo-gonzalez-camarena',
+                'garrett-morgan',
+                'luis-miramontes',
+                'patricia-bath',
+                'alberto-santos-dumont',
+                'marie-van-brittan-brown',
+                'madam-cj-walker',
+                'lewis-latimer',
+                'arthur-zang',
+                'yvonne-clark'
+            ];
+
+            if (inventorsWithPages.includes(randomInventor.id)) {
+                window.location.href = `inventor/${randomInventor.id}.html`;
+            } else {
+                showInventorDetail(randomInventor);
+            }
+        }
+
+        // Generate Statistics Dashboard
+        function generateStatistics() {
+            const allInventors = inventorsDatabase.getAll();
+
+            // Inventions by decade
+            const decadeCounts = {};
+            allInventors.forEach(inv => {
+                const decade = Math.floor(inv.inventionYear / 10) * 10;
+                decadeCounts[decade] = (decadeCounts[decade] || 0) + 1;
+            });
+
+            // Top countries
+            const countryCounts = {};
+            allInventors.forEach(inv => {
+                countryCounts[inv.country] = (countryCounts[inv.country] || 0) + 1;
+            });
+
+            // Category breakdown
+            const categoryCounts = {};
+            allInventors.forEach(inv => {
+                categoryCounts[inv.category] = (categoryCounts[inv.category] || 0) + 1;
+            });
+
+            statsGrid.innerHTML = '';
+
+            // Chart 1: Inventions by Decade
+            const decadeChart = createChart(
+                'Inventions by Decade',
+                Object.entries(decadeCounts)
+                    .sort((a, b) => a[0] - b[0])
+                    .slice(-10)
+            );
+            statsGrid.appendChild(decadeChart);
+
+            // Chart 2: Top Countries
+            const countryChart = createChart(
+                'Top 10 Countries',
+                Object.entries(countryCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 10)
+            );
+            statsGrid.appendChild(countryChart);
+
+            // Chart 3: Category Breakdown
+            const categoryChart = createChart(
+                'Category Breakdown',
+                Object.entries(categoryCounts)
+                    .sort((a, b) => b[1] - a[1])
+            );
+            statsGrid.appendChild(categoryChart);
+        }
+
+        function createChart(title, data) {
+            const chart = document.createElement('div');
+            chart.className = 'stat-chart';
+
+            const maxValue = Math.max(...data.map(d => d[1]));
+
+            let html = `<h3>${title}</h3>`;
+
+            data.forEach(([label, value]) => {
+                const percentage = (value / maxValue) * 100;
+                html += `
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">
+                            <span>${label}</span>
+                            <span>${value}</span>
+                        </div>
+                        <div class="chart-bar-fill-container">
+                            <div class="chart-bar-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            chart.innerHTML = html;
+            return chart;
+        }
+
+        // Favorites System
+        function loadFavorites() {
+            const saved = localStorage.getItem('favoriteInventors');
+            if (saved) {
+                try {
+                    const favorites = JSON.parse(saved);
+                    updateFavoritesBadge(favorites.length);
+                } catch (e) {
+                    console.error('Error loading favorites:', e);
+                }
+            }
+        }
+
+        function getFavorites() {
+            const saved = localStorage.getItem('favoriteInventors');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        function toggleFavorite(inventorId, event) {
+            if (event) {
+                event.stopPropagation();
+            }
+
+            let favorites = getFavorites();
+
+            if (favorites.includes(inventorId)) {
+                favorites = favorites.filter(id => id !== inventorId);
+            } else {
+                favorites.push(inventorId);
+            }
+
+            localStorage.setItem('favoriteInventors', JSON.stringify(favorites));
+            updateFavoritesBadge(favorites.length);
+
+            // Re-render to update heart icons
+            renderInventors();
+        }
+
+        function updateFavoritesBadge(count) {
+            favoritesBadge.textContent = count;
+            favoritesBadge.classList.toggle('hidden', count === 0);
+        }
+
+        // Enhanced Search with Suggestions
+        function showSearchSuggestions() {
+            const allInventors = inventorsDatabase.getAll();
+            const suggestions = [];
+
+            // Find matching inventors
+            allInventors.forEach(inv => {
+                if (inv.name.toLowerCase().includes(currentSearchTerm) ||
+                    inv.primaryInvention.toLowerCase().includes(currentSearchTerm) ||
+                    inv.country.toLowerCase().includes(currentSearchTerm)) {
+                    suggestions.push({
+                        type: 'inventor',
+                        text: `${inv.name} - ${inv.primaryInvention}`,
+                        inventor: inv
+                    });
+                }
+            });
+
+            // Limit to 8 suggestions
+            const limitedSuggestions = suggestions.slice(0, 8);
+
+            if (limitedSuggestions.length > 0) {
+                searchSuggestions.innerHTML = '';
+
+                // Show search history first if no search term
+                if (currentSearchTerm.length < 3 && searchHistory.length > 0) {
+                    const historyHeader = document.createElement('div');
+                    historyHeader.className = 'search-history';
+                    historyHeader.textContent = 'Recent Searches';
+                    searchSuggestions.appendChild(historyHeader);
+
+                    searchHistory.slice(0, 5).forEach(term => {
+                        const item = document.createElement('div');
+                        item.className = 'search-suggestion-item';
+                        item.textContent = term;
+                        item.addEventListener('click', () => {
+                            searchInput.value = term;
+                            currentSearchTerm = term;
+                            searchSuggestions.classList.remove('active');
+                            renderInventors();
+                        });
+                        searchSuggestions.appendChild(item);
+                    });
+                }
+
+                // Show suggestions
+                limitedSuggestions.forEach(suggestion => {
+                    const item = document.createElement('div');
+                    item.className = 'search-suggestion-item';
+
+                    // Highlight matching text
+                    const highlightedText = suggestion.text.replace(
+                        new RegExp(currentSearchTerm, 'gi'),
+                        match => `<span class="search-highlight">${match}</span>`
+                    );
+                    item.innerHTML = highlightedText;
+
+                    item.addEventListener('click', () => {
+                        if (!searchHistory.includes(currentSearchTerm)) {
+                            searchHistory.unshift(currentSearchTerm);
+                            searchHistory = searchHistory.slice(0, 5);
+                        }
+                        showInventorDetail(suggestion.inventor);
+                        searchSuggestions.classList.remove('active');
+                    });
+
+                    searchSuggestions.appendChild(item);
+                });
+
+                searchSuggestions.classList.add('active');
+            } else {
+                searchSuggestions.classList.remove('active');
+            }
+        }
+
+        // Social Sharing
+        function shareInventor(platform) {
+            if (!currentInventor) return;
+
+            const url = window.location.href;
+            const text = `Check out ${currentInventor.name} who invented ${currentInventor.primaryInvention}!`;
+
+            switch (platform) {
+                case 'twitter':
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'linkedin':
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(url).then(() => {
+                        const btn = event.target.closest('.share-btn');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<span>✓</span><span>Copied!</span>';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                        }, 2000);
+                    });
+                    break;
+            }
+        }
+
+        // ========== END NEW FEATURES ==========
 
         // Render inventors based on current filter and search
         function renderInventors() {
@@ -1234,14 +2570,41 @@
             // Apply search filter
             if (currentSearchTerm) {
                 filteredInventors = inventorsDatabase.searchInventors(currentSearchTerm);
-                
+
                 // If we also have a region filter, apply both
                 if (currentFilter !== 'all') {
-                    filteredInventors = filteredInventors.filter(inventor => 
+                    filteredInventors = filteredInventors.filter(inventor =>
                         inventor.region === currentFilter
                     );
                 }
             }
+
+            // Apply category filter
+            if (selectedCategories.length > 0) {
+                filteredInventors = filteredInventors.filter(inventor =>
+                    selectedCategories.includes(inventor.category)
+                );
+            }
+
+            // Apply time range filter
+            filteredInventors = filteredInventors.filter(inventor =>
+                inventor.inventionYear >= timeRangeStart &&
+                inventor.inventionYear <= timeRangeEnd
+            );
+
+            // Apply favorites filter
+            if (showOnlyFavorites) {
+                const favorites = getFavorites();
+                filteredInventors = filteredInventors.filter(inventor =>
+                    favorites.includes(inventor.id)
+                );
+            }
+
+            // Apply sorting
+            filteredInventors = sortInventors(filteredInventors, currentSort);
+
+            // Update results count
+            updateResultsInfo(filteredInventors.length);
 
             // Show/hide loading and no results
             loadingMessage.classList.add('hidden');
@@ -1255,13 +2618,83 @@
             });
         }
 
+        // Sort inventors
+        function sortInventors(inventors, sortBy) {
+            const sorted = [...inventors];
+
+            switch (sortBy) {
+                case 'name-asc':
+                    return sorted.sort((a, b) => a.name.localeCompare(b.name));
+                case 'name-desc':
+                    return sorted.sort((a, b) => b.name.localeCompare(a.name));
+                case 'year-asc':
+                    return sorted.sort((a, b) => a.inventionYear - b.inventionYear);
+                case 'year-desc':
+                    return sorted.sort((a, b) => b.inventionYear - a.inventionYear);
+                case 'views-desc':
+                    return sorted.sort((a, b) => b.viewCount - a.viewCount);
+                default:
+                    return sorted;
+            }
+        }
+
+        // Update results info
+        function updateResultsInfo(count) {
+            const hasActiveFilters = currentFilter !== 'all' ||
+                currentSearchTerm !== '' ||
+                selectedCategories.length > 0 ||
+                timeRangeStart !== 1800 ||
+                timeRangeEnd !== 2024 ||
+                showOnlyFavorites;
+
+            if (count === 0) {
+                resultsCount.textContent = '';
+            } else {
+                const total = inventorsDatabase.getAll().length;
+                if (hasActiveFilters) {
+                    resultsCount.textContent = `Showing ${count} of ${total} inventors`;
+                } else {
+                    resultsCount.textContent = `Showing all ${count} inventors`;
+                }
+            }
+
+            clearAllFilters.classList.toggle('hidden', !hasActiveFilters);
+        }
+
         // Create inventor card
         function createInventorCard(inventor) {
             const card = document.createElement('div');
             card.className = 'inventor-card';
-            card.onclick = () => showInventorDetail(inventor);
+
+            // Check if favorited
+            const favorites = getFavorites();
+            const isFavorited = favorites.includes(inventor.id);
+
+            // List of inventors with dedicated HTML pages
+            const inventorsWithPages = [
+                'guillermo-gonzalez-camarena',
+                'garrett-morgan',
+                'luis-miramontes',
+                'patricia-bath',
+                'alberto-santos-dumont',
+                'marie-van-brittan-brown',
+                'madam-cj-walker',
+                'lewis-latimer',
+                'arthur-zang',
+                'yvonne-clark'
+            ];
+
+            // If inventor has dedicated page, link to it; otherwise show detail modal
+            if (inventorsWithPages.includes(inventor.id)) {
+                card.onclick = () => window.location.href = `inventor/${inventor.id}.html`;
+            } else {
+                card.onclick = () => showInventorDetail(inventor);
+            }
 
             card.innerHTML = `
+                <button class="favorite-btn ${isFavorited ? 'favorited' : ''}" onclick="toggleFavorite('${inventor.id}', event)" aria-label="Add to favorites">
+                    ${isFavorited ? '❤️' : '🤍'}
+                </button>
                 <div class="inventor-image">
                     <div class="placeholder-image">
                         ${inventor.inventionEmoji}
@@ -1286,15 +2719,18 @@
 
         // Show inventor detail page
         function showInventorDetail(inventor) {
+            // Store current inventor for sharing
+            currentInventor = inventor;
+
             // Hide main page
             document.querySelector('main').style.display = 'none';
 
             // Hide header section
             document.body.classList.add('viewing-inventor');
-            
+
             // Show detail page
             inventorDetail.classList.add('active');
-            
+
             // Populate detail content
             document.getElementById('detailName').textContent = inventor.name;
             document.getElementById('detailDates').textContent = `${inventor.birthYear} - ${inventor.deathYear}`;
@@ -1396,7 +2832,27 @@
         function createSimilarInventorTile(inventor) {
             const tile = document.createElement('div');
             tile.className = 'similar-inventor-tile';
-            tile.onclick = () => showInventorDetail(inventor);
+
+            // List of inventors with dedicated HTML pages
+            const inventorsWithPages = [
+                'guillermo-gonzalez-camarena',
+                'garrett-morgan',
+                'luis-miramontes',
+                'patricia-bath',
+                'alberto-santos-dumont',
+                'marie-van-brittan-brown',
+                'madam-cj-walker',
+                'lewis-latimer',
+                'arthur-zang',
+                'yvonne-clark'
+            ];
+
+            // If inventor has dedicated page, link to it; otherwise show detail modal
+            if (inventorsWithPages.includes(inventor.id)) {
+                tile.onclick = () => window.location.href = `inventor/${inventor.id}.html`;
+            } else {
+                tile.onclick = () => showInventorDetail(inventor);
+            }
             
             tile.innerHTML = `
                 <div class="similarity-tag">${inventor.similarityReason}</div>
@@ -1411,6 +2867,7 @@
 
         // Show main page
         function showMainPage() {
+            currentInventor = null;
             document.querySelector('main').style.display = 'block';
             // Show header section again
             document.body.classList.remove('viewing-inventor');

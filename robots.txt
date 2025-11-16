@@ -1,0 +1,12 @@
+# robots.txt for Heroes of Innovation - www.americaninventions.org
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.americaninventions.org/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+# User-agent: *
+# Crawl-delay: 1

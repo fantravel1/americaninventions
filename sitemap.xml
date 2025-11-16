@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.americaninventions.org/</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Individual Inventor Pages -->
+  <url>
+    <loc>https://www.americaninventions.org/inventor/alberto-santos-dumont.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/arthur-zang.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/garrett-morgan.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/guillermo-gonzalez-camarena.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/lewis-latimer.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/luis-miramontes.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/madam-cj-walker.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/marie-van-brittan-brown.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/patricia-bath.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/inventor/yvonne-clark.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://www.americaninventions.org/blog/index.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/blog/garrett-morgan-untold-hero.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/blog/medical-innovations-changed-healthcare.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/blog/mexico-golden-age-innovation.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/blog/october-1951-birth-control-pill.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.americaninventions.org/blog/15-everyday-items-black-brown-inventors.html</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
