@@ -1557,7 +1557,99 @@
                 flex-wrap: wrap;
             }
         }
-    </style>
+    
+        /* View Toggle */
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: #1a1a1a;
+            padding: 0.3rem;
+            border-radius: 8px;
+        }
+
+        .view-toggle-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .view-toggle-btn:hover {
+            background: #333;
+        }
+
+        .view-toggle-btn.active {
+            background: #667eea;
+        }
+
+        /* Inventions Grid */
+        .inventions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .invention-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .invention-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .invention-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .invention-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .invention-category {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .invention-year {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .invention-inventor {
+            font-size: 0.95rem;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+</style>
 </head>
 <body>
     <header>
@@ -1603,6 +1695,11 @@
     <nav>
         <div class="container">
             <div class="nav-container">
+                <div class="view-toggle" id="viewToggle">
+                    <button class="view-toggle-btn active" data-view="inventors">👥 Inventors</button>
+                    <button class="view-toggle-btn" data-view="inventions">💡 Inventions</button>
+                </div>
+                <div style="flex: 1;"></div>
                 <div class="filters">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="north-america">North America</button>
@@ -1710,6 +1807,10 @@
 
             <div id="inventorsGrid" class="inventors-grid">
                 <!-- Inventor cards will be populated here -->
+            </div>
+
+            <div id="inventionsGrid" class="inventions-grid hidden">
+                <!-- Invention cards will be populated here -->
             </div>
 
             <div class="loading hidden" id="loadingMessage">
@@ -3370,6 +3471,1405 @@
             ]
         }
     }
+    
+    // Inventions data
+    const inventionsData = [
+    {
+        "id": "color-television-system",
+        "name": "Color Television System",
+        "emoji": "📺",
+        "year": 1940,
+        "category": "Electronics & Computing",
+        "inventor": "Guillermo González Camarena",
+        "inventorId": "guillermo-gonzalez-camarena",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "railway-telegraph-system",
+        "name": "Railway Telegraph System",
+        "emoji": "🚂",
+        "year": 1887,
+        "category": "Transportation & Communication",
+        "inventor": "Granville Woods",
+        "inventorId": "granville-woods",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "modular-housing-system",
+        "name": "Modular Housing System",
+        "emoji": "🏠",
+        "year": 1975,
+        "category": "Consumer & Personal Products",
+        "inventor": "João Figueiredo",
+        "inventorId": "joao-figueiredo",
+        "country": "Brazil",
+        "flag": "🇧🇷"
+    },
+    {
+        "id": "birth-control-pill",
+        "name": "Birth Control Pill",
+        "emoji": "💊",
+        "year": 1951,
+        "category": "Medicine & Healthcare",
+        "inventor": "Luis Miramontes",
+        "inventorId": "luis-miramontes",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "traffic-signal",
+        "name": "Traffic Signal",
+        "emoji": "🚦",
+        "year": 1923,
+        "category": "Security & Safety",
+        "inventor": "Garrett Morgan",
+        "inventorId": "garrett-morgan",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "agricultural-innovations-peanut-products",
+        "name": "Agricultural Innovations & Peanut Products",
+        "emoji": "🥜",
+        "year": 1896,
+        "category": "Agriculture & Food Science",
+        "inventor": "George Washington Carver",
+        "inventorId": "george-washington-carver",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "hair-care-products-methods",
+        "name": "Hair Care Products & Methods",
+        "emoji": "💄",
+        "year": 1905,
+        "category": "Consumer & Personal Products",
+        "inventor": "Madam C.J. Walker",
+        "inventorId": "madam-cj-walker",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "carbon-filament-for-light-bulbs",
+        "name": "Carbon Filament for Light Bulbs",
+        "emoji": "💡",
+        "year": 1881,
+        "category": "Electronics & Computing",
+        "inventor": "Lewis Latimer",
+        "inventorId": "lewis-latimer",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "shoe-lasting-machine",
+        "name": "Shoe Lasting Machine",
+        "emoji": "👞",
+        "year": 1883,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Jan Matzeliger",
+        "inventorId": "jan-matzeliger",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "automatic-lubricator",
+        "name": "Automatic Lubricator",
+        "emoji": "🚂",
+        "year": 1872,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Elijah McCoy",
+        "inventorId": "elijah-mccoy",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-ironing-board",
+        "name": "Improved Ironing Board",
+        "emoji": "👔",
+        "year": 1892,
+        "category": "Consumer & Personal Products",
+        "inventor": "Sarah Boone",
+        "inventorId": "sarah-boone",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "laserphaco-probe",
+        "name": "Laserphaco Probe",
+        "emoji": "👁️",
+        "year": 1986,
+        "category": "Medicine & Healthcare",
+        "inventor": "Patricia Bath",
+        "inventorId": "patricia-bath",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "super-soaker-water-gun",
+        "name": "Super Soaker Water Gun",
+        "emoji": "🔫",
+        "year": 1989,
+        "category": "Consumer & Personal Products",
+        "inventor": "Lonnie Johnson",
+        "inventorId": "lonnie-johnson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "ibm-personal-computer",
+        "name": "IBM Personal Computer",
+        "emoji": "💻",
+        "year": 1981,
+        "category": "Electronics & Computing",
+        "inventor": "Mark Dean",
+        "inventorId": "mark-dean",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "home-security-system",
+        "name": "Home Security System",
+        "emoji": "📹",
+        "year": 1966,
+        "category": "Security & Safety",
+        "inventor": "Marie Van Brittan Brown",
+        "inventorId": "marie-van-brittan-brown",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "cardiopad-tablet",
+        "name": "Cardiopad Tablet",
+        "emoji": "💓",
+        "year": 2011,
+        "category": "Medicine & Healthcare",
+        "inventor": "Arthur Zang",
+        "inventorId": "arthur-zang",
+        "country": "Cameroon",
+        "flag": "🇨🇲"
+    },
+    {
+        "id": "seismic-building-isolators",
+        "name": "Seismic Building Isolators",
+        "emoji": "🏗️",
+        "year": 1985,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Carlos López-Barillas",
+        "inventorId": "carlos-lopez-barillas",
+        "country": "Guatemala",
+        "flag": "🇬🇹"
+    },
+    {
+        "id": "sustainable-water-purification-system",
+        "name": "Sustainable Water Purification System",
+        "emoji": "🌊",
+        "year": 1974,
+        "category": "Environmental & Energy",
+        "inventor": "Yvonne Clark",
+        "inventorId": "yvonne-clark",
+        "country": "Jamaica",
+        "flag": "🇯🇲"
+    },
+    {
+        "id": "14-bis-aircraft",
+        "name": "14-bis Aircraft",
+        "emoji": "✈️",
+        "year": 1906,
+        "category": "Transportation & Communication",
+        "inventor": "Alberto Santos-Dumont",
+        "inventorId": "santos-dumont",
+        "country": "Brazil",
+        "flag": "🇧🇷"
+    },
+    {
+        "id": "automated-coffee-processing-system",
+        "name": "Automated Coffee Processing System",
+        "emoji": "☕",
+        "year": 1982,
+        "category": "Agriculture & Food Science",
+        "inventor": "Francisco Santamaría",
+        "inventorId": "francisco-santamaria",
+        "country": "Colombia",
+        "flag": "🇨🇴"
+    },
+    {
+        "id": "computer-password-system",
+        "name": "Computer Password System",
+        "emoji": "🔐",
+        "year": 1961,
+        "category": "Electronics & Computing",
+        "inventor": "Fernando Corbató",
+        "inventorId": "fernando-corbato",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "ozone-depletion-research",
+        "name": "Ozone Depletion Research",
+        "emoji": "🌍",
+        "year": 1974,
+        "category": "Environmental & Energy",
+        "inventor": "Mario Molina",
+        "inventorId": "mario-molina",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "optical-analysis-systems",
+        "name": "Optical Analysis Systems",
+        "emoji": "🚀",
+        "year": 1987,
+        "category": "Space & Aerospace",
+        "inventor": "Ellen Ochoa",
+        "inventorId": "ellen-ochoa",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "synthetic-cortisone-steroids",
+        "name": "Synthetic Cortisone & Steroids",
+        "emoji": "💊",
+        "year": 1949,
+        "category": "Chemistry & Materials Science",
+        "inventor": "Percy Julian",
+        "inventorId": "percy-julian",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "pacemaker-control-unit",
+        "name": "Pacemaker Control Unit",
+        "emoji": "💓",
+        "year": 1964,
+        "category": "Medicine & Healthcare",
+        "inventor": "Otis Boykin",
+        "inventorId": "otis-boykin",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "transdermal-patch",
+        "name": "Transdermal Patch",
+        "emoji": "🩹",
+        "year": 1971,
+        "category": "Medicine & Healthcare",
+        "inventor": "Alejandro Zaffaroni",
+        "inventorId": "alejandro-zaffaroni",
+        "country": "Uruguay",
+        "flag": "🇺🇾"
+    },
+    {
+        "id": "sanitary-belt-with-moisture-proof-napkin-pocket",
+        "name": "Sanitary Belt with Moisture-Proof Napkin Pocket",
+        "emoji": "🩲",
+        "year": 1957,
+        "category": "Medicine & Healthcare",
+        "inventor": "Mary Davidson Kenner",
+        "inventorId": "mary-davidson-kenner",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "far-ultraviolet-camera-spectrograph",
+        "name": "Far Ultraviolet Camera/Spectrograph",
+        "emoji": "🔭",
+        "year": 1972,
+        "category": "Space & Aerospace",
+        "inventor": "George Carruthers",
+        "inventorId": "george-carruthers",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "acceleglove",
+        "name": "AcceleGlove",
+        "emoji": "🤟",
+        "year": 1998,
+        "category": "Medicine & Healthcare",
+        "inventor": "José Hernández-Rebollar",
+        "inventorId": "jose-hernandez-rebollar",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "illusion-transmitter",
+        "name": "Illusion Transmitter",
+        "emoji": "🌟",
+        "year": 1980,
+        "category": "Electronics & Computing",
+        "inventor": "Valerie Thomas",
+        "inventorId": "valerie-thomas",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "yellow-fever-transmission-theory",
+        "name": "Yellow Fever Transmission Theory",
+        "emoji": "🦟",
+        "year": 1881,
+        "category": "Medicine & Healthcare",
+        "inventor": "Carlos Finlay",
+        "inventorId": "carlos-finlay",
+        "country": "Cuba",
+        "flag": "🇨🇺"
+    },
+    {
+        "id": "hurricane-tracking-system",
+        "name": "Hurricane Tracking System",
+        "emoji": "🌀",
+        "year": 1987,
+        "category": "Environmental & Energy",
+        "inventor": "Francisco Cabrera",
+        "inventorId": "francisco-cabrera",
+        "country": "Dominican Republic",
+        "flag": "🇩🇴"
+    },
+    {
+        "id": "gamma-electric-cell",
+        "name": "Gamma-Electric Cell",
+        "emoji": "📱",
+        "year": 1971,
+        "category": "Chemistry & Materials Science",
+        "inventor": "Henry Sampson",
+        "inventorId": "henry-sampson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "wooden-clock",
+        "name": "Wooden Clock",
+        "emoji": "⏰",
+        "year": 1753,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Benjamin Banneker",
+        "inventorId": "benjamin-banneker",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "multiple-effect-evaporator",
+        "name": "Multiple-Effect Evaporator",
+        "emoji": "🍯",
+        "year": 1843,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Norbert Rillieux",
+        "inventorId": "norbert-rillieux",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "revolutionary-communication-system",
+        "name": "Revolutionary Communication System",
+        "emoji": "📮",
+        "year": 1892,
+        "category": "Security & Safety",
+        "inventor": "Andrés Bonifacio",
+        "inventorId": "andres-bonifacio",
+        "country": "Philippines",
+        "flag": "🇵🇭"
+    },
+    {
+        "id": "improved-hairbrush",
+        "name": "Improved Hairbrush",
+        "emoji": "🪮",
+        "year": 1898,
+        "category": "Consumer & Personal Products",
+        "inventor": "Lyda Newman",
+        "inventorId": "lyda-newman",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "vertical-farming-system",
+        "name": "Vertical Farming System",
+        "emoji": "🌱",
+        "year": 1989,
+        "category": "Agriculture & Food Science",
+        "inventor": "Arturo Camposeco",
+        "inventorId": "arturo-camposeco",
+        "country": "Guatemala",
+        "flag": "🇬🇹"
+    },
+    {
+        "id": "electronic-feeding-device",
+        "name": "Electronic Feeding Device",
+        "emoji": "🍽️",
+        "year": 1951,
+        "category": "Medicine & Healthcare",
+        "inventor": "Bessie Blount",
+        "inventorId": "bessie-blount",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "wave-energy-converter",
+        "name": "Wave Energy Converter",
+        "emoji": "🌊",
+        "year": 1995,
+        "category": "Environmental & Energy",
+        "inventor": "Ricardo González",
+        "inventorId": "ricardo-gonzalez",
+        "country": "Puerto Rico",
+        "flag": "🇵🇷"
+    },
+    {
+        "id": "fiber-optic-manufacturing-process",
+        "name": "Fiber Optic Manufacturing Process",
+        "emoji": "💻",
+        "year": 1983,
+        "category": "Electronics & Computing",
+        "inventor": "Thomas Mensah",
+        "inventorId": "thomas-mensah",
+        "country": "Ghana/United States",
+        "flag": "🇬🇭"
+    },
+    {
+        "id": "targeted-cancer-drug-delivery-system",
+        "name": "Targeted Cancer Drug Delivery System",
+        "emoji": "🧬",
+        "year": 2003,
+        "category": "Medicine & Healthcare",
+        "inventor": "Ana González-Angulo",
+        "inventorId": "ana-gonzalez-angulo",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "digital-document-processing-system",
+        "name": "Digital Document Processing System",
+        "emoji": "🖨️",
+        "year": 1995,
+        "category": "Electronics & Computing",
+        "inventor": "Ursula Burns",
+        "inventorId": "ursula-burns",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "immune-response-gene-discovery",
+        "name": "Immune Response Gene Discovery",
+        "emoji": "🦠",
+        "year": 1965,
+        "category": "Medicine & Healthcare",
+        "inventor": "Baruj Benacerraf",
+        "inventorId": "baruj-benacerraf",
+        "country": "Venezuela",
+        "flag": "🇻🇪"
+    },
+    {
+        "id": "geothermal-energy-extraction-system",
+        "name": "Geothermal Energy Extraction System",
+        "emoji": "🌋",
+        "year": 1978,
+        "category": "Environmental & Energy",
+        "inventor": "Enrique Ríos",
+        "inventorId": "enrique-rios",
+        "country": "Chile",
+        "flag": "🇨🇱"
+    },
+    {
+        "id": "sustainable-shrimp-farming-system",
+        "name": "Sustainable Shrimp Farming System",
+        "emoji": "🦐",
+        "year": 1985,
+        "category": "Agriculture & Food Science",
+        "inventor": "José Cuello",
+        "inventorId": "jose-cuello",
+        "country": "Ecuador",
+        "flag": "🇪🇨"
+    },
+    {
+        "id": "helicopter-crop-dusting-system",
+        "name": "Helicopter Crop Dusting System",
+        "emoji": "🚁",
+        "year": 1968,
+        "category": "Agriculture & Food Science",
+        "inventor": "Antonio de Nicolás",
+        "inventorId": "antonio-de-nicolas",
+        "country": "Colombia",
+        "flag": "🇨🇴"
+    },
+    {
+        "id": "rainforest-preservation-drone-system",
+        "name": "Rainforest Preservation Drone System",
+        "emoji": "🌿",
+        "year": 1998,
+        "category": "Environmental & Energy",
+        "inventor": "Lúcia Mendonça",
+        "inventorId": "lucia-mendonca",
+        "country": "Brazil",
+        "flag": "🇧🇷"
+    },
+    {
+        "id": "community-communication-network",
+        "name": "Community Communication Network",
+        "emoji": "📡",
+        "year": 1992,
+        "category": "Consumer & Personal Products",
+        "inventor": "Hugo Chávez Frías",
+        "inventorId": "hugo-chavez-frias",
+        "country": "Venezuela",
+        "flag": "🇻🇪"
+    },
+    {
+        "id": "amazon-climate-monitoring-system",
+        "name": "Amazon Climate Monitoring System",
+        "emoji": "🌡️",
+        "year": 1990,
+        "category": "Environmental & Energy",
+        "inventor": "Carlos Nobre",
+        "inventorId": "carlos-nobre",
+        "country": "Brazil",
+        "flag": "🇧🇷"
+    },
+    {
+        "id": "mobile-refrigeration-unit",
+        "name": "Mobile Refrigeration Unit",
+        "emoji": "🚛",
+        "year": 1938,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Frederick McKinley Jones",
+        "inventorId": "frederick-mckinley-jones",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "hair-straightening-cream",
+        "name": "Hair Straightening Cream",
+        "emoji": "💇",
+        "year": 1913,
+        "category": "Consumer & Personal Products",
+        "inventor": "Garrett Augustus Morgan",
+        "inventorId": "garrett-augustus-morgan",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "automatic-railroad-car-coupler",
+        "name": "Automatic Railroad Car Coupler",
+        "emoji": "🚂",
+        "year": 1897,
+        "category": "Transportation & Communication",
+        "inventor": "Andrew Jackson Beard",
+        "inventorId": "andrew-jackson-beard",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-refrigerator",
+        "name": "Improved Refrigerator",
+        "emoji": "❄️",
+        "year": 1879,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Thomas Elkins",
+        "inventorId": "thomas-elkins",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "gorilla-health-monitoring-system",
+        "name": "Gorilla Health Monitoring System",
+        "emoji": "🦍",
+        "year": 2003,
+        "category": "Environmental & Energy",
+        "inventor": "Gladys Kalema-Zikusoka",
+        "inventorId": "gladys-kalema-zikusoka",
+        "country": "Uganda",
+        "flag": "🇺🇬"
+    },
+    {
+        "id": "synthetic-insulin-production",
+        "name": "Synthetic Insulin Production",
+        "emoji": "🧬",
+        "year": 1978,
+        "category": "Chemistry & Materials Science",
+        "inventor": "Lydia Villa-Komaroff",
+        "inventorId": "lydia-villa-komaroff",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "hiv-gene-mapping",
+        "name": "HIV Gene Mapping",
+        "emoji": "🦠",
+        "year": 1985,
+        "category": "Medicine & Healthcare",
+        "inventor": "Flossie Wong-Staal",
+        "inventorId": "flossie-wong-staal",
+        "country": "China/United States",
+        "flag": "🇨🇳"
+    },
+    {
+        "id": "medicinal-plant-database-system",
+        "name": "Medicinal Plant Database System",
+        "emoji": "🌺",
+        "year": 1995,
+        "category": "Agriculture & Food Science",
+        "inventor": "Ameenah Gurib-Fakim",
+        "inventorId": "ameenah-gurib-fakim",
+        "country": "Mauritius",
+        "flag": "🇲🇺"
+    },
+    {
+        "id": "covid-19-vaccine-development",
+        "name": "COVID-19 Vaccine Development",
+        "emoji": "💉",
+        "year": 2020,
+        "category": "Medicine & Healthcare",
+        "inventor": "Kizzmekia Corbett",
+        "inventorId": "kizzmekia-corbett",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "laser-cancer-treatment-system",
+        "name": "Laser Cancer Treatment System",
+        "emoji": "🔬",
+        "year": 2016,
+        "category": "Medicine & Healthcare",
+        "inventor": "Hadiyah Green",
+        "inventorId": "hadiyah-green",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "assistive-robotics-for-children",
+        "name": "Assistive Robotics for Children",
+        "emoji": "🤖",
+        "year": 2005,
+        "category": "Electronics & Computing",
+        "inventor": "Ayanna Howard",
+        "inventorId": "ayanna-howard",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "space-physiology-monitoring-system",
+        "name": "Space Physiology Monitoring System",
+        "emoji": "🚀",
+        "year": 2019,
+        "category": "Medicine & Healthcare",
+        "inventor": "Jessica Meir",
+        "inventorId": "jessica-meir",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "agni-missile-guidance-system",
+        "name": "Agni Missile Guidance System",
+        "emoji": "🚀",
+        "year": 2010,
+        "category": "Space & Aerospace",
+        "inventor": "Tessy Thomas",
+        "inventorId": "tessy-thomas",
+        "country": "India",
+        "flag": "🇮🇳"
+    },
+    {
+        "id": "bone-cell-research-in-microgravity",
+        "name": "Bone Cell Research in Microgravity",
+        "emoji": "🌟",
+        "year": 1992,
+        "category": "Medicine & Healthcare",
+        "inventor": "Mae Jemison",
+        "inventorId": "mae-jemison",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "fire-escape-ladder",
+        "name": "Fire Escape Ladder",
+        "emoji": "🔥",
+        "year": 1878,
+        "category": "Security & Safety",
+        "inventor": "Joseph Winters",
+        "inventorId": "joseph-winters",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-paper-bag-machine",
+        "name": "Improved Paper Bag Machine",
+        "emoji": "📎",
+        "year": 1884,
+        "category": "Engineering & Manufacturing",
+        "inventor": "William Purvis",
+        "inventorId": "william-purvis",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "street-letter-box",
+        "name": "Street Letter Box",
+        "emoji": "📮",
+        "year": 1891,
+        "category": "Transportation & Communication",
+        "inventor": "Philip Downing",
+        "inventorId": "phillip-downing",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "automatic-elevator-doors",
+        "name": "Automatic Elevator Doors",
+        "emoji": "🛗",
+        "year": 1887,
+        "category": "Security & Safety",
+        "inventor": "Alexander Miles",
+        "inventorId": "alexander-miles",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "electric-railway-system",
+        "name": "Electric Railway System",
+        "emoji": "🔌",
+        "year": 1901,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Lyates Woods",
+        "inventorId": "granville-woods-second",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "corn-planter",
+        "name": "Corn Planter",
+        "emoji": "🌽",
+        "year": 1834,
+        "category": "Agriculture & Food Science",
+        "inventor": "Henry Blair",
+        "inventorId": "henry-blair",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "instabook-maker",
+        "name": "Instabook Maker",
+        "emoji": "📰",
+        "year": 1992,
+        "category": "Electronics & Computing",
+        "inventor": "Víctor Celorio",
+        "inventorId": "victor-celorio",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "solar-battery-storage-system",
+        "name": "Solar Battery Storage System",
+        "emoji": "🔋",
+        "year": 2001,
+        "category": "Environmental & Energy",
+        "inventor": "Mario Molina-Pasquel",
+        "inventorId": "mario-molina-pasquel",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "automated-tortilla-machine",
+        "name": "Automated Tortilla Machine",
+        "emoji": "🌮",
+        "year": 1975,
+        "category": "Agriculture & Food Science",
+        "inventor": "Arturo Montiel",
+        "inventorId": "arturo-montiel",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "chili-pepper-preservation-system",
+        "name": "Chili Pepper Preservation System",
+        "emoji": "🌶️",
+        "year": 1987,
+        "category": "Agriculture & Food Science",
+        "inventor": "Refugio Ruiz",
+        "inventorId": "refugio-ruiz",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "automated-embroidery-system",
+        "name": "Automated Embroidery System",
+        "emoji": "🧵",
+        "year": 1994,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Esperanza Martínez",
+        "inventorId": "esperanza-martinez",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "atmospheric-water-generator",
+        "name": "Atmospheric Water Generator",
+        "emoji": "🌊",
+        "year": 1999,
+        "category": "Environmental & Energy",
+        "inventor": "Ricardo Domínguez",
+        "inventorId": "ricardo-dominguez",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "plastic-to-fuel-conversion-system",
+        "name": "Plastic-to-Fuel Conversion System",
+        "emoji": "🔬",
+        "year": 2003,
+        "category": "Environmental & Energy",
+        "inventor": "Javier Hernández-Clara",
+        "inventorId": "javier-hernandez-clara",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "portable-medical-diagnostic-kit",
+        "name": "Portable Medical Diagnostic Kit",
+        "emoji": "🏥",
+        "year": 2005,
+        "category": "Medicine & Healthcare",
+        "inventor": "María González-Vélez",
+        "inventorId": "maria-gonzalez-velez",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "earthquake-resistant-adobe-construction",
+        "name": "Earthquake-Resistant Adobe Construction",
+        "emoji": "🏠",
+        "year": 1988,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Fernando Alba-Andrade",
+        "inventorId": "fernando-alba-andrade",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "stellar-classification-system",
+        "name": "Stellar Classification System",
+        "emoji": "🌟",
+        "year": 1975,
+        "category": "Space & Aerospace",
+        "inventor": "Silvia Torres-Castilleja",
+        "inventorId": "silvia-torres-castilleja",
+        "country": "Mexico",
+        "flag": "🇲🇽"
+    },
+    {
+        "id": "kevlar",
+        "name": "Kevlar",
+        "emoji": "🦺",
+        "year": 1965,
+        "category": "Chemistry & Materials Science",
+        "inventor": "Stephanie Kwolek",
+        "inventorId": "stephanie-kwolek",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "gps-mathematical-model",
+        "name": "GPS Mathematical Model",
+        "emoji": "🛰️",
+        "year": 1979,
+        "category": "Space & Aerospace",
+        "inventor": "Gladys West",
+        "inventorId": "gladys-west",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "supersonic-flight-pressure-studies",
+        "name": "Supersonic Flight Pressure Studies",
+        "emoji": "✈️",
+        "year": 1958,
+        "category": "Space & Aerospace",
+        "inventor": "Mary Jackson",
+        "inventorId": "mary-jackson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "leprosy-treatment-method",
+        "name": "Leprosy Treatment Method",
+        "emoji": "💊",
+        "year": 1915,
+        "category": "Medicine & Healthcare",
+        "inventor": "Alice Ball",
+        "inventorId": "alice-ball",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "rocket-fuel-efficiency-software",
+        "name": "Rocket Fuel Efficiency Software",
+        "emoji": "🚀",
+        "year": 1975,
+        "category": "Electronics & Computing",
+        "inventor": "Annie Easley",
+        "inventorId": "annie-easley",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "cancer-cell-research-methods",
+        "name": "Cancer Cell Research Methods",
+        "emoji": "🔬",
+        "year": 1952,
+        "category": "Medicine & Healthcare",
+        "inventor": "Jewel Plummer Cobb",
+        "inventorId": "jewel-plummer-cobb",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "spacecraft-trajectory-calculations",
+        "name": "Spacecraft Trajectory Calculations",
+        "emoji": "🧮",
+        "year": 1961,
+        "category": "Space & Aerospace",
+        "inventor": "Catherine Johnson",
+        "inventorId": "catherine-johnson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "fortran-programming-applications",
+        "name": "FORTRAN Programming Applications",
+        "emoji": "💻",
+        "year": 1958,
+        "category": "Electronics & Computing",
+        "inventor": "Dorothy Vaughan",
+        "inventorId": "dorothy-vaughan",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "cholesterol-and-heart-disease-research",
+        "name": "Cholesterol and Heart Disease Research",
+        "emoji": "🫀",
+        "year": 1955,
+        "category": "Medicine & Healthcare",
+        "inventor": "Marie Daly",
+        "inventorId": "marie-daly",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "radioimmunoassay-technique",
+        "name": "Radioimmunoassay Technique",
+        "emoji": "🧬",
+        "year": 1959,
+        "category": "Medicine & Healthcare",
+        "inventor": "Rosalyn Yalow",
+        "inventorId": "rosalyn-yalow",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "automated-investment-analysis-system",
+        "name": "Automated Investment Analysis System",
+        "emoji": "💰",
+        "year": 1987,
+        "category": "Electronics & Computing",
+        "inventor": "Michael Lee-Chin",
+        "inventorId": "michael-lee-chin",
+        "country": "Jamaica",
+        "flag": "🇯🇲"
+    },
+    {
+        "id": "ocean-thermal-energy-converter",
+        "name": "Ocean Thermal Energy Converter",
+        "emoji": "🌊",
+        "year": 1982,
+        "category": "Environmental & Energy",
+        "inventor": "Stanley Mason",
+        "inventorId": "stanley-mason",
+        "country": "Barbados",
+        "flag": "🇧🇧"
+    },
+    {
+        "id": "digital-steel-pan-synthesizer",
+        "name": "Digital Steel Pan Synthesizer",
+        "emoji": "🎵",
+        "year": 1994,
+        "category": "Electronics & Computing",
+        "inventor": "Ian Wilmot",
+        "inventorId": "ian-wilmot",
+        "country": "Trinidad and Tobago",
+        "flag": "🇹🇹"
+    },
+    {
+        "id": "medicinal-plant-extraction-system",
+        "name": "Medicinal Plant Extraction System",
+        "emoji": "🌿",
+        "year": 1996,
+        "category": "Medicine & Healthcare",
+        "inventor": "Marva Clarke",
+        "inventorId": "marva-clarke",
+        "country": "Jamaica",
+        "flag": "🇯🇲"
+    },
+    {
+        "id": "geothermal-greenhouse-system",
+        "name": "Geothermal Greenhouse System",
+        "emoji": "🌋",
+        "year": 1991,
+        "category": "Agriculture & Food Science",
+        "inventor": "Winston Jamaica",
+        "inventorId": "winston-jamaica",
+        "country": "Dominica",
+        "flag": "🇩🇲"
+    },
+    {
+        "id": "mosquito-control-bioagent",
+        "name": "Mosquito Control Bioagent",
+        "emoji": "🦟",
+        "year": 1989,
+        "category": "Medicine & Healthcare",
+        "inventor": "Patricia Rodney",
+        "inventorId": "patricia-rodney",
+        "country": "Guyana",
+        "flag": "🇬🇾"
+    },
+    {
+        "id": "beach-erosion-prevention-system",
+        "name": "Beach Erosion Prevention System",
+        "emoji": "🏖️",
+        "year": 1998,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Ronald Harewood",
+        "inventorId": "ronald-harewood",
+        "country": "Barbados",
+        "flag": "🇧🇧"
+    },
+    {
+        "id": "solar-desalination-system",
+        "name": "Solar Desalination System",
+        "emoji": "💡",
+        "year": 1986,
+        "category": "Environmental & Energy",
+        "inventor": "Marie St. Clair",
+        "inventorId": "marie-st-clair",
+        "country": "Haiti",
+        "flag": "🇭🇹"
+    },
+    {
+        "id": "hurricane-resistant-building-design",
+        "name": "Hurricane-Resistant Building Design",
+        "emoji": "🌀",
+        "year": 1992,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Carlos Williams",
+        "inventorId": "carlos-williams",
+        "country": "Puerto Rico",
+        "flag": "🇵🇷"
+    },
+    {
+        "id": "oil-spill-bioremediation-system",
+        "name": "Oil Spill Bioremediation System",
+        "emoji": "🛢️",
+        "year": 2005,
+        "category": "Environmental & Energy",
+        "inventor": "Jennifer Mohammed",
+        "inventorId": "jennifer-mohammed",
+        "country": "Trinidad and Tobago",
+        "flag": "🇹🇹"
+    },
+    {
+        "id": "telecommunications-research-foundation",
+        "name": "Telecommunications Research Foundation",
+        "emoji": "📡",
+        "year": 1976,
+        "category": "Electronics & Computing",
+        "inventor": "Shirley Ann Jackson",
+        "inventorId": "shirley-ann-jackson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "electret-microphone",
+        "name": "Electret Microphone",
+        "emoji": "🎤",
+        "year": 1962,
+        "category": "Electronics & Computing",
+        "inventor": "James Edward Maceo West",
+        "inventorId": "james-edward-west",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "gong-and-signal-chair",
+        "name": "Gong and Signal Chair",
+        "emoji": "🔔",
+        "year": 1888,
+        "category": "Electronics & Computing",
+        "inventor": "Miriam Benjamin",
+        "inventorId": "miriam-benjamin",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "folding-cabinet-bed",
+        "name": "Folding Cabinet Bed",
+        "emoji": "🛏️",
+        "year": 1885,
+        "category": "Consumer & Personal Products",
+        "inventor": "Sarah E. Goode",
+        "inventorId": "sarah-e-goode",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "blood-plasma-preservation",
+        "name": "Blood Plasma Preservation",
+        "emoji": "🩸",
+        "year": 1940,
+        "category": "Medicine & Healthcare",
+        "inventor": "Charles Richard Drew",
+        "inventorId": "charles-richard-drew",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "open-heart-surgery-technique",
+        "name": "Open-Heart Surgery Technique",
+        "emoji": "❤️",
+        "year": 1893,
+        "category": "Medicine & Healthcare",
+        "inventor": "Daniel Hale Williams",
+        "inventorId": "daniel-hale-williams",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "bread-crumbing-machine",
+        "name": "Bread Crumbing Machine",
+        "emoji": "🍞",
+        "year": 1895,
+        "category": "Agriculture & Food Science",
+        "inventor": "Joseph Lee",
+        "inventorId": "joseph-lee",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "dough-kneader-and-roller",
+        "name": "Dough Kneader and Roller",
+        "emoji": "🥖",
+        "year": 1884,
+        "category": "Agriculture & Food Science",
+        "inventor": "Judy Reed",
+        "inventorId": "judy-reed",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-mop",
+        "name": "Improved Mop",
+        "emoji": "🧽",
+        "year": 1893,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Thomas W. Stewart",
+        "inventorId": "thomas-w-stewart",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-egg-beater",
+        "name": "Improved Egg Beater",
+        "emoji": "🥚",
+        "year": 1884,
+        "category": "Agriculture & Food Science",
+        "inventor": "Willis Johnson",
+        "inventorId": "willis-johnson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "rotary-blade-lawn-mower",
+        "name": "Rotary Blade Lawn Mower",
+        "emoji": "🌱",
+        "year": 1899,
+        "category": "Agriculture & Food Science",
+        "inventor": "John Albert Burr",
+        "inventorId": "john-albert-burr",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "player-piano-mechanism",
+        "name": "Player Piano Mechanism",
+        "emoji": "🎹",
+        "year": 1899,
+        "category": "Electronics & Computing",
+        "inventor": "Joseph Hunter Dickinson",
+        "inventorId": "joseph-hunter-dickinson",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "photographic-print-wash",
+        "name": "Photographic Print Wash",
+        "emoji": "📸",
+        "year": 1895,
+        "category": "Electronics & Computing",
+        "inventor": "Clatonia Joaquin Dorticus",
+        "inventorId": "clatonia-joaquin-dorticus",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "electrogasdynamic-systems",
+        "name": "Electrogasdynamic Systems",
+        "emoji": "💨",
+        "year": 1970,
+        "category": "Engineering & Manufacturing",
+        "inventor": "Meredith Gourdine",
+        "inventorId": "meredith-gourdine",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "food-preservation-methods",
+        "name": "Food Preservation Methods",
+        "emoji": "🧂",
+        "year": 1932,
+        "category": "Agriculture & Food Science",
+        "inventor": "Lloyd Augustus Hall",
+        "inventorId": "lloyd-augustus-hall",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "improved-refrigerator-and-oil-stove",
+        "name": "Improved Refrigerator and Oil Stove",
+        "emoji": "❄️",
+        "year": 1891,
+        "category": "Consumer & Personal Products",
+        "inventor": "John Standard",
+        "inventorId": "john-standard",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "postmarking-and-canceling-machine",
+        "name": "Postmarking and Canceling Machine",
+        "emoji": "📮",
+        "year": 1899,
+        "category": "Transportation & Communication",
+        "inventor": "William Barry",
+        "inventorId": "william-barry",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "air-purification-device",
+        "name": "Air Purification Device",
+        "emoji": "💨",
+        "year": 1968,
+        "category": "Environmental & Energy",
+        "inventor": "Rufus Stokes",
+        "inventorId": "rufus-stokes",
+        "country": "United States",
+        "flag": "🇺🇸"
+    },
+    {
+        "id": "kwashiorkor-treatment-protocol",
+        "name": "Kwashiorkor Treatment Protocol",
+        "emoji": "👶",
+        "year": 1935,
+        "category": "Medicine & Healthcare",
+        "inventor": "Cicely Williams",
+        "inventorId": "cicely-williams",
+        "country": "Jamaica",
+        "flag": "🇯🇲"
+    },
+    {
+        "id": "improved-printing-press-technology",
+        "name": "Improved Printing Press Technology",
+        "emoji": "📰",
+        "year": 1885,
+        "category": "Electronics & Computing",
+        "inventor": "José do Patrocínio",
+        "inventorId": "jose-do-patrocinio",
+        "country": "Brazil",
+        "flag": "🇧🇷"
+    }
+];
+
+    // Populate inventions grid
+    function populateInventionsGrid() {
+        const grid = document.getElementById('inventionsGrid');
+        if (!grid) return;
+
+        grid.innerHTML = inventionsData
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map(invention => `
+                <a href="invention/${invention.id}.html" class="invention-card">
+                    <span class="invention-emoji">${invention.emoji}</span>
+                    <div class="invention-name">${invention.name}</div>
+                    <div class="invention-category">${invention.category}</div>
+                    <div class="invention-year">${invention.year} • ${invention.country} ${invention.flag}</div>
+                    <div class="invention-inventor">by ${invention.inventor}</div>
+                </a>
+            `).join('');
+    }
+
+    // View toggle functionality
+    function setupViewToggle() {
+        const toggleButtons = document.querySelectorAll('.view-toggle-btn');
+        const inventorsGrid = document.getElementById('inventorsGrid');
+        const inventionsGrid = document.getElementById('inventionsGrid');
+        const advancedControls = document.querySelector('.advanced-controls');
+        const timelineSection = document.getElementById('timelineSection');
+        const tagcloudSection = document.getElementById('tagcloudSection');
+        const statsDashboard = document.getElementById('statsDashboard');
+        const resultsInfo = document.querySelector('.results-info');
+        const filters = document.querySelector('.filters');
+
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+
+                // Update active state
+                toggleButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                if (view === 'inventors') {
+                    // Show inventors view
+                    inventorsGrid.classList.remove('hidden');
+                    inventionsGrid.classList.add('hidden');
+                    if (advancedControls) advancedControls.style.display = 'block';
+                    if (timelineSection) timelineSection.style.display = 'block';
+                    if (tagcloudSection) tagcloudSection.style.display = 'block';
+                    if (statsDashboard) statsDashboard.style.display = 'block';
+                    if (resultsInfo) resultsInfo.style.display = 'flex';
+                    if (filters) filters.style.display = 'flex';
+                } else {
+                    // Show inventions view
+                    inventorsGrid.classList.add('hidden');
+                    inventionsGrid.classList.remove('hidden');
+                    if (advancedControls) advancedControls.style.display = 'none';
+                    if (timelineSection) timelineSection.style.display = 'none';
+                    if (tagcloudSection) tagcloudSection.style.display = 'none';
+                    if (statsDashboard) statsDashboard.style.display = 'none';
+                    if (resultsInfo) resultsInfo.style.display = 'none';
+                    if (filters) filters.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            populateInventionsGrid();
+            setupViewToggle();
+        });
+    } else {
+        populateInventionsGrid();
+        setupViewToggle();
+    }
+
     </script>
 </body>
 </html>
