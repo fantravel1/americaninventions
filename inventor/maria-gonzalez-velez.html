@@ -139,11 +139,159 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
+
+        /* Enhanced Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            margin-top: 4rem;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer-bottom a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Category Badge */
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
 </style>
 </head>
 <body>
-<nav class="top-nav"><div class="nav-container"><a href="../index.html" class="nav-logo">Heroes of Innovation</a><div class="nav-links"><a href="../index.html">All Inventors</a><a href="../index.html#about">About</a></div></div></nav>
-<section class="hero"><div class="hero-content"><span class="inventor-emoji">🏥</span><h1>María González-Vélez</h1><p class="hero-subtitle">Rural Healthcare Pioneer - Portable Diagnostics Revolutionary</p><p class="hero-dates">Born 1968</p><span class="hero-flag">🇲🇽 Mexico</span><div class="hero-note"><strong>Democratizing Medical Technology</strong> – Created portable diagnostic kit bringing advanced testing to remote communities</div></div></section>
+<nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">💡 Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">🏠 Home</a>
+                <a href="../index.html">👥 Inventors</a>
+                <a href="../index.html">💡 Inventions</a>
+                <a href="../index.html#tagcloudSection">📚 Categories</a>
+                <a href="../blog/index.html">📝 Blog</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare">  Medicine & Healthcare</a>
+            <span>›</span>
+            <strong>María González-Vélez</strong>
+        </div>
+    </div>
+
+<section class="hero"><div class="hero-content"><span class="inventor-emoji">🏥</span><h1>María González-Vélez</h1><p class="hero-subtitle">Rural Healthcare Pioneer - Portable Diagnostics Revolutionary</p><p class="hero-dates">Born 1968</p><span class="hero-flag">🇲🇽 Mexico</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare" class="category-badge">Medicine & Healthcare</a><div class="hero-note"><strong>Democratizing Medical Technology</strong> – Created portable diagnostic kit bringing advanced testing to remote communities</div></div></section>
 <div class="container">
 <aside class="quick-facts"><h2>Quick Facts</h2><div class="fact-grid"><div class="fact-item"><div class="fact-label">Primary Innovation</div><div class="fact-value">Portable Medical Diagnostic Kit</div></div><div class="fact-item"><div class="fact-label">Innovation Year</div><div class="fact-value">2005</div></div><div class="fact-item"><div class="fact-label">Field</div><div class="fact-value">Medical Technology</div></div><div class="fact-item"><div class="fact-label">Birthplace</div><div class="fact-value">Mexico</div></div><div class="fact-item"><div class="fact-label">Impact</div><div class="fact-value">Remote Community Healthcare</div></div><div class="fact-item"><div class="fact-label">Legacy</div><div class="fact-value">Telemedicine & Point-of-Care Testing</div></div></div></aside>
 <section id="biography"><h2>Bringing Modern Medicine to Remote Communities</h2><p>María González-Vélez was born in 1968 in Mexico, a nation of extraordinary contrasts where gleaming modern hospitals in cities like Mexico City coexist with remote rural communities that lack basic medical services. Growing up, González-Vélez witnessed this healthcare inequality firsthand—urban Mexicans had access to advanced medical technology while rural communities, particularly in mountainous and isolated regions, often had no access to doctors, hospitals, or medical laboratories. This stark disparity inspired her to pursue biomedical engineering, driven by a vision of using technology to democratize healthcare access.</p><p>As a young woman pursuing engineering education in Mexico, González-Vélez faced gender-based barriers common in male-dominated technical fields. But she persevered, earning her biomedical engineering degree and dedicating her career to solving a problem that affected millions: how to bring modern medical diagnostics to communities too remote for traditional healthcare infrastructure.</p><h3>The Rural Healthcare Crisis</h3><p>In Mexico and many other countries, rural communities face profound healthcare challenges. Remote villages may be hours or even days away from the nearest hospital or medical laboratory. When residents develop symptoms, they often cannot get tested to determine what disease they have. Without diagnosis, appropriate treatment is impossible. Treatable diseases become deadly simply because patients cannot access diagnostic services that urban residents take for granted.</p><p>Consider a rural farmer who develops persistent fever and fatigue. In a city, they could visit a doctor, get blood tests to check for infections or other conditions, receive a diagnosis, and start treatment—all within a day. In a remote village without medical facilities, that same farmer might have to travel for hours to reach a hospital, spending money on transportation they can't afford, losing days of work, and possibly arriving too late for treatment to be effective. Many rural residents simply go without medical care because accessing it is too difficult or expensive.</p><p>This healthcare inequality isn't just unfair—it's deadly. Preventable and treatable diseases kill people in rural areas who would survive if they lived in cities. Diabetes goes undiagnosed until complications develop. Infections that could be cured with antibiotics become life-threatening. Pregnant women lack prenatal testing that could save their lives and their babies' lives. The absence of diagnostic technology creates a healthcare crisis that disproportionately affects the poor and marginalized.</p><h3>Creating the Portable Diagnostic Kit</h3><p>In 2005, María González-Vélez developed a revolutionary solution: a portable medical diagnostic kit that brings advanced testing directly to remote communities. Her invention combines multiple diagnostic functions in a single compact, battery-powered device that community health workers can use without specialized training or laboratory facilities.</p><p>The kit integrates several crucial diagnostic capabilities. Blood analysis functions can test for common infections, measure blood glucose levels for diabetes screening, check hemoglobin for anemia, and perform other standard blood tests. Vital sign monitoring measures blood pressure, heart rate, temperature, and oxygen saturation. Rapid disease tests can detect conditions like malaria, dengue fever, and other infectious diseases common in Mexico. Most importantly, the kit includes telemedicine connectivity that allows community health workers to transmit test results to doctors in distant hospitals who can provide diagnosis and treatment recommendations remotely.</p><p>The technical challenges González-Vélez overcame were formidable. The device had to be rugged enough to withstand rough handling and transport over poor roads. It had to operate reliably in remote areas without consistent electricity, using battery power that could be recharged via solar panels. The tests had to be simple enough for community health workers without extensive medical training to perform correctly. The results had to be accurate and reliable, matching the quality of hospital laboratory tests. The telemedicine connection had to work even in areas with limited cellular or internet connectivity.</p><h3>Engineering for Real-World Conditions</h3><p>González-Vélez's design philosophy centered on making the technology appropriate for the communities it would serve. The kit uses robust construction that can survive being transported in backpacks over mountain trails. The interface is intuitive with clear visual guides, allowing health workers with basic training to perform tests correctly. The battery system provides sufficient power for a full day of testing in multiple villages before needing recharging. The test cartridges and supplies are sealed and stable, remaining effective even in hot conditions without refrigeration.</p><p>The telemedicine component was particularly innovative. The kit can store test results locally and transmit them when cellular or internet connectivity is available—it doesn't require constant connection. When connectivity exists, health workers can establish video calls with remote doctors, showing symptoms, describing patient history, and receiving real-time guidance. This transforms isolated health workers into extensions of hospital medical teams, dramatically expanding the reach of professional medical care.</p><p>González-Vélez received a Mexican patent (Mexican Patent #MX-05-678) for her portable diagnostic technology, officially recognizing her innovation. More importantly, she worked with Mexican health authorities and non-governmental organizations to deploy the kits in underserved communities, training health workers and establishing telemedicine networks that connected rural villages with urban hospitals.</p><h3>Impact on Rural Communities</h3><p>The impact of portable diagnostic kits in remote Mexican communities has been profound and measurable. Villages that previously had no access to medical testing can now screen residents for diabetes, hypertension, infections, and other common conditions. Early diagnosis allows early treatment, preventing complications and saving lives. Pregnant women can receive prenatal testing that identifies high-risk conditions, reducing maternal and infant mortality. Infectious disease outbreaks can be detected and controlled before spreading widely.</p><p>The economic benefits are also significant. Patients who can be tested and diagnosed locally don't have to spend money and time traveling to distant hospitals. Treatment can begin immediately rather than being delayed by transportation challenges. Community health workers, who are often local residents, gain skills and employment. The telemedicine connections mean that even complex cases can receive specialist consultation without expensive and difficult patient transport.</p><p>Perhaps most importantly, portable diagnostics restore dignity and equity. Rural residents no longer receive inferior healthcare simply because of where they live. They can access the same diagnostic testing that urban residents use, enabling appropriate treatment regardless of geography. This healthcare democratization represents a fundamental advance in social justice.</p><h3>Influencing Global Healthcare</h3><p>María González-Vélez's work on portable diagnostics has influenced healthcare delivery far beyond Mexico. The principles she pioneered—integrated multi-function diagnostic devices, design for resource-limited settings, telemedicine connectivity, community health worker empowerment—have been adopted by global health organizations working in developing countries worldwide.</p><p>The COVID-19 pandemic dramatically accelerated interest in portable and point-of-care diagnostic technology. When hospital capacity was overwhelmed and reducing exposure risk became critical, the ability to test patients in their homes or communities rather than centralized laboratories became essential. Many rapid COVID tests and portable diagnostic systems deployed during the pandemic built on foundations that pioneers like González-Vélez established.</p><h3>Advocating for Health Equity</h3><p>Throughout her career, González-Vélez has been a vocal advocate for health equity and the principle that everyone deserves access to quality medical care regardless of their economic status or geographic location. She argues that technology should be designed to serve the most vulnerable and marginalized communities, not just wealthy urban populations. Her portable diagnostic kit exemplifies this philosophy—technology explicitly designed to reach people who have been underserved by traditional healthcare systems.</p><p>For women in engineering and medicine, González-Vélez represents an inspiring example of how technical innovation can serve social justice. She didn't pursue biomedical engineering for abstract intellectual satisfaction or profit—she pursued it to solve a problem that was killing people in her country. Her success demonstrates that the most meaningful innovations often come from people who understand problems intimately because they've witnessed their human impact.</p><h3>Legacy of Democratized Healthcare</h3><p>María González-Vélez's portable diagnostic kit proves that technology can be a powerful tool for reducing inequality and improving lives. By bringing advanced medical testing to remote communities, she didn't just provide a service—she challenged the assumption that geography should determine whether you live or die from treatable diseases. Her work demonstrates that healthcare technology can and should be designed to serve everyone, and that innovation guided by social justice can save lives while advancing medical science.</p><p>Every time a remote village resident receives a diagnosis that leads to life-saving treatment, every time a community health worker uses portable technology to extend professional medical care to underserved areas, every time healthcare technology is designed with equity as a central goal—we see the legacy of María González-Vélez's vision and determination. The Mexican biomedical engineer who refused to accept that rural communities should go without medical diagnostics reminds us that the highest purpose of medical technology is ensuring that everyone, everywhere, can access the care they need to survive and thrive.</p></section>
@@ -179,9 +327,90 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
         </section>
 
 ours or days away. Patients with symptoms often cannot get tested and diagnosed, leading to untreated diseases and preventable deaths. Portable diagnostics bring advanced medical testing directly to communities, enabling early diagnosis, appropriate treatment, reduced travel costs, and lives saved through timely intervention.</div></div><div class="faq-item"><div class="faq-question">What impact has González-Vélez's invention had?</div><div class="faq-answer">Her portable diagnostic kit has brought modern medical testing to remote Mexican communities, improved healthcare access in underserved regions, enabled telemedicine consultations in rural areas, trained and empowered community health workers, reduced maternal and infant mortality, enabled early diagnosis of chronic diseases like diabetes, and demonstrated the potential of portable technology to democratize healthcare access globally.</div></div><div class="faq-item"><div class="faq-question">Is portable diagnostic technology being used elsewhere?</div><div class="faq-answer">Yes, the principles González-Vélez pioneered have influenced portable diagnostic development worldwide. Point-of-care testing devices are increasingly used in developing countries, disaster zones, refugee camps, and remote areas where traditional laboratory testing is unavailable. The COVID-19 pandemic further accelerated adoption of portable diagnostic technologies, demonstrating the value of bringing testing directly to communities rather than requiring centralized facilities.</div></div></section>
-<section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="lydia-villa-komaroff.html" class="related-card"><span class="related-emoji">🧬</span><div class="related-name">Lydia Villa-Komaroff</div><div class="related-invention">Synthetic Insulin Production</div></a><a href="jose-hernandez-rebollar.html" class="related-card"><span class="related-emoji">🤟</span><div class="related-name">José Hernández-Rebollar</div><div class="related-invention">AcceleGlove</div></a><a href="patricia-bath.html" class="related-card"><span class="related-emoji">👁️</span><div class="related-name">Patricia Bath</div><div class="related-invention">Laser Cataract Surgery</div></a></div></section>
+
+        <!-- Related Inventions in Same Category -->
+        <section id="related-inventions">
+            <h2>More Medicine & Healthcare Inventions</h2>
+            <div class="related-grid">
+                <a href="../invention/leprosy-treatment-method.html" class="related-card">
+                    <span class="related-emoji">💊</span>
+                    <div class="related-name">Leprosy Treatment Method</div>
+                    <div class="related-invention">by Alice Ball (1915)</div>
+                </a>
+                <a href="../invention/cholesterol-and-heart-disease-research.html" class="related-card">
+                    <span class="related-emoji">🫀</span>
+                    <div class="related-name">Cholesterol and Heart Disease Research</div>
+                    <div class="related-invention">by Marie Daly (1955)</div>
+                </a>
+                <a href="../invention/yellow-fever-transmission-theory.html" class="related-card">
+                    <span class="related-emoji">🦟</span>
+                    <div class="related-name">Yellow Fever Transmission Theory</div>
+                    <div class="related-invention">by Carlos Finlay (1881)</div>
+                </a>
+            </div>
+        </section>
+
+        <section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="lydia-villa-komaroff.html" class="related-card"><span class="related-emoji">🧬</span><div class="related-name">Lydia Villa-Komaroff</div><div class="related-invention">Synthetic Insulin Production</div></a><a href="jose-hernandez-rebollar.html" class="related-card"><span class="related-emoji">🤟</span><div class="related-name">José Hernández-Rebollar</div><div class="related-invention">AcceleGlove</div></a><a href="patricia-bath.html" class="related-card"><span class="related-emoji">👁️</span><div class="related-name">Patricia Bath</div><div class="related-invention">Laser Cataract Surgery</div></a></div></section>
 <a href="../index.html" class="back-button">← Back to All Inventors</a>
 </div>
-<footer><p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p><p><a href="../index.html" style="color:#F06292;">www.americaninventions.org</a></p></footer>
+<footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>💡 Heroes of Innovation</h3>
+                    <p class="footer-description">
+                        Celebrating the revolutionary contributions of Black and Brown inventors across the Americas.
+                        Discover the untold stories of innovation that shaped our modern world and continue to inspire future generations.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">All Inventors</a></li>
+                        <li><a href="../index.html">All Inventions</a></li>
+                        <li><a href="../index.html#timelineSection">Timeline</a></li>
+                        <li><a href="../index.html#tagcloudSection">Categories</a></li>
+                        <li><a href="../index.html#statsDashboard">Statistics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../index.html?category=Agriculture%20%26%20Food%20Science">Agriculture & Food Science</a></li>
+                        <li><a href="../index.html?category=Chemistry%20%26%20Materials%20Science">Chemistry & Materials Science</a></li>
+                        <li><a href="../index.html?category=Consumer%20%26%20Personal%20Products">Consumer & Personal Products</a></li>
+                        <li><a href="../index.html?category=Electronics%20%26%20Computing">Electronics & Computing</a></li>
+                        <li><a href="../index.html?category=Engineering%20%26%20Manufacturing">Engineering & Manufacturing</a></li>
+                        <li><a href="../index.html?category=Environmental%20%26%20Energy">Environmental & Energy</a></li>
+                        <li><a href="../index.html?category=Medicine%20%26%20Healthcare">Medicine & Healthcare</a></li>
+                        <li><a href="../index.html?category=Security%20%26%20Safety">Security & Safety</a></li>
+                        <li><a href="../index.html?category=Space%20%26%20Aerospace">Space & Aerospace</a></li>
+                        <li><a href="../index.html?category=Transportation%20%26%20Communication">Transportation & Communication</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="../index.html?region=north-america">🌎 North America</a></li>
+                        <li><a href="../index.html?region=south-america">🌎 South America</a></li>
+                        <li><a href="../index.html?region=caribbean">🏝️ Caribbean</a></li>
+                        <li><a href="../index.html?region=central-america">🌎 Central America</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+                <p>
+                    <a href="../index.html">www.americaninventions.org</a> •
+                    <a href="../index.html#about">About</a> •
+                    <a href="../index.html#contact">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

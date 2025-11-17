@@ -556,18 +556,157 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
+
+        /* Enhanced Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            margin-top: 4rem;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer-bottom a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Category Badge */
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
 </style>
 </head>
 <body>
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <a href="../index.html" class="nav-logo">💡 Heroes of Innovation</a>
             <div class="nav-links">
-                <a href="../index.html">All Inventors</a>
-                <a href="../index.html#about">About</a>
+                <a href="../index.html">🏠 Home</a>
+                <a href="../index.html">👥 Inventors</a>
+                <a href="../index.html">💡 Inventions</a>
+                <a href="../index.html#tagcloudSection">📚 Categories</a>
+                <a href="../blog/index.html">📝 Blog</a>
             </div>
         </div>
     </nav>
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare">  Medicine & Healthcare</a>
+            <span>›</span>
+            <strong>Marva Clarke</strong>
+        </div>
+    </div>
+
 
     <section class="hero">
         <div class="hero-content">
@@ -576,6 +715,7 @@
             <p class="hero-subtitle">Bridging Traditional Caribbean Medicine and Modern Pharmaceuticals</p>
             <p class="hero-dates">Born 1962</p>
             <span class="hero-flag">🇯🇲 Jamaica</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare" class="category-badge">Medicine & Healthcare</a>
             <div class="hero-note">
                 <strong>Medicinal Plant Extraction Pioneer</strong> – Transformed traditional Caribbean remedies into modern pharmaceuticals through innovative biochemical systems
             </div>
@@ -877,6 +1017,29 @@ ernatives for conditions like diabetes and hypertension. By transforming local p
             </div>
         </section>
 
+        
+        <!-- Related Inventions in Same Category -->
+        <section id="related-inventions">
+            <h2>More Medicine & Healthcare Inventions</h2>
+            <div class="related-grid">
+                <a href="../invention/mosquito-control-bioagent.html" class="related-card">
+                    <span class="related-emoji">🦟</span>
+                    <div class="related-name">Mosquito Control Bioagent</div>
+                    <div class="related-invention">by Patricia Rodney (1989)</div>
+                </a>
+                <a href="../invention/portable-medical-diagnostic-kit.html" class="related-card">
+                    <span class="related-emoji">🏥</span>
+                    <div class="related-name">Portable Medical Diagnostic Kit</div>
+                    <div class="related-invention">by María González-Vélez (2005)</div>
+                </a>
+                <a href="../invention/transdermal-patch.html" class="related-card">
+                    <span class="related-emoji">🩹</span>
+                    <div class="related-name">Transdermal Patch</div>
+                    <div class="related-invention">by Alejandro Zaffaroni (1971)</div>
+                </a>
+            </div>
+        </section>
+
         <section id="related">
             <h2>Related Inventors</h2>
             <div class="related-grid">
@@ -902,8 +1065,63 @@ ernatives for conditions like diabetes and hypertension. By transforming local p
     </div>
 
     <footer>
-        <p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
-        <p><a href="../index.html" style="color: #2ecc71;">www.americaninventions.org</a></p>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>💡 Heroes of Innovation</h3>
+                    <p class="footer-description">
+                        Celebrating the revolutionary contributions of Black and Brown inventors across the Americas.
+                        Discover the untold stories of innovation that shaped our modern world and continue to inspire future generations.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">All Inventors</a></li>
+                        <li><a href="../index.html">All Inventions</a></li>
+                        <li><a href="../index.html#timelineSection">Timeline</a></li>
+                        <li><a href="../index.html#tagcloudSection">Categories</a></li>
+                        <li><a href="../index.html#statsDashboard">Statistics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../index.html?category=Agriculture%20%26%20Food%20Science">Agriculture & Food Science</a></li>
+                        <li><a href="../index.html?category=Chemistry%20%26%20Materials%20Science">Chemistry & Materials Science</a></li>
+                        <li><a href="../index.html?category=Consumer%20%26%20Personal%20Products">Consumer & Personal Products</a></li>
+                        <li><a href="../index.html?category=Electronics%20%26%20Computing">Electronics & Computing</a></li>
+                        <li><a href="../index.html?category=Engineering%20%26%20Manufacturing">Engineering & Manufacturing</a></li>
+                        <li><a href="../index.html?category=Environmental%20%26%20Energy">Environmental & Energy</a></li>
+                        <li><a href="../index.html?category=Medicine%20%26%20Healthcare">Medicine & Healthcare</a></li>
+                        <li><a href="../index.html?category=Security%20%26%20Safety">Security & Safety</a></li>
+                        <li><a href="../index.html?category=Space%20%26%20Aerospace">Space & Aerospace</a></li>
+                        <li><a href="../index.html?category=Transportation%20%26%20Communication">Transportation & Communication</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="../index.html?region=north-america">🌎 North America</a></li>
+                        <li><a href="../index.html?region=south-america">🌎 South America</a></li>
+                        <li><a href="../index.html?region=caribbean">🏝️ Caribbean</a></li>
+                        <li><a href="../index.html?region=central-america">🌎 Central America</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+                <p>
+                    <a href="../index.html">www.americaninventions.org</a> •
+                    <a href="../index.html#about">About</a> •
+                    <a href="../index.html#contact">Contact</a>
+                </p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
