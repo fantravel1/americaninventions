@@ -319,9 +319,71 @@
                 font-size: 1.2rem;
             }
         }
-    </style>
+    
+        /* Unified Top Navigation */
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+</style>
 </head>
 <body>
+<!-- Unified Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">💡 Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">🏠 Home</a>
+                <a href="../index.html">👥 Inventors</a>
+                <a href="../index.html">💡 Inventions</a>
+                <a href="../index.html#tagcloudSection">📚 Categories</a>
+                <a href="index.html">📝 Blog</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
             <div class="breadcrumb">
