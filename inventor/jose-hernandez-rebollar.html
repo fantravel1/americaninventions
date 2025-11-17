@@ -139,11 +139,159 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
+
+        /* Enhanced Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            margin-top: 4rem;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer-bottom a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Category Badge */
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
 </style>
 </head>
 <body>
-<nav class="top-nav"><div class="nav-container"><a href="../index.html" class="nav-logo">Heroes of Innovation</a><div class="nav-links"><a href="../index.html">All Inventors</a><a href="../index.html#about">About</a></div></div></nav>
-<section class="hero"><div class="hero-content"><span class="inventor-emoji">🤟</span><h1>José Hernández-Rebollar</h1><p class="hero-subtitle">AcceleGlove Inventor - Breaking Communication Barriers</p><p class="hero-dates">Born 1969</p><span class="hero-flag">🇲🇽 Mexico</span><div class="hero-note"><strong>Revolutionary Sign Language Translation</strong> – Invented the AcceleGlove that translates sign language into spoken words and text</div></div></section>
+<nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">💡 Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">🏠 Home</a>
+                <a href="../index.html">👥 Inventors</a>
+                <a href="../index.html">💡 Inventions</a>
+                <a href="../index.html#tagcloudSection">📚 Categories</a>
+                <a href="../blog/index.html">📝 Blog</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare">  Medicine & Healthcare</a>
+            <span>›</span>
+            <strong>José Hernández-Rebollar</strong>
+        </div>
+    </div>
+
+<section class="hero"><div class="hero-content"><span class="inventor-emoji">🤟</span><h1>José Hernández-Rebollar</h1><p class="hero-subtitle">AcceleGlove Inventor - Breaking Communication Barriers</p><p class="hero-dates">Born 1969</p><span class="hero-flag">🇲🇽 Mexico</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare" class="category-badge">Medicine & Healthcare</a><div class="hero-note"><strong>Revolutionary Sign Language Translation</strong> – Invented the AcceleGlove that translates sign language into spoken words and text</div></div></section>
 <div class="container">
 <aside class="quick-facts"><h2>Quick Facts</h2><div class="fact-grid"><div class="fact-item"><div class="fact-label">Primary Innovation</div><div class="fact-value">AcceleGlove</div></div><div class="fact-item"><div class="fact-label">Innovation Year</div><div class="fact-value">1998</div></div><div class="fact-item"><div class="fact-label">Field</div><div class="fact-value">Assistive Technology</div></div><div class="fact-item"><div class="fact-label">Birthplace</div><div class="fact-value">Puebla, Mexico</div></div><div class="fact-item"><div class="fact-label">Impact</div><div class="fact-value">Deaf-Hearing Communication</div></div><div class="fact-item"><div class="fact-label">Legacy</div><div class="fact-value">Wearable Translation Technology</div></div></div></aside>
 <section id="biography"><h2>The Engineer Who Gave Voice to Hands</h2><p>José Hernández-Rebollar was born in 1969 in Puebla, Mexico, a city with deep historical roots and a vibrant cultural tradition. Growing up in Mexico, he developed a fascination with engineering and technology from an early age. He pursued his passion by earning an engineering degree from Universidad Puebla, where he excelled in electrical engineering and computer science. His academic success opened doors for advanced studies, and he moved to the United States to pursue graduate work in engineering.</p><p>During his graduate studies, Hernández-Rebollar encountered members of the deaf community and became acutely aware of the communication barriers they faced daily. While sign language is a complete, sophisticated form of communication with its own grammar and expressive capacity, most hearing people don't understand it. This creates profound isolation for deaf individuals who must rely on interpreters or writing to communicate with the hearing world. Hernández-Rebollar recognized that technology could bridge this gap.</p><h3>The Birth of the AcceleGlove</h3><p>In 1998, José Hernández-Rebollar invented the AcceleGlove, a wearable device that would revolutionize communication for the deaf community. The concept was elegantly simple yet technically sophisticated: create a glove equipped with sensors that could detect the hand and finger movements used in sign language, then translate those movements into spoken words or written text that hearing people could understand.</p><p>The AcceleGlove contained multiple accelerometers—devices that measure acceleration and orientation—strategically placed throughout the glove to capture the precise position and movement of the hand and each finger. Sign language relies on specific hand shapes, positions, orientations, and movements to convey meaning. The accelerometers in the AcceleGlove could detect all these parameters with remarkable accuracy.</p><p>But detecting hand movements was only the first challenge. The truly revolutionary aspect of the AcceleGlove was the sophisticated software Hernández-Rebollar developed to interpret these movements. He created algorithms that could recognize patterns in the sensor data corresponding to specific signs in American Sign Language (ASL). The system had to distinguish between hundreds of different signs, account for individual variations in how people sign, and process data quickly enough for real-time translation.</p><h3>Motion-Sensing Algorithms and Pattern Recognition</h3><p>The technical challenges Hernández-Rebollar overcame in developing the AcceleGlove were formidable. Sign language is not simply a collection of static hand positions—it's a dynamic, flowing form of communication where movement, speed, orientation, and facial expressions all contribute to meaning. The algorithms had to capture this complexity and translate it into discrete, recognizable signs.</p><p>Hernández-Rebollar employed advanced pattern recognition techniques and machine learning algorithms. He trained the system by having fluent ASL signers wear the glove and perform signs repeatedly while the system recorded the sensor patterns. Over time, the software learned to recognize the distinctive sensor signatures associated with each sign, building a comprehensive library of recognized gestures.</p><p>The system also had to handle the challenge of context and grammar. Individual signs don't always translate directly to individual words—sign language has its own grammatical structure. Hernández-Rebollar developed algorithms that could recognize sign sequences and apply grammatical rules to produce coherent English sentences, not just disconnected words.</p><h3>From Prototype to Practical Device</h3><p>The early versions of the AcceleGlove were prototypes used primarily for research and demonstration. Hernández-Rebollar refined the design through multiple iterations, improving sensor accuracy, reducing latency (the delay between signing and speech output), and expanding the vocabulary of recognized signs. Each improvement brought the device closer to being a practical, everyday communication tool.</p><p>He received U.S. Patent #6,181,329 for his invention, officially recognizing his pioneering work in wearable translation technology. The patent covered the innovative sensor arrangement, the motion detection system, and the translation algorithms that made the AcceleGlove possible.</p><p>Demonstrations of the AcceleGlove generated significant interest in the assistive technology community, the deaf community, and among engineers and researchers worldwide. Here was proof that technology could break down disability barriers in practical, wearable form. The device represented not just a technical achievement but a bridge between communities that had been separated by communication barriers.</p><h3>Advancing Assistive Technology</h3><p>José Hernández-Rebollar's work on the AcceleGlove helped catalyze broader interest in assistive technology and accessibility innovation. His success demonstrated that wearable sensors and sophisticated algorithms could solve real-world communication problems, inspiring researchers and inventors to develop other assistive devices.</p><p>The principles underlying the AcceleGlove—motion sensing, pattern recognition, real-time processing, and translation—have influenced numerous subsequent projects. Researchers have developed enhanced versions with additional sensors, expanded sign language vocabularies, support for different national sign languages, and integration with smartphones and other devices.</p><p>Hernández-Rebollar's work also highlighted the importance of involving the communities that assistive technology aims to serve in the development process. He worked closely with deaf individuals to understand their communication needs, test prototypes, and refine the system. This user-centered design approach ensured the AcceleGlove addressed real needs rather than solving theoretical problems.</p><h3>Impact on the Deaf Community</h3><p>For the deaf community, the AcceleGlove and similar technologies represent both opportunity and complexity. On one hand, devices that translate sign language into spoken words can reduce communication barriers, increase independence, and improve access to services and employment. Deaf individuals using such technology can communicate with hearing people who don't know sign language, reducing their dependence on interpreters.</p><p>On the other hand, many in the deaf community emphasize that deafness is not a disability to be "fixed" but a cultural identity with its own language, traditions, and values. Sign language is not inferior to spoken language—it's a complete, rich form of human communication. The ideal solution is not to make deaf people more like hearing people, but for society to become more accessible and for more hearing people to learn sign language.</p><p>Hernández-Rebollar's invention is best understood as one tool among many for improving communication accessibility. It doesn't replace sign language interpreters, deaf education, or the need for hearing people to learn sign language. Rather, it provides an additional option for situations where other solutions aren't available or practical.</p><h3>Legacy and Continuing Innovation</h3><p>José Hernández-Rebollar's AcceleGlove demonstrated that wearable technology and sophisticated algorithms could tackle complex communication challenges. His pioneering work helped establish the field of wearable assistive devices and showed that engineers from diverse backgrounds—including Mexican and Latin American inventors—are at the forefront of technological innovation.</p><p>Today, the principles he pioneered continue to evolve. Researchers are developing sign language translation systems using computer vision instead of gloves, systems that can recognize sign language through cameras. Others are creating two-way translation systems that can convert spoken language into sign language through animated avatars or robotic hands. All of these innovations build on foundations that Hernández-Rebollar helped establish.</p><p>His story also challenges stereotypes about who inventors are and where innovation happens. José Hernández-Rebollar, from Puebla, Mexico, invented technology that addresses a universal human challenge—communication across difference. His work proves that innovation knows no borders, and that solving global challenges requires diverse perspectives and talents from around the world.</p><p>Every time technology breaks down barriers between people, every time wearable devices empower individuals with disabilities, every time algorithms translate human communication across different forms—we see echoes of José Hernández-Rebollar's vision. The Mexican engineer who gave voice to hands reminds us that the highest purpose of technology is to connect people, bridge divides, and ensure that everyone can participate fully in society, regardless of the form their communication takes.</p></section>
@@ -179,9 +327,90 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
         </section>
 
 p the deaf community break down communication barriers between deaf and hearing people. He recognized that while sign language is a complete and sophisticated form of communication, most hearing people don't understand it, creating isolation for deaf individuals. His invention provides a technological bridge that allows deaf people to communicate with hearing people who don't know sign language.</div></div><div class="faq-item"><div class="faq-question">What impact has the AcceleGlove had?</div><div class="faq-answer">The AcceleGlove has helped bridge communication gaps between deaf and hearing communities worldwide, advanced assistive technology, improved accessibility in communication, and pioneered wearable translation technology. It has influenced the development of other assistive devices, inspired research in gesture recognition and machine learning, and demonstrated the potential of technology to break down disability barriers.</div></div><div class="faq-item"><div class="faq-question">Is the AcceleGlove still being developed?</div><div class="faq-answer">Yes, wearable sign language translation technology continues to evolve based on Hernández-Rebollar's pioneering work. The principles he established with the AcceleGlove have influenced numerous assistive technology projects and commercial products. Researchers are also developing computer vision-based systems that can recognize sign language through cameras, building on the pattern recognition and translation concepts Hernández-Rebollar pioneered.</div></div></section>
-<section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="lydia-villa-komaroff.html" class="related-card"><span class="related-emoji">🧬</span><div class="related-name">Lydia Villa-Komaroff</div><div class="related-invention">Synthetic Insulin Production</div></a><a href="maria-gonzalez-velez.html" class="related-card"><span class="related-emoji">🏥</span><div class="related-name">María González-Vélez</div><div class="related-invention">Portable Medical Diagnostics</div></a><a href="guillermo-gonzalez-camarena.html" class="related-card"><span class="related-emoji">📺</span><div class="related-name">Guillermo González Camarena</div><div class="related-invention">Color Television</div></a></div></section>
+
+        <!-- Related Inventions in Same Category -->
+        <section id="related-inventions">
+            <h2>More Medicine & Healthcare Inventions</h2>
+            <div class="related-grid">
+                <a href="../invention/electronic-feeding-device.html" class="related-card">
+                    <span class="related-emoji">🍽️</span>
+                    <div class="related-name">Electronic Feeding Device</div>
+                    <div class="related-invention">by Bessie Blount (1951)</div>
+                </a>
+                <a href="../invention/portable-medical-diagnostic-kit.html" class="related-card">
+                    <span class="related-emoji">🏥</span>
+                    <div class="related-name">Portable Medical Diagnostic Kit</div>
+                    <div class="related-invention">by María González-Vélez (2005)</div>
+                </a>
+                <a href="../invention/immune-response-gene-discovery.html" class="related-card">
+                    <span class="related-emoji">🦠</span>
+                    <div class="related-name">Immune Response Gene Discovery</div>
+                    <div class="related-invention">by Baruj Benacerraf (1965)</div>
+                </a>
+            </div>
+        </section>
+
+        <section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="lydia-villa-komaroff.html" class="related-card"><span class="related-emoji">🧬</span><div class="related-name">Lydia Villa-Komaroff</div><div class="related-invention">Synthetic Insulin Production</div></a><a href="maria-gonzalez-velez.html" class="related-card"><span class="related-emoji">🏥</span><div class="related-name">María González-Vélez</div><div class="related-invention">Portable Medical Diagnostics</div></a><a href="guillermo-gonzalez-camarena.html" class="related-card"><span class="related-emoji">📺</span><div class="related-name">Guillermo González Camarena</div><div class="related-invention">Color Television</div></a></div></section>
 <a href="../index.html" class="back-button">← Back to All Inventors</a>
 </div>
-<footer><p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p><p><a href="../index.html" style="color:#CE1126;">www.americaninventions.org</a></p></footer>
+<footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>💡 Heroes of Innovation</h3>
+                    <p class="footer-description">
+                        Celebrating the revolutionary contributions of Black and Brown inventors across the Americas.
+                        Discover the untold stories of innovation that shaped our modern world and continue to inspire future generations.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">All Inventors</a></li>
+                        <li><a href="../index.html">All Inventions</a></li>
+                        <li><a href="../index.html#timelineSection">Timeline</a></li>
+                        <li><a href="../index.html#tagcloudSection">Categories</a></li>
+                        <li><a href="../index.html#statsDashboard">Statistics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../index.html?category=Agriculture%20%26%20Food%20Science">Agriculture & Food Science</a></li>
+                        <li><a href="../index.html?category=Chemistry%20%26%20Materials%20Science">Chemistry & Materials Science</a></li>
+                        <li><a href="../index.html?category=Consumer%20%26%20Personal%20Products">Consumer & Personal Products</a></li>
+                        <li><a href="../index.html?category=Electronics%20%26%20Computing">Electronics & Computing</a></li>
+                        <li><a href="../index.html?category=Engineering%20%26%20Manufacturing">Engineering & Manufacturing</a></li>
+                        <li><a href="../index.html?category=Environmental%20%26%20Energy">Environmental & Energy</a></li>
+                        <li><a href="../index.html?category=Medicine%20%26%20Healthcare">Medicine & Healthcare</a></li>
+                        <li><a href="../index.html?category=Security%20%26%20Safety">Security & Safety</a></li>
+                        <li><a href="../index.html?category=Space%20%26%20Aerospace">Space & Aerospace</a></li>
+                        <li><a href="../index.html?category=Transportation%20%26%20Communication">Transportation & Communication</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="../index.html?region=north-america">🌎 North America</a></li>
+                        <li><a href="../index.html?region=south-america">🌎 South America</a></li>
+                        <li><a href="../index.html?region=caribbean">🏝️ Caribbean</a></li>
+                        <li><a href="../index.html?region=central-america">🌎 Central America</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+                <p>
+                    <a href="../index.html">www.americaninventions.org</a> •
+                    <a href="../index.html#about">About</a> •
+                    <a href="../index.html#contact">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

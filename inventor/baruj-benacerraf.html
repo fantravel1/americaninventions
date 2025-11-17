@@ -136,11 +136,159 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
+
+        /* Enhanced Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            margin-top: 4rem;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer-bottom a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Category Badge */
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
 </style>
 </head>
 <body>
-<nav class="top-nav"><div class="nav-container"><a href="../index.html" class="nav-logo">Heroes of Innovation</a><div class="nav-links"><a href="../index.html">All Inventors</a><a href="../index.html#about">About</a></div></div></nav>
-<section class="hero"><div class="hero-content"><span class="inventor-emoji">🧬</span><h1>Dr. Baruj Benacerraf</h1><p class="hero-subtitle">Nobel Prize Winner - Discovered Genes Controlling Immune Response</p><p class="hero-dates">October 29, 1920 – August 2, 2011</p><span class="hero-flag">🇻🇪 Venezuela / 🇺🇸 United States</span><div class="hero-note"><strong>Nobel Prize in Medicine 1980</strong> – Discovered major histocompatibility complex genes revolutionizing immunology and transplant medicine</div></div></section>
+<nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">💡 Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">🏠 Home</a>
+                <a href="../index.html">👥 Inventors</a>
+                <a href="../index.html">💡 Inventions</a>
+                <a href="../index.html#tagcloudSection">📚 Categories</a>
+                <a href="../blog/index.html">📝 Blog</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare">  Medicine & Healthcare</a>
+            <span>›</span>
+            <strong>Baruj Benacerraf</strong>
+        </div>
+    </div>
+
+<section class="hero"><div class="hero-content"><span class="inventor-emoji">🧬</span><h1>Dr. Baruj Benacerraf</h1><p class="hero-subtitle">Nobel Prize Winner - Discovered Genes Controlling Immune Response</p><p class="hero-dates">October 29, 1920 – August 2, 2011</p><span class="hero-flag">🇻🇪 Venezuela / 🇺🇸 United States</span>
+            <a href="../index.html?category=Medicine%20%26%20Healthcare" class="category-badge">Medicine & Healthcare</a><div class="hero-note"><strong>Nobel Prize in Medicine 1980</strong> – Discovered major histocompatibility complex genes revolutionizing immunology and transplant medicine</div></div></section>
 <div class="container">
 <aside class="quick-facts"><h2>Quick Facts</h2><div class="fact-grid"><div class="fact-item"><div class="fact-label">Major Discovery</div><div class="fact-value">MHC Immune Genes</div></div><div class="fact-item"><div class="fact-label">Nobel Prize</div><div class="fact-value">Physiology/Medicine, 1980</div></div><div class="fact-item"><div class="fact-label">Field</div><div class="fact-value">Immunology & Genetics</div></div><div class="fact-item"><div class="fact-label">Institution</div><div class="fact-value">Harvard Medical School</div></div><div class="fact-item"><div class="fact-label">Heritage</div><div class="fact-value">Venezuelan-American</div></div><div class="fact-item"><div class="fact-label">Impact</div><div class="fact-value">Transplant Medicine Revolution</div></div></div></aside>
 <section id="biography"><h2>From Caracas to Nobel Prize</h2><p>Baruj Benacerraf was born on October 29, 1920, in Caracas, Venezuela, to Sephardic Jewish parents who had emigrated from Morocco and Algeria. His family was prosperous—his father was a successful businessman in the textile industry—but they recognized that Venezuela's limited educational opportunities would constrain young Baruj's potential. When he was five years old, the family moved to Paris, seeking better schools and cultural enrichment.</p><p>In Paris, Benacerraf attended the prestigious Lycée Français, becoming fluent in French and developing the broad intellectual foundation that would serve him throughout his career. However, the rise of Nazism in Europe forced the family to flee France in 1939, just before World War II engulfed Europe. They emigrated to the United States, where Benacerraf would complete his education and make discoveries that would revolutionize immunology.</p><h3>Medical Education and Research Beginnings</h3><p>Benacerraf attended Columbia University, earning his bachelor's degree in 1942. He then entered the Medical College of Virginia (now Virginia Commonwealth University), graduating with his medical degree in 1945. After completing military service during World War II, he pursued research training in immunology, fascinated by how the body distinguishes "self" from "non-self" and fights infections while avoiding attacking its own tissues.</p><p>In the early 1950s, Benacerraf worked at the Broussais Hospital in Paris, conducting research on hypersensitivity and immune responses. He then returned to the United States, joining New York University School of Medicine in 1956. His research focused on understanding why different individuals' immune systems responded differently to the same antigens (foreign substances that trigger immune responses).</p><h3>The Nobel Prize Discovery: Immune Response Genes</h3><p>In the 1960s and 1970s, working first at NYU and later at the National Institutes of Health and Harvard Medical School, Benacerraf made the discoveries that would earn him the Nobel Prize. He demonstrated that genes—specifically, genes in the major histocompatibility complex (MHC)—controlled the immune system's ability to recognize and respond to foreign substances.</p><p>This was revolutionary. Before Benacerraf's work, scientists knew that immune responses varied between individuals, but they didn't understand why. Benacerraf showed that specific genes determined whether an individual could mount an immune response to particular antigens. Some people's genes made them strong responders to certain infections; others' genes made them weak responders to the same infections.</p><p>The major histocompatibility complex (MHC) genes that Benacerraf studied encode proteins displayed on cell surfaces. These proteins present fragments of foreign proteins (from viruses, bacteria, or other pathogens) to immune cells, triggering immune responses. Different versions of MHC genes produce different MHC proteins, explaining why people respond differently to the same infections.</p><h3>Nobel Prize and Impact on Medicine</h3><p>In 1980, Baruj Benacerraf shared the Nobel Prize in Physiology or Medicine with Jean Dausset and George Snell for their discoveries concerning "genetically determined structures on the cell surface that regulate immunological reactions." This work fundamentally changed medicine's understanding of immunity, autoimmune diseases, and organ transplantation.</p><p>Understanding MHC genes revolutionized transplant medicine. Doctors could now match organ donors and recipients based on MHC compatibility, dramatically improving transplant success rates. Before this knowledge, most organ transplants failed because the recipient's immune system rejected the donor organ. MHC matching made kidney transplants, heart transplants, and bone marrow transplants viable treatments, saving countless lives.</p><p>Benacerraf's work also illuminated autoimmune diseases—conditions where the immune system attacks the body's own tissues. Researchers discovered that certain MHC gene variants predispose people to autoimmune diseases like type 1 diabetes, rheumatoid arthritis, and multiple sclerosis. This understanding has led to better diagnostics and treatments for millions suffering from these conditions.</p><h3>Harvard Leadership and Mentorship</h3><p>From 1970 to 1991, Benacerraf served as Chair of the Pathology Department at Harvard Medical School, one of the world's premier medical institutions. As department chair, he built Harvard's immunology research program into a global leader, recruiting brilliant scientists and fostering collaborative research.</p><p>Benacerraf was known as an exceptional mentor who trained and inspired generations of immunologists. His laboratory produced numerous scientists who went on to make their own important discoveries. He emphasized rigorous experimental design, creative thinking, and the importance of asking fundamental questions about biological mechanisms.</p><h3>Honors and Recognition</h3><p>Beyond the Nobel Prize, Benacerraf received numerous honors including the National Medal of Science (1990), the highest honor for scientific achievement in the United States. He was elected to the National Academy of Sciences, the American Academy of Arts and Sciences, and received honorary degrees from universities worldwide.</p><p>Benacerraf remained active in research and scientific leadership throughout his career, retiring only in his 80s. He passed away on August 2, 2011, at age 90, leaving a legacy of transformative discoveries that continue benefiting millions through improved transplant medicine and immunology.</p><h3>Venezuelan Pride and Latin American Science</h3><p>For Venezuela and Latin America, Baruj Benacerraf represents proof that Latin American scientists can achieve the highest levels of global scientific recognition. Though he left Venezuela as a child and conducted his research in the United States and France, Venezuela proudly claims him as a native son whose achievements demonstrate the intellectual potential of Latin America.</p><p>His success inspired Latin American students to pursue careers in science and medicine, showing that with education and opportunity, scientists from any background can make discoveries that change the world. Benacerraf maintained connections to Venezuela throughout his life and served as an example that geographical origin doesn't limit scientific achievement—what matters is curiosity, rigorous training, and dedication to understanding nature's mysteries.</p></section>
@@ -176,9 +324,90 @@ footer{background:#000;color:#fff;text-align:center;padding:2rem 0;margin-top:4r
         </section>
 
 ents' immune systems. MHC matching dramatically improved success rates for kidney, heart, liver, and bone marrow transplants, saving thousands of lives annually. Modern transplant medicine's success depends on the genetic understanding Benacerraf provided.</div></div><div class="faq-item"><div class="faq-question">Was Benacerraf the first Venezuelan Nobel Prize winner?</div><div class="faq-answer">Yes, Baruj Benacerraf was the first Venezuelan-born person to win a Nobel Prize in science. Though he left Venezuela as a child and conducted his research in the United States and France, Venezuela proudly claims him as a native son. His 1980 Nobel Prize in Physiology or Medicine demonstrated that Venezuelan and Latin American scientists could achieve the highest levels of global scientific recognition, inspiring generations of students across Latin America.</div></div><div class="faq-item"><div class="faq-question">What is the major histocompatibility complex (MHC)?</div><div class="faq-answer">The major histocompatibility complex (MHC) is a group of genes that Benacerraf studied, which encode proteins displayed on cell surfaces. These proteins present fragments of foreign proteins (from viruses, bacteria, or other pathogens) to immune cells, triggering immune responses. Different versions of MHC genes produce different MHC proteins, explaining why people respond differently to infections and why organ transplant compatibility depends on MHC matching. Benacerraf's work revealed how these genes control immunity.</div></div></section>
-<section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="mario-molina.html" class="related-card"><span class="related-emoji">🌍</span><div class="related-name">Mario Molina</div><div class="related-invention">Nobel Prize Chemist</div></a><a href="luis-von-ahn.html" class="related-card"><span class="related-emoji">🔐</span><div class="related-name">Luis von Ahn</div><div class="related-invention">CAPTCHA & Duolingo</div></a><a href="france-cordova.html" class="related-card"><span class="related-emoji">🔭</span><div class="related-name">France Córdova</div><div class="related-invention">Astrophysicist & NSF</div></a></div></section>
+
+        <!-- Related Inventions in Same Category -->
+        <section id="related-inventions">
+            <h2>More Medicine & Healthcare Inventions</h2>
+            <div class="related-grid">
+                <a href="../invention/pacemaker-control-unit.html" class="related-card">
+                    <span class="related-emoji">💓</span>
+                    <div class="related-name">Pacemaker Control Unit</div>
+                    <div class="related-invention">by Otis Boykin (1964)</div>
+                </a>
+                <a href="../invention/yellow-fever-transmission-theory.html" class="related-card">
+                    <span class="related-emoji">🦟</span>
+                    <div class="related-name">Yellow Fever Transmission Theory</div>
+                    <div class="related-invention">by Carlos Finlay (1881)</div>
+                </a>
+                <a href="../invention/transdermal-patch.html" class="related-card">
+                    <span class="related-emoji">🩹</span>
+                    <div class="related-name">Transdermal Patch</div>
+                    <div class="related-invention">by Alejandro Zaffaroni (1971)</div>
+                </a>
+            </div>
+        </section>
+
+        <section id="related"><h2>Related Inventors</h2><div class="related-grid"><a href="mario-molina.html" class="related-card"><span class="related-emoji">🌍</span><div class="related-name">Mario Molina</div><div class="related-invention">Nobel Prize Chemist</div></a><a href="luis-von-ahn.html" class="related-card"><span class="related-emoji">🔐</span><div class="related-name">Luis von Ahn</div><div class="related-invention">CAPTCHA & Duolingo</div></a><a href="france-cordova.html" class="related-card"><span class="related-emoji">🔭</span><div class="related-name">France Córdova</div><div class="related-invention">Astrophysicist & NSF</div></a></div></section>
 <a href="../index.html" class="back-button">← Back to All Inventors</a>
 </div>
-<footer><p>&copy; 2024 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p><p><a href="../index.html" style="color:#0b8793;">www.americaninventions.org</a></p></footer>
+<footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>💡 Heroes of Innovation</h3>
+                    <p class="footer-description">
+                        Celebrating the revolutionary contributions of Black and Brown inventors across the Americas.
+                        Discover the untold stories of innovation that shaped our modern world and continue to inspire future generations.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">All Inventors</a></li>
+                        <li><a href="../index.html">All Inventions</a></li>
+                        <li><a href="../index.html#timelineSection">Timeline</a></li>
+                        <li><a href="../index.html#tagcloudSection">Categories</a></li>
+                        <li><a href="../index.html#statsDashboard">Statistics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../index.html?category=Agriculture%20%26%20Food%20Science">Agriculture & Food Science</a></li>
+                        <li><a href="../index.html?category=Chemistry%20%26%20Materials%20Science">Chemistry & Materials Science</a></li>
+                        <li><a href="../index.html?category=Consumer%20%26%20Personal%20Products">Consumer & Personal Products</a></li>
+                        <li><a href="../index.html?category=Electronics%20%26%20Computing">Electronics & Computing</a></li>
+                        <li><a href="../index.html?category=Engineering%20%26%20Manufacturing">Engineering & Manufacturing</a></li>
+                        <li><a href="../index.html?category=Environmental%20%26%20Energy">Environmental & Energy</a></li>
+                        <li><a href="../index.html?category=Medicine%20%26%20Healthcare">Medicine & Healthcare</a></li>
+                        <li><a href="../index.html?category=Security%20%26%20Safety">Security & Safety</a></li>
+                        <li><a href="../index.html?category=Space%20%26%20Aerospace">Space & Aerospace</a></li>
+                        <li><a href="../index.html?category=Transportation%20%26%20Communication">Transportation & Communication</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="../index.html?region=north-america">🌎 North America</a></li>
+                        <li><a href="../index.html?region=south-america">🌎 South America</a></li>
+                        <li><a href="../index.html?region=caribbean">🏝️ Caribbean</a></li>
+                        <li><a href="../index.html?region=central-america">🌎 Central America</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heroes of Innovation | Celebrating Black and Brown Inventors Across the Americas</p>
+                <p>
+                    <a href="../index.html">www.americaninventions.org</a> •
+                    <a href="../index.html#about">About</a> •
+                    <a href="../index.html#contact">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
