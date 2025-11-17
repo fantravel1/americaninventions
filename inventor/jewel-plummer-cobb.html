@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <!-- PWA and performance hints -->
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewel Plummer Cobb - Cancer Cell Research Pioneer | Heroes of Innovation</title>
@@ -696,7 +707,140 @@
         .breadcrumb span {
             margin: 0 0.5rem;
         }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #000000;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid #222;
+                margin: 0;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-container {
+                position: relative;
+            }
+
+            /* Touch-friendly buttons */
+            button, .filter-btn, .view-toggle-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Larger touch targets for cards */
+            .inventor-card, .invention-card, .related-card {
+                padding: 1.5rem;
+            }
+
+            /* Better mobile spacing */
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            /* Mobile-friendly footer */
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            /* Prevent horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+
+            /* Make tables scrollable */
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        /* Touch feedback for all interactive elements */
+        @media (hover: none) {
+            a:active, button:active, .filter-btn:active {
+                opacity: 0.7;
+            }
+        }
 </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.americaninventions.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Medicine & Healthcare",
+          "item": "https://www.americaninventions.org/?category=Medicine%20%26%20Healthcare"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jewel Plummer Cobb",
+          "item": "https://www.americaninventions.org/inventor/jewel-plummer-cobb.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <nav class="top-nav">
@@ -1152,5 +1296,61 @@ ology.
             </div>
         </div>
     </footer>
+
+    <script>
+    
+    // Mobile menu toggle functionality
+    function initMobileMenu() {
+        const nav = document.querySelector('.top-nav');
+        if (!nav) return;
+
+        const navLinks = nav.querySelector('.nav-links');
+        if (!navLinks) return;
+
+        // Check if toggle button already exists
+        if (nav.querySelector('.mobile-menu-toggle')) return;
+
+        // Create mobile menu toggle button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-menu-toggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
+        toggleBtn.innerHTML = '☰';
+
+        // Insert toggle button before nav links
+        const navContainer = nav.querySelector('.nav-container');
+        navContainer.insertBefore(toggleBtn, navLinks);
+
+        // Toggle menu on button click
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            toggleBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target)) {
+                navLinks.classList.remove('active');
+                toggleBtn.innerHTML = '☰';
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                toggleBtn.innerHTML = '☰';
+            });
+        });
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+
+    </script>
 </body>
 </html>
