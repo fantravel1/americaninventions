@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <!-- PWA and performance hints -->
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heroes of Innovation - Celebrating Black and Brown Inventors Across the Americas</title>
@@ -1651,6 +1662,125 @@
             display: none !important;
         }
 </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Heroes of Innovation",
+      "alternateName": "American Inventions",
+      "url": "https://www.americaninventions.org",
+      "logo": "https://www.americaninventions.org/og-image.jpg",
+      "description": "Celebrating the revolutionary contributions of Black and Brown inventors across the Americas. Discover the untold stories of innovation that shaped our modern world.",
+      "sameAs": [
+        "https://www.facebook.com/americaninventions",
+        "https://twitter.com/americaninvent",
+        "https://www.instagram.com/americaninventions"
+      ],
+      "foundingDate": "2025",
+      "founders": []
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Heroes of Innovation",
+      "url": "https://www.americaninventions.org",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.americaninventions.org/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Black and Brown Inventors Database",
+      "description": "Comprehensive database of 120 Black and Brown inventors who changed the world",
+      "url": "https://www.americaninventions.org",
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 120,
+        "itemListElement": [
+          {
+            "@type": "Person",
+            "position": 1,
+            "name": "Guillermo González Camarena",
+            "description": "At just 23 years old, this brilliant Mexican engineer invented the first color television system in 1940, revolutionizing how the world would experience visual media forever.",
+            "url": "https://www.americaninventions.org/inventor/guillermo-gonzalez-camarena.html"
+          },
+          {
+            "@type": "Person",
+            "position": 2,
+            "name": "Granville Woods",
+            "description": "Known as the 'Black Edison,' Woods held over 60 patents and revolutionized railway safety with his multiplex telegraph system, allowing moving trains to communicate with stations.",
+            "url": "https://www.americaninventions.org/inventor/granville-woods.html"
+          },
+          {
+            "@type": "Person",
+            "position": 3,
+            "name": "João Figueiredo",
+            "description": "This visionary Afro-Brazilian architect developed revolutionary modular housing systems that made quality homes accessible to millions of families across Latin America.",
+            "url": "https://www.americaninventions.org/inventor/joao-figueiredo.html"
+          },
+          {
+            "@type": "Person",
+            "position": 4,
+            "name": "Luis Miramontes",
+            "description": "At age 26, this Mexican chemist co-invented the birth control pill, revolutionizing women's reproductive rights and family planning worldwide.",
+            "url": "https://www.americaninventions.org/inventor/luis-miramontes.html"
+          },
+          {
+            "@type": "Person",
+            "position": 5,
+            "name": "Garrett Morgan",
+            "description": "This innovative African American inventor created the modern traffic signal and gas mask, saving countless lives through his safety-focused inventions.",
+            "url": "https://www.americaninventions.org/inventor/garrett-morgan.html"
+          },
+          {
+            "@type": "Person",
+            "position": 6,
+            "name": "George Washington Carver",
+            "description": "This brilliant agricultural scientist developed over 300 uses for peanuts and revolutionized Southern agriculture through crop rotation and soil conservation.",
+            "url": "https://www.americaninventions.org/inventor/george-washington-carver.html"
+          },
+          {
+            "@type": "Person",
+            "position": 7,
+            "name": "Madam C.J. Walker",
+            "description": "America's first female self-made millionaire, she revolutionized Black hair care with innovative products and became a pioneering entrepreneur.",
+            "url": "https://www.americaninventions.org/inventor/madam-cj-walker.html"
+          },
+          {
+            "@type": "Person",
+            "position": 8,
+            "name": "Lewis Latimer",
+            "description": "This brilliant inventor improved Edison's light bulb with a longer-lasting carbon filament and was the only Black member of Edison's elite research team.",
+            "url": "https://www.americaninventions.org/inventor/lewis-latimer.html"
+          },
+          {
+            "@type": "Person",
+            "position": 9,
+            "name": "Jan Matzeliger",
+            "description": "This Afro-Dutch-Surinamese inventor revolutionized shoe manufacturing with his lasting machine, making quality footwear affordable for everyone.",
+            "url": "https://www.americaninventions.org/inventor/jan-matzeliger.html"
+          },
+          {
+            "@type": "Person",
+            "position": 10,
+            "name": "Elijah McCoy",
+            "description": "The son of escaped slaves, McCoy invented the automatic lubricator that kept trains running smoothly, coining the phrase 'the real McCoy.'",
+            "url": "https://www.americaninventions.org/inventor/elijah-mccoy.html"
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -4870,6 +5000,29 @@
         populateInventionsGrid();
         setupViewToggle();
     }
+
+    </script>
+
+    <script>
+    
+    // Lazy load images for better performance
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[data-src]');
+        images.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers that don't support lazy loading
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        document.body.appendChild(script);
+    }
+
+    // Defer non-critical JavaScript
+    window.addEventListener('load', function() {
+        // Any non-critical functionality can be loaded here
+        console.log('Page fully loaded - non-critical resources can load now');
+    });
 
     </script>
 </body>

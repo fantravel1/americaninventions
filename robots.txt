@@ -1,12 +1,27 @@
-# robots.txt for Heroes of Innovation - www.americaninventions.org
+# robots.txt for americaninventions.org
 
-# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemaps
 Sitemap: https://www.americaninventions.org/sitemap.xml
 
-# Crawl-delay for polite crawling (optional)
-# User-agent: *
-# Crawl-delay: 1
+# Crawl-delay (be nice to servers)
+Crawl-delay: 1
+
+# Disallow admin or temporary files
+Disallow: /generate-*.js
+Disallow: /integrate-*.js
+Disallow: /add-*.js
+Disallow: /fix-*.js
+Disallow: /update-*.js
+Disallow: /verify-*.js
+Disallow: /*.js$
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow all HTML pages
+Allow: /*.html$
+Allow: /inventor/*.html$
+Allow: /invention/*.html$
+Allow: /blog/*.html$
