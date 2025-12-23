@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katherine Johnson: The Hidden Figure Who Sent America to Space | Heroes of Innovation Blog</title>
+    <meta name="description" content="Discover the extraordinary story of Katherine Johnson, the brilliant mathematician whose calculations sent astronauts to the moon and changed NASA forever.">
+    <meta name="keywords" content="Katherine Johnson, NASA, Hidden Figures, space exploration, African American mathematician, women in STEM, moon landing">
+    <meta name="author" content="Heroes of Innovation Team">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.americaninventions.org/blog/katherine-johnson-hidden-figure.html">
+    <meta property="og:title" content="Katherine Johnson: The Hidden Figure Who Sent America to Space">
+    <meta property="og:description" content="The extraordinary story of the mathematician whose calculations sent astronauts to the moon.">
+    <meta property="og:image" content="https://www.americaninventions.org/blog/og-katherine-johnson.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Katherine Johnson: The Hidden Figure Who Sent America to Space">
+    <meta property="twitter:description" content="The extraordinary story of the mathematician whose calculations sent astronauts to the moon.">
+
+    <link rel="canonical" href="https://www.americaninventions.org/blog/katherine-johnson-hidden-figure.html">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', serif; line-height: 1.8; color: #1a1a1a; background: #ffffff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: #000000;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo { color: #ffffff; text-decoration: none; font-size: 1.2rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 0.7; }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .article-category {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { opacity: 0.9; font-size: 1rem; }
+        .article-meta span { margin: 0 1rem; }
+
+        article { padding: 4rem 0; }
+        article h2 { font-size: 1.8rem; margin: 2rem 0 1rem; color: #1a1a1a; }
+        article h3 { font-size: 1.4rem; margin: 1.5rem 0 1rem; color: #333; }
+        article p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        article ul, article ol { margin: 1.5rem 0; padding-left: 2rem; }
+        article li { margin-bottom: 0.75rem; font-size: 1.1rem; }
+
+        .hero-emoji { font-size: 6rem; margin-bottom: 1rem; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .highlight-box h3 { margin-top: 0; color: #667eea; }
+
+        .quote-block {
+            background: #f9f9f9;
+            border-left: 4px solid #333;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        .quote-attribution { font-style: normal; font-size: 1rem; margin-top: 1rem; color: #666; }
+
+        .timeline {
+            border-left: 3px solid #667eea;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        .timeline-item { margin-bottom: 2rem; position: relative; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        .timeline-year { font-weight: 700; color: #667eea; font-size: 1.1rem; }
+
+        .cta-section {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta-section h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .cta-btn {
+            display: inline-block;
+            background: #667eea;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover { background: #764ba2; transform: translateY(-2px); }
+
+        .related-posts { margin: 4rem 0; }
+        .related-posts h3 { margin-bottom: 2rem; font-size: 1.5rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .related-card {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .related-card:hover { border-color: #667eea; transform: translateY(-3px); }
+        .related-card h4 { margin-bottom: 0.5rem; }
+        .related-card a { color: #1a1a1a; text-decoration: none; }
+        .related-card p { font-size: 0.9rem; color: #666; }
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer a { color: #fff; text-decoration: none; margin: 0 1rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 1.8rem; }
+            .article-meta span { display: block; margin: 0.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Heroes of Innovation</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#inventorsGrid">Inventors</a>
+                <a href="index.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="hero-emoji">🚀</div>
+            <span class="article-category">Inventor Spotlight</span>
+            <h1>Katherine Johnson: The Hidden Figure Who Sent America to Space</h1>
+            <div class="article-meta">
+                <span>December 20, 2025</span>
+                <span>15 min read</span>
+                <span>Heroes of Innovation Team</span>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <p>In the annals of space exploration, few names carry the weight of Katherine Johnson. This brilliant African American mathematician didn't just crunch numbers - she literally calculated the trajectory that sent the first Americans into orbit and eventually to the moon. Yet for decades, her story remained largely untold, hidden in the shadows of a segregated America.</p>
+
+            <div class="quote-block">
+                "I counted everything. I counted the steps to the road, the steps up to church, the number of dishes and silverware I washed... anything that could be counted, I did."
+                <div class="quote-attribution">- Katherine Johnson</div>
+            </div>
+
+            <h2>A Mind for Numbers</h2>
+
+            <p>Born on August 26, 1918, in White Sulphur Springs, West Virginia, Katherine Coleman (later Johnson) displayed an extraordinary gift for mathematics from an early age. By the age of 10, she was already attending high school - four years ahead of her peers.</p>
+
+            <p>Her father, Joshua Coleman, was a farmer and handyman who recognized his daughter's exceptional abilities. He moved the entire family 125 miles to Institute, West Virginia, so Katherine could attend high school, as their hometown didn't offer education for Black students beyond eighth grade.</p>
+
+            <div class="highlight-box">
+                <h3>Early Achievements</h3>
+                <ul>
+                    <li>Graduated from high school at age 14</li>
+                    <li>Earned a B.S. in Mathematics and French at age 18</li>
+                    <li>Was personally selected by a professor to take advanced geometry courses</li>
+                    <li>Became one of three Black students to integrate West Virginia's graduate schools in 1939</li>
+                </ul>
+            </div>
+
+            <h2>Breaking Through at NASA</h2>
+
+            <p>In 1953, Katherine joined the all-Black West Area Computing Unit at the National Advisory Committee for Aeronautics (NACA), which would later become NASA. As a "computer" - the term used for people who performed mathematical calculations before electronic computers - she faced the double barriers of racism and sexism.</p>
+
+            <p>But Katherine refused to accept limitations. When told she couldn't attend briefings because she was a woman, she simply asked: "Is there a law against it?" There wasn't, and she became the first woman to attend these crucial meetings.</p>
+
+            <h2>The Calculations That Changed History</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1961 - Freedom 7</div>
+                    <p>Katherine calculated the trajectory for Alan Shepard's historic flight, the first American in space. Her calculations had to account for the spacecraft's speed, the Earth's rotation, and countless other variables.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1962 - Friendship 7</div>
+                    <p>When John Glenn was preparing to become the first American to orbit Earth, he made an unprecedented request: he refused to fly until Katherine personally verified the electronic computer's calculations. "Get the girl to check the numbers," he said. She did, and the mission was a success.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1969 - Apollo 11</div>
+                    <p>Katherine's calculations helped plot the trajectory for Apollo 11's journey to the moon. Her work ensured that Neil Armstrong and Buzz Aldrin could land safely and return home.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1970 - Apollo 13</div>
+                    <p>When Apollo 13 suffered a catastrophic equipment failure, Katherine worked on backup procedures and charts that helped bring the astronauts safely back to Earth.</p>
+                </div>
+            </div>
+
+            <h2>The Hidden Figure Revealed</h2>
+
+            <p>For most of her career, Katherine Johnson worked in relative obscurity. Like many Black women at NASA, her contributions were overshadowed by the more visible (and predominantly white, male) faces of the space program.</p>
+
+            <p>That changed in 2016 when Margot Lee Shetterly published "Hidden Figures," a book that finally brought Katherine's story to the world. The subsequent film, starring Taraji P. Henson as Katherine, introduced millions to this remarkable woman's achievements.</p>
+
+            <div class="highlight-box">
+                <h3>Recognition & Awards</h3>
+                <ul>
+                    <li><strong>2015</strong> - Presidential Medal of Freedom from President Barack Obama</li>
+                    <li><strong>2016</strong> - NASA's Langley Research Center named a building in her honor</li>
+                    <li><strong>2017</strong> - NASA dedicated the Katherine G. Johnson Computational Research Facility</li>
+                    <li><strong>2019</strong> - Congressional Gold Medal (posthumously awarded)</li>
+                </ul>
+            </div>
+
+            <h2>Legacy of Inspiration</h2>
+
+            <p>Katherine Johnson passed away on February 24, 2020, at the age of 101, but her legacy continues to inspire. She proved that with determination, brilliance, and courage, barriers can be broken and history can be made.</p>
+
+            <p>Today, her story serves as a powerful reminder that some of history's most important contributions have come from those who were forced to work in the shadows. And it challenges us to ask: whose stories are still waiting to be told?</p>
+
+            <div class="quote-block">
+                "Like what you do, and then you will do your best."
+                <div class="quote-attribution">- Katherine Johnson</div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Explore Katherine Johnson's Full Story</h3>
+                <p>Discover more about this remarkable mathematician and her contributions to space exploration.</p>
+                <a href="../inventor/katherine-johnson.html" class="cta-btn">View Full Profile</a>
+            </div>
+
+            <div class="related-posts">
+                <h3>Related Stories</h3>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <a href="garrett-morgan-untold-hero.html">
+                            <h4>Garrett Morgan: The Untold Hero</h4>
+                            <p>The inventor who saved lives with the traffic signal and gas mask.</p>
+                        </a>
+                    </div>
+                    <div class="related-card">
+                        <a href="medical-innovations-changed-healthcare.html">
+                            <h4>10 Medical Innovations</h4>
+                            <p>Black and Brown inventors who transformed healthcare forever.</p>
+                        </a>
+                    </div>
+                    <div class="related-card">
+                        <a href="15-everyday-items-black-brown-inventors.html">
+                            <h4>15 Everyday Items</h4>
+                            <p>Surprising inventions you use daily by Black and Brown innovators.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Heroes of Innovation - American Inventions</p>
+            <p>
+                <a href="../index.html">Home</a>
+                <a href="index.html">Blog</a>
+                <a href="mailto:info@webuildpillars.com">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Katherine Johnson: The Hidden Figure Who Sent America to Space",
+        "author": {"@type": "Organization", "name": "Heroes of Innovation"},
+        "datePublished": "2025-12-20",
+        "description": "The extraordinary story of Katherine Johnson, the brilliant mathematician whose calculations sent astronauts to the moon.",
+        "mainEntityOfPage": "https://www.americaninventions.org/blog/katherine-johnson-hidden-figure.html"
+    }
+    </script>
+</body>
+</html>

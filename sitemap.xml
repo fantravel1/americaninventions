@@ -11,9 +11,27 @@
     </url>
     <url>
         <loc>https://www.americaninventions.org/blog/index.html</loc>
-        <lastmod>2025-11-17</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.americaninventions.org/blog/katherine-johnson-hidden-figure.html</loc>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.americaninventions.org/blog/caribbean-inventors-innovation.html</loc>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.americaninventions.org/blog/december-history-inventions.html</loc>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.americaninventions.org/inventor/alberto-santos-dumont.html</loc>
