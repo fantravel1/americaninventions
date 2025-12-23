@@ -40,6 +40,34 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
 
     <style>
+        /* CSS Variables for Theme Support */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --bg-tertiary: #f0f0f0;
+            --text-primary: #1a1a1a;
+            --text-secondary: #333333;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.1);
+            --navbar-bg: rgba(0, 0, 0, 0.95);
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2d2d2d;
+            --text-primary: #f0f0f0;
+            --text-secondary: #d0d0d0;
+            --text-muted: #a0a0a0;
+            --border-color: #404040;
+            --card-bg: #1e1e1e;
+            --card-shadow: rgba(0,0,0,0.4);
+            --navbar-bg: rgba(30, 30, 30, 0.98);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -49,9 +77,10 @@
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
+            color: var(--text-primary);
+            background: var(--bg-primary);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -259,9 +288,40 @@
             color: #ffffff;
         }
 
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle-icon {
+            transform: rotate(180deg);
+        }
+
         /* Top Navigation Bar */
         .top-navbar {
-            background: rgba(0, 0, 0, 0.95);
+            background: var(--navbar-bg);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: sticky;
@@ -1962,6 +2022,1242 @@
         .hidden {
             display: none !important;
         }
+
+        /* ========== INVENTOR OF THE WEEK SECTION ========== */
+        .inventor-spotlight {
+            background: var(--accent-gradient);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inventor-spotlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+
+        .spotlight-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .spotlight-badge {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .spotlight-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 4px solid rgba(255,255,255,0.4);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+
+        .spotlight-info {
+            color: #ffffff;
+        }
+
+        .spotlight-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .spotlight-info .invention-highlight {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .spotlight-info .bio-preview {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .spotlight-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spotlight-stat {
+            text-align: center;
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .spotlight-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .spotlight-stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .spotlight-cta {
+            display: inline-block;
+            background: #ffffff;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .spotlight-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .spotlight-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .spotlight-image {
+                width: 180px;
+                height: 180px;
+                font-size: 4rem;
+            }
+
+            .spotlight-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .spotlight-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ========== COMPARISON TOOL SECTION ========== */
+        .comparison-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .comparison-slot {
+            background: var(--card-bg);
+            border: 3px dashed var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            min-height: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-slot.filled {
+            border-style: solid;
+            border-color: #667eea;
+        }
+
+        .comparison-slot-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .comparison-slot-empty span {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .comparison-vs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            background: var(--bg-primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #667eea;
+            margin-top: 170px;
+        }
+
+        .comparison-inventor {
+            text-align: center;
+        }
+
+        .comparison-inventor-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 1rem;
+            border: 3px solid #667eea;
+        }
+
+        .comparison-inventor h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-inventor .country {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .comparison-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-detail:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .comparison-value {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 900px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-vs {
+                margin: 1rem auto;
+            }
+        }
+
+        /* ========== QUIZ SECTION ========== */
+        .quiz-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            color: #ffffff;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-header p {
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .quiz-progress-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-score {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 1.25rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-align: left;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(5px);
+        }
+
+        .quiz-option.correct {
+            background: rgba(34, 197, 94, 0.3);
+            border-color: #22c55e;
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(239, 68, 68, 0.3);
+            border-color: #ef4444;
+        }
+
+        .quiz-option.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .quiz-feedback h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .quiz-next-btn {
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .quiz-next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .quiz-results {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .quiz-results h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-results .final-score {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .quiz-results p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-restart-btn {
+            background: #ffffff;
+            color: #667eea;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .quiz-restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        /* ========== EDUCATIONAL RESOURCES SECTION ========== */
+        .edu-resources-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .edu-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .edu-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .edu-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .edu-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--card-shadow);
+            border-color: #667eea;
+        }
+
+        .edu-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .edu-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .edu-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .edu-card-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-card-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .edu-card-list li:last-child {
+            border-bottom: none;
+        }
+
+        .edu-card-list li::before {
+            content: '✓ ';
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .edu-download-btn {
+            display: inline-block;
+            background: #667eea;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .edu-download-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== INTERACTIVE MAP SECTION ========== */
+        .map-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .map-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .americas-map {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            position: relative;
+            min-height: 450px;
+        }
+
+        .map-region {
+            position: absolute;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .map-region:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .map-region.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .map-region .count {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .map-region .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .region-north-america { top: 8%; left: 25%; }
+        .region-central-america { top: 38%; left: 20%; }
+        .region-caribbean { top: 32%; left: 55%; }
+        .region-south-america { top: 65%; left: 35%; }
+
+        .map-legend {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+        }
+
+        .legend-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .country-list {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .country-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .country-item:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .country-item .flag-name {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .country-item .flag {
+            font-size: 1.5rem;
+        }
+
+        .country-item .inventor-count {
+            background: #667eea;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ========== THIS DAY IN HISTORY ========== */
+        .today-history-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .today-history-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .today-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .today-date {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-title {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .today-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .today-event {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .today-emoji {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .today-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-details p {
+            opacity: 0.95;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .today-cta {
+            display: inline-block;
+            background: #ffffff;
+            color: #ee5a24;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .today-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ========== ACHIEVEMENT BADGES ========== */
+        .badges-section {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .badges-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .badges-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .badges-header p {
+            color: var(--text-muted);
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .badge-item.earned {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .badge-item.locked {
+            opacity: 0.5;
+            filter: grayscale(1);
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .badge-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+
+            .americas-map {
+                min-height: 350px;
+            }
+
+            .today-event {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ========== FEATURED INVENTORS CAROUSEL ========== */
+        .carousel-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .carousel-header {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-header p {
+            opacity: 0.8;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-card {
+            flex: 0 0 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .carousel-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-card .invention {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-card .year {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .carousel-card .view-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .carousel-card .view-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* ========== FUN FACTS TICKER ========== */
+        .ticker-section {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            padding: 0 3rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ticker-item::after {
+            content: '✦';
+            margin-left: 3rem;
+            opacity: 0.5;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-section:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        /* ========== PRINT CARD MODAL ========== */
+        .print-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .print-modal.active {
+            display: flex;
+        }
+
+        .print-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .print-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: -3rem -3rem 2rem -3rem;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            color: #ffffff;
+        }
+
+        .print-card-emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .print-card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .print-card-header .country {
+            opacity: 0.9;
+        }
+
+        .print-card-body {
+            text-align: left;
+        }
+
+        .print-card-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .print-card-row:last-child {
+            border-bottom: none;
+        }
+
+        .print-card-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .print-card-value {
+            color: #1a1a1a;
+        }
+
+        .print-card-bio {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #667eea;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+        }
+
+        .print-card-footer {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .print-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #764ba2;
+        }
+
+        .print-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        @media print {
+            .print-modal {
+                position: static;
+                background: none;
+                padding: 0;
+            }
+            .print-actions, .print-close {
+                display: none;
+            }
+            .print-card {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        /* ========== QUICK STATS BAR ========== */
+        .quick-stats-bar {
+            background: var(--bg-tertiary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .quick-stat {
+            text-align: center;
+        }
+
+        .quick-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .quick-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 </style>
 
     <script type="application/ld+json">
@@ -2095,11 +3391,38 @@
                 <li><a href="#inventionsGrid">Inventions</a></li>
                 <li><a href="#tagcloudSection">Categories</a></li>
                 <li><a href="#timelineSection">Timeline</a></li>
+                <li><a href="#quizSection">Quiz</a></li>
                 <li><a href="blog/index.html">Blog</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle-icon">🌙</span>
+                <span class="theme-toggle-text">Dark</span>
+            </button>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
         </div>
     </nav>
+
+    <!-- Fun Facts Ticker -->
+    <div class="ticker-section" id="funFactsTicker">
+        <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-item">💡 Lewis Latimer's carbon filament made light bulbs last 10x longer</div>
+            <div class="ticker-item">🚦 Garrett Morgan's traffic signal saved countless lives</div>
+            <div class="ticker-item">📺 Color TV was invented by a 23-year-old Mexican engineer</div>
+            <div class="ticker-item">🚀 Katherine Johnson's calculations put the first Americans in space</div>
+            <div class="ticker-item">💊 The birth control pill was co-created by a 26-year-old Mexican chemist</div>
+            <div class="ticker-item">👁️ Dr. Patricia Bath invented laser cataract surgery</div>
+            <div class="ticker-item">🥜 George Washington Carver developed 300+ peanut products</div>
+            <div class="ticker-item">💧 Super Soaker inventor Lonnie Johnson was a NASA engineer</div>
+            <div class="ticker-item">💡 Lewis Latimer's carbon filament made light bulbs last 10x longer</div>
+            <div class="ticker-item">🚦 Garrett Morgan's traffic signal saved countless lives</div>
+            <div class="ticker-item">📺 Color TV was invented by a 23-year-old Mexican engineer</div>
+            <div class="ticker-item">🚀 Katherine Johnson's calculations put the first Americans in space</div>
+            <div class="ticker-item">💊 The birth control pill was co-created by a 26-year-old Mexican chemist</div>
+            <div class="ticker-item">👁️ Dr. Patricia Bath invented laser cataract surgery</div>
+            <div class="ticker-item">🥜 George Washington Carver developed 300+ peanut products</div>
+            <div class="ticker-item">💧 Super Soaker inventor Lonnie Johnson was a NASA engineer</div>
+        </div>
+    </div>
 
     <header>
         <div class="container">
@@ -2340,6 +3663,331 @@
             </div>
         </div>
     </div>
+
+    <!-- ========== FEATURED INVENTORS CAROUSEL ========== -->
+    <section class="carousel-section" id="carouselSection">
+        <div class="container">
+            <div class="carousel-header">
+                <h2>Featured Inventors</h2>
+                <p>Discover some of the most influential innovators in American history</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Cards populated by JavaScript -->
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dots populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INVENTOR OF THE WEEK SPOTLIGHT ========== -->
+    <section class="inventor-spotlight" id="spotlightSection">
+        <div class="container">
+            <div class="spotlight-content">
+                <div class="spotlight-image" id="spotlightImage">🥜</div>
+                <div class="spotlight-info">
+                    <span class="spotlight-badge">Inventor of the Week</span>
+                    <h2 id="spotlightName">George Washington Carver</h2>
+                    <div class="invention-highlight" id="spotlightInvention">Agricultural Innovations & Peanut Products (1896)</div>
+                    <p class="bio-preview" id="spotlightBio">Born into slavery around 1864, George Washington Carver became one of the most prominent scientists and inventors in American history. He developed over 300 products from peanuts and revolutionized Southern agriculture through crop rotation.</p>
+                    <div class="spotlight-stats">
+                        <div class="spotlight-stat">
+                            <span class="spotlight-stat-value" id="spotlightPatents">3</span>
+                            <span class="spotlight-stat-label">Patents</span>
+                        </div>
+                        <div class="spotlight-stat">
+                            <span class="spotlight-stat-value" id="spotlightProducts">300+</span>
+                            <span class="spotlight-stat-label">Products</span>
+                        </div>
+                        <div class="spotlight-stat">
+                            <span class="spotlight-stat-value" id="spotlightYear">1896</span>
+                            <span class="spotlight-stat-label">Year</span>
+                        </div>
+                    </div>
+                    <a href="inventor/george-washington-carver.html" class="spotlight-cta" id="spotlightCTA">Explore Full Story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INVENTOR COMPARISON TOOL ========== -->
+    <section class="comparison-section" id="comparisonSection">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Compare Inventors</h2>
+                <p>Select two inventors to compare their achievements, timelines, and contributions side by side</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-slot" id="comparisonSlot1">
+                    <div class="comparison-slot-empty" id="emptySlot1">
+                        <span>👤</span>
+                        <p>Select First Inventor</p>
+                        <select class="comparison-select" id="compareSelect1" onchange="updateComparison(1)">
+                            <option value="">Choose an inventor...</option>
+                        </select>
+                    </div>
+                    <div class="comparison-inventor hidden" id="inventor1Display">
+                        <div class="comparison-inventor-image" id="inventor1Image">👤</div>
+                        <h3 id="inventor1Name">-</h3>
+                        <div class="country" id="inventor1Country">-</div>
+                        <div class="comparison-details">
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Invention</span>
+                                <span class="comparison-value" id="inventor1Invention">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Year</span>
+                                <span class="comparison-value" id="inventor1Year">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Category</span>
+                                <span class="comparison-value" id="inventor1Category">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Lifespan</span>
+                                <span class="comparison-value" id="inventor1Lifespan">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Patents</span>
+                                <span class="comparison-value" id="inventor1Patents">-</span>
+                            </div>
+                        </div>
+                        <select class="comparison-select" id="compareSelect1Alt" onchange="updateComparison(1)">
+                            <option value="">Change inventor...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="comparison-vs">VS</div>
+
+                <div class="comparison-slot" id="comparisonSlot2">
+                    <div class="comparison-slot-empty" id="emptySlot2">
+                        <span>👤</span>
+                        <p>Select Second Inventor</p>
+                        <select class="comparison-select" id="compareSelect2" onchange="updateComparison(2)">
+                            <option value="">Choose an inventor...</option>
+                        </select>
+                    </div>
+                    <div class="comparison-inventor hidden" id="inventor2Display">
+                        <div class="comparison-inventor-image" id="inventor2Image">👤</div>
+                        <h3 id="inventor2Name">-</h3>
+                        <div class="country" id="inventor2Country">-</div>
+                        <div class="comparison-details">
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Invention</span>
+                                <span class="comparison-value" id="inventor2Invention">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Year</span>
+                                <span class="comparison-value" id="inventor2Year">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Category</span>
+                                <span class="comparison-value" id="inventor2Category">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Lifespan</span>
+                                <span class="comparison-value" id="inventor2Lifespan">-</span>
+                            </div>
+                            <div class="comparison-detail">
+                                <span class="comparison-label">Patents</span>
+                                <span class="comparison-value" id="inventor2Patents">-</span>
+                            </div>
+                        </div>
+                        <select class="comparison-select" id="compareSelect2Alt" onchange="updateComparison(2)">
+                            <option value="">Change inventor...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUIZ SECTION ========== -->
+    <section class="quiz-section" id="quizSection">
+        <div class="container">
+            <div class="quiz-header">
+                <h2>Test Your Knowledge</h2>
+                <p>How well do you know these pioneering inventors and their groundbreaking inventions?</p>
+            </div>
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-progress">
+                    <span id="quizQuestionNum">Question 1 of 10</span>
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%"></div>
+                    </div>
+                    <span class="quiz-score" id="quizScore">Score: 0</span>
+                </div>
+                <div class="quiz-question" id="quizQuestion">Loading question...</div>
+                <div class="quiz-options" id="quizOptions">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                <div class="quiz-feedback" id="quizFeedback">
+                    <h4 id="feedbackTitle">Correct!</h4>
+                    <p id="feedbackText">Additional information about the answer...</p>
+                    <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next Question →</button>
+                </div>
+            </div>
+            <div class="quiz-results hidden" id="quizResults">
+                <h3>Quiz Complete!</h3>
+                <div class="final-score" id="finalScore">0/10</div>
+                <p id="resultMessage">Great job learning about these amazing inventors!</p>
+                <button class="quiz-restart-btn" onclick="restartQuiz()">Play Again</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDUCATIONAL RESOURCES SECTION ========== -->
+    <section class="edu-resources-section" id="eduSection">
+        <div class="container">
+            <div class="edu-header">
+                <h2>Educational Resources</h2>
+                <p>Free materials for teachers, students, and lifelong learners</p>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-card-icon">📚</div>
+                    <h3>Lesson Plans</h3>
+                    <p>Ready-to-use lesson plans aligned with educational standards for grades K-12.</p>
+                    <ul class="edu-card-list">
+                        <li>STEM integration activities</li>
+                        <li>History & social studies connections</li>
+                        <li>Critical thinking exercises</li>
+                        <li>Discussion guides</li>
+                    </ul>
+                    <a href="#" class="edu-download-btn">Browse Lessons</a>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-icon">🎨</div>
+                    <h3>Activity Sheets</h3>
+                    <p>Printable worksheets, coloring pages, and hands-on activities for students.</p>
+                    <ul class="edu-card-list">
+                        <li>Inventor biography cards</li>
+                        <li>Timeline activities</li>
+                        <li>Invention design challenges</li>
+                        <li>Word puzzles & games</li>
+                    </ul>
+                    <a href="#" class="edu-download-btn">Get Activities</a>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-icon">🎬</div>
+                    <h3>Presentation Kits</h3>
+                    <p>Slideshow presentations and multimedia resources for classroom use.</p>
+                    <ul class="edu-card-list">
+                        <li>PowerPoint templates</li>
+                        <li>Video discussion guides</li>
+                        <li>Virtual field trip resources</li>
+                        <li>Guest speaker programs</li>
+                    </ul>
+                    <a href="#" class="edu-download-btn">View Presentations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== THIS DAY IN HISTORY ========== -->
+    <section class="today-history-section" id="todaySection">
+        <div class="container">
+            <div class="today-header">
+                <div class="today-date" id="todayDate">December 23</div>
+                <div class="today-title">This Day in Innovation History</div>
+            </div>
+            <div class="today-content">
+                <div class="today-event">
+                    <div class="today-emoji" id="todayEmoji">💡</div>
+                    <div class="today-details">
+                        <h3 id="todayTitle">Innovation Spotlight</h3>
+                        <p id="todayDescription">Discover the inventors and innovations connected to today's date in history.</p>
+                        <a href="#inventorsGrid" class="today-cta" id="todayCTA">Explore Inventors →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERACTIVE MAP ========== -->
+    <section class="map-section" id="mapSection">
+        <div class="container">
+            <div class="map-header">
+                <h2>Inventors Across the Americas</h2>
+                <p>Click on a region to explore inventors from that area</p>
+            </div>
+            <div class="map-container">
+                <div class="americas-map">
+                    <div class="map-region region-north-america" onclick="filterByRegion('north-america')">
+                        <span class="count" id="northAmericaCount">0</span>
+                        <span class="label">North America</span>
+                    </div>
+                    <div class="map-region region-central-america" onclick="filterByRegion('central-america')">
+                        <span class="count" id="centralAmericaCount">0</span>
+                        <span class="label">Central America</span>
+                    </div>
+                    <div class="map-region region-caribbean" onclick="filterByRegion('caribbean')">
+                        <span class="count" id="caribbeanCount">0</span>
+                        <span class="label">Caribbean</span>
+                    </div>
+                    <div class="map-region region-south-america" onclick="filterByRegion('south-america')">
+                        <span class="count" id="southAmericaCount">0</span>
+                        <span class="label">South America</span>
+                    </div>
+                </div>
+                <div class="map-legend">
+                    <div class="legend-title">Inventors by Country</div>
+                    <div class="country-list" id="countryList">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ACHIEVEMENT BADGES ========== -->
+    <section class="badges-section" id="badgesSection">
+        <div class="container">
+            <div class="badges-header">
+                <h2>Your Achievement Badges</h2>
+                <p>Complete quizzes and explore inventors to earn badges</p>
+            </div>
+            <div class="badges-grid" id="badgesGrid">
+                <div class="badge-item locked" data-badge="first-quiz">
+                    <div class="badge-icon">🎯</div>
+                    <div class="badge-name">First Steps</div>
+                    <div class="badge-desc">Complete your first quiz</div>
+                </div>
+                <div class="badge-item locked" data-badge="perfect-score">
+                    <div class="badge-icon">🏆</div>
+                    <div class="badge-name">Perfect Score</div>
+                    <div class="badge-desc">Get 10/10 on a quiz</div>
+                </div>
+                <div class="badge-item locked" data-badge="explorer">
+                    <div class="badge-icon">🔍</div>
+                    <div class="badge-name">Explorer</div>
+                    <div class="badge-desc">View 10 inventor profiles</div>
+                </div>
+                <div class="badge-item locked" data-badge="historian">
+                    <div class="badge-icon">📚</div>
+                    <div class="badge-name">Historian</div>
+                    <div class="badge-desc">Read 5 blog articles</div>
+                </div>
+                <div class="badge-item locked" data-badge="collector">
+                    <div class="badge-icon">❤️</div>
+                    <div class="badge-name">Collector</div>
+                    <div class="badge-desc">Add 5 favorites</div>
+                </div>
+                <div class="badge-item locked" data-badge="globetrotter">
+                    <div class="badge-icon">🌎</div>
+                    <div class="badge-name">Globetrotter</div>
+                    <div class="badge-desc">Explore all 4 regions</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ADVERT1: COLORING BOOK SECTION -->
     <section class="coloring-book-section">
@@ -3861,8 +5509,473 @@
             window.scrollTo(0, 0);
         }
 
+        // ========== DARK MODE TOGGLE ==========
+        function initDarkMode() {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+            // Apply saved theme
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeButton(newTheme);
+            });
+        }
+
+        function updateThemeButton(theme) {
+            const icon = document.querySelector('.theme-toggle-icon');
+            const text = document.querySelector('.theme-toggle-text');
+
+            if (theme === 'dark') {
+                icon.textContent = '☀️';
+                text.textContent = 'Light';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark';
+            }
+        }
+
+        // ========== COMPARISON TOOL ==========
+        function initComparisonTool() {
+            const allInventors = inventorsDatabase.getAll();
+            const selects = ['compareSelect1', 'compareSelect2', 'compareSelect1Alt', 'compareSelect2Alt'];
+
+            selects.forEach(selectId => {
+                const select = document.getElementById(selectId);
+                if (select) {
+                    allInventors.sort((a, b) => a.name.localeCompare(b.name)).forEach(inventor => {
+                        const option = document.createElement('option');
+                        option.value = inventor.id;
+                        option.textContent = `${inventor.flag} ${inventor.name}`;
+                        select.appendChild(option);
+                    });
+                }
+            });
+        }
+
+        function updateComparison(slot) {
+            const selectId = slot === 1 ? 'compareSelect1' : 'compareSelect2';
+            const altSelectId = slot === 1 ? 'compareSelect1Alt' : 'compareSelect2Alt';
+            const select = document.getElementById(selectId);
+            const altSelect = document.getElementById(altSelectId);
+            const inventorId = select.value || altSelect.value;
+
+            if (!inventorId) return;
+
+            const inventor = inventorsDatabase.getAll().find(inv => inv.id === inventorId);
+            if (!inventor) return;
+
+            const slotEl = document.getElementById(`comparisonSlot${slot}`);
+            const emptyEl = document.getElementById(`emptySlot${slot}`);
+            const displayEl = document.getElementById(`inventor${slot}Display`);
+
+            // Update display
+            document.getElementById(`inventor${slot}Image`).textContent = inventor.inventionEmoji;
+            document.getElementById(`inventor${slot}Name`).textContent = inventor.name;
+            document.getElementById(`inventor${slot}Country`).textContent = `${inventor.flag} ${inventor.country}`;
+            document.getElementById(`inventor${slot}Invention`).textContent = inventor.primaryInvention;
+            document.getElementById(`inventor${slot}Year`).textContent = inventor.inventionYear;
+            document.getElementById(`inventor${slot}Category`).textContent = inventor.category;
+            document.getElementById(`inventor${slot}Lifespan`).textContent = `${inventor.birthYear} - ${inventor.deathYear}`;
+            document.getElementById(`inventor${slot}Patents`).textContent = inventor.patents.length;
+
+            // Update alt select
+            altSelect.value = inventorId;
+
+            // Show inventor display, hide empty state
+            emptyEl.classList.add('hidden');
+            displayEl.classList.remove('hidden');
+            slotEl.classList.add('filled');
+        }
+
+        // ========== QUIZ SYSTEM ==========
+        const quizQuestions = [
+            {
+                question: "Who invented the first color television system in 1940?",
+                options: ["Granville Woods", "Guillermo González Camarena", "George Washington Carver", "Lewis Latimer"],
+                correct: 1,
+                fact: "Guillermo González Camarena invented the chromoscopic adapter at just 23 years old in Mexico!"
+            },
+            {
+                question: "What life-saving invention did Garrett Morgan create that is still used worldwide today?",
+                options: ["Telephone", "Traffic Signal", "Light Bulb", "Automobile"],
+                correct: 1,
+                fact: "Garrett Morgan invented the three-position traffic signal after witnessing a severe car accident."
+            },
+            {
+                question: "Who developed over 300 products from peanuts and revolutionized Southern agriculture?",
+                options: ["Madam C.J. Walker", "Lewis Latimer", "George Washington Carver", "Elijah McCoy"],
+                correct: 2,
+                fact: "George Washington Carver was born into slavery and became one of the most prominent scientists in American history."
+            },
+            {
+                question: "Which inventor co-created the birth control pill at age 26?",
+                options: ["Patricia Bath", "Luis Miramontes", "Marie Curie", "Carlos Finlay"],
+                correct: 1,
+                fact: "Luis Miramontes synthesized norethindrone in 1951, revolutionizing women's reproductive rights worldwide."
+            },
+            {
+                question: "Who was known as 'The Black Edison' and held over 60 patents?",
+                options: ["Granville Woods", "Benjamin Banneker", "Jan Matzeliger", "Garrett Morgan"],
+                correct: 0,
+                fact: "Granville Woods invented the multiplex telegraph for railway communication, preventing countless train accidents."
+            },
+            {
+                question: "Who invented laser cataract surgery, becoming the first African American female doctor to receive a medical patent?",
+                options: ["Rebecca Crumpler", "Patricia Bath", "Mae Jemison", "Jane Wright"],
+                correct: 1,
+                fact: "Dr. Patricia Bath invented the Laserphaco Probe in 1986, restoring sight to people who had been blind for over 30 years."
+            },
+            {
+                question: "What did Madam C.J. Walker become famous for inventing?",
+                options: ["Hair care products", "Cosmetic surgery", "Medicine", "Food products"],
+                correct: 0,
+                fact: "Madam C.J. Walker became America's first female self-made millionaire with her hair care empire."
+            },
+            {
+                question: "Who invented the Super Soaker water gun?",
+                options: ["Mark Dean", "Lonnie Johnson", "Philip Emeagwali", "Otis Boykin"],
+                correct: 1,
+                fact: "Lonnie Johnson was a NASA engineer who invented the Super Soaker, which generated over $1 billion in sales!"
+            },
+            {
+                question: "Who was the first African American woman to travel to space?",
+                options: ["Katherine Johnson", "Dorothy Vaughan", "Mae Jemison", "Mary Jackson"],
+                correct: 2,
+                fact: "Mae Jemison flew on the Space Shuttle Endeavour in 1992, making history as the first African American woman in space."
+            },
+            {
+                question: "What did Lewis Latimer contribute to Thomas Edison's light bulb?",
+                options: ["The glass enclosure", "The carbon filament", "The power source", "The socket"],
+                correct: 1,
+                fact: "Lewis Latimer invented a longer-lasting carbon filament that made light bulbs practical for everyday use."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let shuffledQuestions = [];
+
+        function initQuiz() {
+            shuffledQuestions = [...quizQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
+            currentQuestion = 0;
+            quizScore = 0;
+            document.getElementById('quizContainer').classList.remove('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = shuffledQuestions[currentQuestion];
+            document.getElementById('quizQuestionNum').textContent = `Question ${currentQuestion + 1} of ${shuffledQuestions.length}`;
+            document.getElementById('quizProgressFill').style.width = `${((currentQuestion + 1) / shuffledQuestions.length) * 100}%`;
+            document.getElementById('quizScore').textContent = `Score: ${quizScore}`;
+            document.getElementById('quizQuestion').textContent = q.question;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = option;
+                btn.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').classList.remove('show');
+        }
+
+        function selectAnswer(index) {
+            const q = shuffledQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach((opt, i) => {
+                opt.classList.add('disabled');
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                } else if (i === index && i !== q.correct) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            const feedback = document.getElementById('quizFeedback');
+            const feedbackTitle = document.getElementById('feedbackTitle');
+            const feedbackText = document.getElementById('feedbackText');
+
+            if (index === q.correct) {
+                quizScore++;
+                feedbackTitle.textContent = '✅ Correct!';
+            } else {
+                feedbackTitle.textContent = '❌ Not quite!';
+            }
+
+            feedbackText.textContent = q.fact;
+            feedback.classList.add('show');
+            document.getElementById('quizScore').textContent = `Score: ${quizScore}`;
+
+            if (currentQuestion >= shuffledQuestions.length - 1) {
+                document.getElementById('quizNextBtn').textContent = 'See Results →';
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+
+            if (currentQuestion >= shuffledQuestions.length) {
+                showResults();
+            } else {
+                showQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+            document.getElementById('finalScore').textContent = `${quizScore}/${shuffledQuestions.length}`;
+
+            let message = '';
+            const percentage = (quizScore / shuffledQuestions.length) * 100;
+
+            if (percentage === 100) {
+                message = "Perfect score! You're a true innovation expert!";
+            } else if (percentage >= 80) {
+                message = "Excellent! You really know your inventors!";
+            } else if (percentage >= 60) {
+                message = "Good job! Keep exploring to learn more!";
+            } else if (percentage >= 40) {
+                message = "Not bad! There's so much more to discover!";
+            } else {
+                message = "Keep learning! These inventors have amazing stories!";
+            }
+
+            document.getElementById('resultMessage').textContent = message;
+
+            // Check for badges
+            checkQuizBadges();
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // ========== INVENTOR OF THE WEEK ==========
+        function initSpotlight() {
+            // Rotate spotlight inventor based on week of year
+            const weekOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 1)) / (7 * 24 * 60 * 60 * 1000));
+            const allInventors = inventorsDatabase.getAll();
+            const spotlightInventor = allInventors[weekOfYear % allInventors.length];
+
+            document.getElementById('spotlightImage').textContent = spotlightInventor.inventionEmoji;
+            document.getElementById('spotlightName').textContent = spotlightInventor.name;
+            document.getElementById('spotlightInvention').textContent = `${spotlightInventor.primaryInvention} (${spotlightInventor.inventionYear})`;
+            document.getElementById('spotlightBio').textContent = spotlightInventor.detailedBio.substring(0, 300) + '...';
+            document.getElementById('spotlightPatents').textContent = spotlightInventor.patents.length;
+            document.getElementById('spotlightYear').textContent = spotlightInventor.inventionYear;
+            document.getElementById('spotlightCTA').href = `inventor/${spotlightInventor.id}.html`;
+        }
+
+        // ========== THIS DAY IN HISTORY ==========
+        const todayEvents = {
+            '1-5': { emoji: '🥜', title: 'George Washington Carver Day', desc: 'Remembering the agricultural genius who passed away on January 5, 1943.' },
+            '2-14': { emoji: '❤️', title: 'Celebrating Innovation & Love', desc: 'Many inventors were inspired by love for humanity to create life-changing inventions.' },
+            '3-4': { emoji: '💡', title: 'Lewis Latimer\'s Legacy', desc: 'Celebrating the contributions of Lewis Latimer to electric lighting.' },
+            '6-19': { emoji: '🎉', title: 'Juneteenth - Freedom & Innovation', desc: 'Celebrating freedom and the inventive spirit that flourished after emancipation.' },
+            '8-26': { emoji: '🚀', title: 'Katherine Johnson\'s Birthday', desc: 'The brilliant NASA mathematician was born on this day in 1918.' },
+            '10-15': { emoji: '💊', title: 'Birth Control Pill Anniversary', desc: 'Luis Miramontes synthesized norethindrone on this day in 1951.' },
+            '11-23': { emoji: '🚦', title: 'Traffic Safety Day', desc: 'Honoring Garrett Morgan\'s life-saving traffic signal invention.' },
+            '12-23': { emoji: '📺', title: 'Color Television Milestone', desc: 'Celebrating Guillermo González Camarena\'s groundbreaking invention.' }
+        };
+
+        function initTodayHistory() {
+            const now = new Date();
+            const monthDay = `${now.getMonth() + 1}-${now.getDate()}`;
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            document.getElementById('todayDate').textContent = `${months[now.getMonth()]} ${now.getDate()}`;
+
+            const event = todayEvents[monthDay] || {
+                emoji: '💡',
+                title: 'Discover Innovation',
+                desc: 'Every day is a chance to learn about the amazing inventors who shaped our world. Explore their stories!'
+            };
+
+            document.getElementById('todayEmoji').textContent = event.emoji;
+            document.getElementById('todayTitle').textContent = event.title;
+            document.getElementById('todayDescription').textContent = event.desc;
+        }
+
+        // ========== INTERACTIVE MAP ==========
+        function initMap() {
+            const allInventors = inventorsDatabase.getAll();
+
+            // Count by region
+            const regionCounts = {
+                'north-america': 0,
+                'central-america': 0,
+                'caribbean': 0,
+                'south-america': 0
+            };
+
+            // Count by country
+            const countryCounts = {};
+
+            allInventors.forEach(inv => {
+                if (regionCounts[inv.region] !== undefined) {
+                    regionCounts[inv.region]++;
+                }
+
+                if (!countryCounts[inv.country]) {
+                    countryCounts[inv.country] = { count: 0, flag: inv.flag };
+                }
+                countryCounts[inv.country].count++;
+            });
+
+            // Update region counts
+            document.getElementById('northAmericaCount').textContent = regionCounts['north-america'];
+            document.getElementById('centralAmericaCount').textContent = regionCounts['central-america'];
+            document.getElementById('caribbeanCount').textContent = regionCounts['caribbean'];
+            document.getElementById('southAmericaCount').textContent = regionCounts['south-america'];
+
+            // Build country list
+            const countryList = document.getElementById('countryList');
+            const sortedCountries = Object.entries(countryCounts)
+                .sort((a, b) => b[1].count - a[1].count);
+
+            countryList.innerHTML = sortedCountries.map(([country, data]) => `
+                <div class="country-item" onclick="filterByCountry('${country}')">
+                    <div class="flag-name">
+                        <span class="flag">${data.flag}</span>
+                        <span>${country}</span>
+                    </div>
+                    <span class="inventor-count">${data.count}</span>
+                </div>
+            `).join('');
+        }
+
+        function filterByRegion(region) {
+            // Remove active class from all regions
+            document.querySelectorAll('.map-region').forEach(r => r.classList.remove('active'));
+
+            // Add active class to selected region
+            document.querySelector(`.region-${region}`).classList.add('active');
+
+            // Filter inventors grid
+            const filterBtn = document.querySelector(`.filter-btn[data-filter="${region}"]`);
+            if (filterBtn) {
+                filterBtn.click();
+            }
+
+            // Scroll to inventors grid
+            document.getElementById('inventorsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterByCountry(country) {
+            searchInput.value = country;
+            currentSearchTerm = country.toLowerCase();
+            searchClearBtn.classList.remove('hidden');
+            renderInventors();
+            document.getElementById('inventorsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========== ACHIEVEMENT BADGES ==========
+        function initBadges() {
+            loadBadges();
+        }
+
+        function loadBadges() {
+            const badges = JSON.parse(localStorage.getItem('inventorBadges') || '{}');
+
+            document.querySelectorAll('.badge-item').forEach(badge => {
+                const badgeId = badge.dataset.badge;
+                if (badges[badgeId]) {
+                    badge.classList.remove('locked');
+                    badge.classList.add('earned');
+                }
+            });
+        }
+
+        function earnBadge(badgeId) {
+            const badges = JSON.parse(localStorage.getItem('inventorBadges') || '{}');
+
+            if (!badges[badgeId]) {
+                badges[badgeId] = { earned: true, date: new Date().toISOString() };
+                localStorage.setItem('inventorBadges', JSON.stringify(badges));
+
+                // Animate badge
+                const badge = document.querySelector(`[data-badge="${badgeId}"]`);
+                if (badge) {
+                    badge.classList.remove('locked');
+                    badge.classList.add('earned');
+                    badge.style.animation = 'pulse 0.5s ease';
+                }
+
+                // Show notification
+                showBadgeNotification(badgeId);
+            }
+        }
+
+        function showBadgeNotification(badgeId) {
+            const badgeNames = {
+                'first-quiz': 'First Steps',
+                'perfect-score': 'Perfect Score',
+                'explorer': 'Explorer',
+                'historian': 'Historian',
+                'collector': 'Collector',
+                'globetrotter': 'Globetrotter'
+            };
+
+            const notification = document.createElement('div');
+            notification.className = 'badge-notification';
+            notification.innerHTML = `🏅 Badge Unlocked: ${badgeNames[badgeId]}!`;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #fbbf24, #f59e0b);
+                color: #1a1a1a;
+                padding: 1rem 2rem;
+                border-radius: 12px;
+                font-weight: 600;
+                z-index: 9999;
+                animation: slideIn 0.5s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'fadeIn 0.3s ease reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Track quiz completion for badges
+        function checkQuizBadges() {
+            earnBadge('first-quiz');
+
+            if (quizScore === shuffledQuestions.length) {
+                earnBadge('perfect-score');
+            }
+        }
+
         // Initialize the app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            initDarkMode();
+            initComparisonTool();
+            initQuiz();
+            initSpotlight();
+            initTodayHistory();
+            initMap();
+            initBadges();
+        });
     </script>
 
     <!-- Schema.org structured data for SEO -->
@@ -5417,6 +7530,169 @@
         initTopNavbarMobile();
     }
 
+    // ========== FEATURED CAROUSEL ==========
+    let carouselIndex = 0;
+    const featuredInventors = [
+        { id: 'lewis-latimer', name: 'Lewis Latimer', emoji: '💡', invention: 'Carbon Filament', year: 1882 },
+        { id: 'garrett-morgan', name: 'Garrett Morgan', emoji: '🚦', invention: 'Traffic Signal', year: 1923 },
+        { id: 'madam-cj-walker', name: 'Madam C.J. Walker', emoji: '💇', invention: 'Hair Care Products', year: 1905 },
+        { id: 'george-washington-carver', name: 'George Washington Carver', emoji: '🥜', invention: 'Peanut Products', year: 1896 },
+        { id: 'patricia-bath', name: 'Dr. Patricia Bath', emoji: '👁️', invention: 'Laserphaco Probe', year: 1986 },
+        { id: 'guillermo-gonzalez-camarena', name: 'Guillermo González Camarena', emoji: '📺', invention: 'Color Television', year: 1940 },
+        { id: 'lonnie-johnson', name: 'Lonnie Johnson', emoji: '💧', invention: 'Super Soaker', year: 1990 },
+        { id: 'granville-woods', name: 'Granville Woods', emoji: '🚂', invention: 'Railway Telegraph', year: 1887 }
+    ];
+
+    function initCarousel() {
+        const track = document.getElementById('carouselTrack');
+        const dots = document.getElementById('carouselDots');
+
+        if (!track) return;
+
+        track.innerHTML = featuredInventors.map(inv => `
+            <div class="carousel-card">
+                <div class="carousel-emoji">${inv.emoji}</div>
+                <h3>${inv.name}</h3>
+                <div class="invention">${inv.invention}</div>
+                <div class="year">${inv.year}</div>
+                <a href="inventor/${inv.id}.html" class="view-btn">View Profile</a>
+            </div>
+        `).join('');
+
+        // Create dots
+        const numDots = Math.ceil(featuredInventors.length / 3);
+        dots.innerHTML = Array(numDots).fill(0).map((_, i) =>
+            `<div class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
+        ).join('');
+    }
+
+    function moveCarousel(direction) {
+        const track = document.getElementById('carouselTrack');
+        const maxIndex = Math.ceil(featuredInventors.length / 3) - 1;
+
+        carouselIndex += direction;
+        if (carouselIndex < 0) carouselIndex = maxIndex;
+        if (carouselIndex > maxIndex) carouselIndex = 0;
+
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        carouselIndex = index;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const track = document.getElementById('carouselTrack');
+        const offset = carouselIndex * (300 + 32) * 3; // card width + gap
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Update dots
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === carouselIndex);
+        });
+    }
+
+    // ========== PRINT CARD ==========
+    let currentPrintInventor = null;
+
+    function openPrintCard(inventorId) {
+        const inventor = inventorsDatabase.getAll().find(inv => inv.id === inventorId);
+        if (!inventor) return;
+
+        currentPrintInventor = inventor;
+
+        document.getElementById('printCardEmoji').textContent = inventor.inventionEmoji;
+        document.getElementById('printCardName').textContent = inventor.name;
+        document.getElementById('printCardCountry').textContent = `${inventor.flag} ${inventor.country}`;
+        document.getElementById('printCardInvention').textContent = inventor.primaryInvention;
+        document.getElementById('printCardYear').textContent = inventor.inventionYear;
+        document.getElementById('printCardCategory').textContent = inventor.category;
+        document.getElementById('printCardLifespan').textContent = `${inventor.birthYear} - ${inventor.deathYear}`;
+        document.getElementById('printCardBio').textContent = inventor.shortBio;
+
+        document.getElementById('printModal').classList.add('active');
+    }
+
+    function closePrintCard() {
+        document.getElementById('printModal').classList.remove('active');
+    }
+
+    function printCard() {
+        window.print();
+    }
+
+    function downloadCard() {
+        // Create a simple text version for download
+        if (!currentPrintInventor) return;
+        const inv = currentPrintInventor;
+        const text = `
+HEROES OF INNOVATION - Inventor Card
+=====================================
+${inv.name}
+${inv.flag} ${inv.country}
+
+Invention: ${inv.primaryInvention} (${inv.inventionYear})
+Category: ${inv.category}
+Lifespan: ${inv.birthYear} - ${inv.deathYear}
+
+${inv.shortBio}
+
+Learn more at: americaninventions.org/inventor/${inv.id}.html
+        `.trim();
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${inv.id}-inventor-card.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Initialize carousel on load
+    document.addEventListener('DOMContentLoaded', initCarousel);
+
     </script>
+
+    <!-- Print Card Modal -->
+    <div class="print-modal" id="printModal" onclick="if(event.target === this) closePrintCard()">
+        <div class="print-card">
+            <button class="print-close" onclick="closePrintCard()">×</button>
+            <div class="print-card-header">
+                <div class="print-card-emoji" id="printCardEmoji">💡</div>
+                <h2 id="printCardName">Inventor Name</h2>
+                <div class="country" id="printCardCountry">Country</div>
+            </div>
+            <div class="print-card-body">
+                <div class="print-card-row">
+                    <span class="print-card-label">Invention</span>
+                    <span class="print-card-value" id="printCardInvention">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Year</span>
+                    <span class="print-card-value" id="printCardYear">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Category</span>
+                    <span class="print-card-value" id="printCardCategory">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Lifespan</span>
+                    <span class="print-card-value" id="printCardLifespan">-</span>
+                </div>
+            </div>
+            <div class="print-card-bio" id="printCardBio">
+                Biography text here...
+            </div>
+            <div class="print-card-footer">
+                americaninventions.org | Heroes of Innovation
+            </div>
+            <div class="print-actions">
+                <button class="print-btn" onclick="printCard()">🖨️ Print</button>
+                <button class="print-btn" onclick="downloadCard()">📥 Download</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
