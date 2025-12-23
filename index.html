@@ -2614,6 +2614,303 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* ========== INTERACTIVE MAP SECTION ========== */
+        .map-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .map-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .americas-map {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            position: relative;
+            min-height: 450px;
+        }
+
+        .map-region {
+            position: absolute;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .map-region:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .map-region.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .map-region .count {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .map-region .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .region-north-america { top: 8%; left: 25%; }
+        .region-central-america { top: 38%; left: 20%; }
+        .region-caribbean { top: 32%; left: 55%; }
+        .region-south-america { top: 65%; left: 35%; }
+
+        .map-legend {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+        }
+
+        .legend-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .country-list {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .country-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .country-item:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .country-item .flag-name {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .country-item .flag {
+            font-size: 1.5rem;
+        }
+
+        .country-item .inventor-count {
+            background: #667eea;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ========== THIS DAY IN HISTORY ========== */
+        .today-history-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .today-history-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .today-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .today-date {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-title {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .today-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .today-event {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .today-emoji {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .today-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-details p {
+            opacity: 0.95;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .today-cta {
+            display: inline-block;
+            background: #ffffff;
+            color: #ee5a24;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .today-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ========== ACHIEVEMENT BADGES ========== */
+        .badges-section {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .badges-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .badges-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .badges-header p {
+            color: var(--text-muted);
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .badge-item.earned {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .badge-item.locked {
+            opacity: 0.5;
+            filter: grayscale(1);
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .badge-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+
+            .americas-map {
+                min-height: 350px;
+            }
+
+            .today-event {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -3198,6 +3495,104 @@
                         <li>Guest speaker programs</li>
                     </ul>
                     <a href="#" class="edu-download-btn">View Presentations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== THIS DAY IN HISTORY ========== -->
+    <section class="today-history-section" id="todaySection">
+        <div class="container">
+            <div class="today-header">
+                <div class="today-date" id="todayDate">December 23</div>
+                <div class="today-title">This Day in Innovation History</div>
+            </div>
+            <div class="today-content">
+                <div class="today-event">
+                    <div class="today-emoji" id="todayEmoji">💡</div>
+                    <div class="today-details">
+                        <h3 id="todayTitle">Innovation Spotlight</h3>
+                        <p id="todayDescription">Discover the inventors and innovations connected to today's date in history.</p>
+                        <a href="#inventorsGrid" class="today-cta" id="todayCTA">Explore Inventors →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERACTIVE MAP ========== -->
+    <section class="map-section" id="mapSection">
+        <div class="container">
+            <div class="map-header">
+                <h2>Inventors Across the Americas</h2>
+                <p>Click on a region to explore inventors from that area</p>
+            </div>
+            <div class="map-container">
+                <div class="americas-map">
+                    <div class="map-region region-north-america" onclick="filterByRegion('north-america')">
+                        <span class="count" id="northAmericaCount">0</span>
+                        <span class="label">North America</span>
+                    </div>
+                    <div class="map-region region-central-america" onclick="filterByRegion('central-america')">
+                        <span class="count" id="centralAmericaCount">0</span>
+                        <span class="label">Central America</span>
+                    </div>
+                    <div class="map-region region-caribbean" onclick="filterByRegion('caribbean')">
+                        <span class="count" id="caribbeanCount">0</span>
+                        <span class="label">Caribbean</span>
+                    </div>
+                    <div class="map-region region-south-america" onclick="filterByRegion('south-america')">
+                        <span class="count" id="southAmericaCount">0</span>
+                        <span class="label">South America</span>
+                    </div>
+                </div>
+                <div class="map-legend">
+                    <div class="legend-title">Inventors by Country</div>
+                    <div class="country-list" id="countryList">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ACHIEVEMENT BADGES ========== -->
+    <section class="badges-section" id="badgesSection">
+        <div class="container">
+            <div class="badges-header">
+                <h2>Your Achievement Badges</h2>
+                <p>Complete quizzes and explore inventors to earn badges</p>
+            </div>
+            <div class="badges-grid" id="badgesGrid">
+                <div class="badge-item locked" data-badge="first-quiz">
+                    <div class="badge-icon">🎯</div>
+                    <div class="badge-name">First Steps</div>
+                    <div class="badge-desc">Complete your first quiz</div>
+                </div>
+                <div class="badge-item locked" data-badge="perfect-score">
+                    <div class="badge-icon">🏆</div>
+                    <div class="badge-name">Perfect Score</div>
+                    <div class="badge-desc">Get 10/10 on a quiz</div>
+                </div>
+                <div class="badge-item locked" data-badge="explorer">
+                    <div class="badge-icon">🔍</div>
+                    <div class="badge-name">Explorer</div>
+                    <div class="badge-desc">View 10 inventor profiles</div>
+                </div>
+                <div class="badge-item locked" data-badge="historian">
+                    <div class="badge-icon">📚</div>
+                    <div class="badge-name">Historian</div>
+                    <div class="badge-desc">Read 5 blog articles</div>
+                </div>
+                <div class="badge-item locked" data-badge="collector">
+                    <div class="badge-icon">❤️</div>
+                    <div class="badge-name">Collector</div>
+                    <div class="badge-desc">Add 5 favorites</div>
+                </div>
+                <div class="badge-item locked" data-badge="globetrotter">
+                    <div class="badge-icon">🌎</div>
+                    <div class="badge-name">Globetrotter</div>
+                    <div class="badge-desc">Explore all 4 regions</div>
                 </div>
             </div>
         </div>
@@ -4970,6 +5365,9 @@
             }
 
             document.getElementById('resultMessage').textContent = message;
+
+            // Check for badges
+            checkQuizBadges();
         }
 
         function restartQuiz() {
@@ -4992,6 +5390,190 @@
             document.getElementById('spotlightCTA').href = `inventor/${spotlightInventor.id}.html`;
         }
 
+        // ========== THIS DAY IN HISTORY ==========
+        const todayEvents = {
+            '1-5': { emoji: '🥜', title: 'George Washington Carver Day', desc: 'Remembering the agricultural genius who passed away on January 5, 1943.' },
+            '2-14': { emoji: '❤️', title: 'Celebrating Innovation & Love', desc: 'Many inventors were inspired by love for humanity to create life-changing inventions.' },
+            '3-4': { emoji: '💡', title: 'Lewis Latimer\'s Legacy', desc: 'Celebrating the contributions of Lewis Latimer to electric lighting.' },
+            '6-19': { emoji: '🎉', title: 'Juneteenth - Freedom & Innovation', desc: 'Celebrating freedom and the inventive spirit that flourished after emancipation.' },
+            '8-26': { emoji: '🚀', title: 'Katherine Johnson\'s Birthday', desc: 'The brilliant NASA mathematician was born on this day in 1918.' },
+            '10-15': { emoji: '💊', title: 'Birth Control Pill Anniversary', desc: 'Luis Miramontes synthesized norethindrone on this day in 1951.' },
+            '11-23': { emoji: '🚦', title: 'Traffic Safety Day', desc: 'Honoring Garrett Morgan\'s life-saving traffic signal invention.' },
+            '12-23': { emoji: '📺', title: 'Color Television Milestone', desc: 'Celebrating Guillermo González Camarena\'s groundbreaking invention.' }
+        };
+
+        function initTodayHistory() {
+            const now = new Date();
+            const monthDay = `${now.getMonth() + 1}-${now.getDate()}`;
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            document.getElementById('todayDate').textContent = `${months[now.getMonth()]} ${now.getDate()}`;
+
+            const event = todayEvents[monthDay] || {
+                emoji: '💡',
+                title: 'Discover Innovation',
+                desc: 'Every day is a chance to learn about the amazing inventors who shaped our world. Explore their stories!'
+            };
+
+            document.getElementById('todayEmoji').textContent = event.emoji;
+            document.getElementById('todayTitle').textContent = event.title;
+            document.getElementById('todayDescription').textContent = event.desc;
+        }
+
+        // ========== INTERACTIVE MAP ==========
+        function initMap() {
+            const allInventors = inventorsDatabase.getAll();
+
+            // Count by region
+            const regionCounts = {
+                'north-america': 0,
+                'central-america': 0,
+                'caribbean': 0,
+                'south-america': 0
+            };
+
+            // Count by country
+            const countryCounts = {};
+
+            allInventors.forEach(inv => {
+                if (regionCounts[inv.region] !== undefined) {
+                    regionCounts[inv.region]++;
+                }
+
+                if (!countryCounts[inv.country]) {
+                    countryCounts[inv.country] = { count: 0, flag: inv.flag };
+                }
+                countryCounts[inv.country].count++;
+            });
+
+            // Update region counts
+            document.getElementById('northAmericaCount').textContent = regionCounts['north-america'];
+            document.getElementById('centralAmericaCount').textContent = regionCounts['central-america'];
+            document.getElementById('caribbeanCount').textContent = regionCounts['caribbean'];
+            document.getElementById('southAmericaCount').textContent = regionCounts['south-america'];
+
+            // Build country list
+            const countryList = document.getElementById('countryList');
+            const sortedCountries = Object.entries(countryCounts)
+                .sort((a, b) => b[1].count - a[1].count);
+
+            countryList.innerHTML = sortedCountries.map(([country, data]) => `
+                <div class="country-item" onclick="filterByCountry('${country}')">
+                    <div class="flag-name">
+                        <span class="flag">${data.flag}</span>
+                        <span>${country}</span>
+                    </div>
+                    <span class="inventor-count">${data.count}</span>
+                </div>
+            `).join('');
+        }
+
+        function filterByRegion(region) {
+            // Remove active class from all regions
+            document.querySelectorAll('.map-region').forEach(r => r.classList.remove('active'));
+
+            // Add active class to selected region
+            document.querySelector(`.region-${region}`).classList.add('active');
+
+            // Filter inventors grid
+            const filterBtn = document.querySelector(`.filter-btn[data-filter="${region}"]`);
+            if (filterBtn) {
+                filterBtn.click();
+            }
+
+            // Scroll to inventors grid
+            document.getElementById('inventorsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterByCountry(country) {
+            searchInput.value = country;
+            currentSearchTerm = country.toLowerCase();
+            searchClearBtn.classList.remove('hidden');
+            renderInventors();
+            document.getElementById('inventorsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========== ACHIEVEMENT BADGES ==========
+        function initBadges() {
+            loadBadges();
+        }
+
+        function loadBadges() {
+            const badges = JSON.parse(localStorage.getItem('inventorBadges') || '{}');
+
+            document.querySelectorAll('.badge-item').forEach(badge => {
+                const badgeId = badge.dataset.badge;
+                if (badges[badgeId]) {
+                    badge.classList.remove('locked');
+                    badge.classList.add('earned');
+                }
+            });
+        }
+
+        function earnBadge(badgeId) {
+            const badges = JSON.parse(localStorage.getItem('inventorBadges') || '{}');
+
+            if (!badges[badgeId]) {
+                badges[badgeId] = { earned: true, date: new Date().toISOString() };
+                localStorage.setItem('inventorBadges', JSON.stringify(badges));
+
+                // Animate badge
+                const badge = document.querySelector(`[data-badge="${badgeId}"]`);
+                if (badge) {
+                    badge.classList.remove('locked');
+                    badge.classList.add('earned');
+                    badge.style.animation = 'pulse 0.5s ease';
+                }
+
+                // Show notification
+                showBadgeNotification(badgeId);
+            }
+        }
+
+        function showBadgeNotification(badgeId) {
+            const badgeNames = {
+                'first-quiz': 'First Steps',
+                'perfect-score': 'Perfect Score',
+                'explorer': 'Explorer',
+                'historian': 'Historian',
+                'collector': 'Collector',
+                'globetrotter': 'Globetrotter'
+            };
+
+            const notification = document.createElement('div');
+            notification.className = 'badge-notification';
+            notification.innerHTML = `🏅 Badge Unlocked: ${badgeNames[badgeId]}!`;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #fbbf24, #f59e0b);
+                color: #1a1a1a;
+                padding: 1rem 2rem;
+                border-radius: 12px;
+                font-weight: 600;
+                z-index: 9999;
+                animation: slideIn 0.5s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'fadeIn 0.3s ease reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Track quiz completion for badges
+        function checkQuizBadges() {
+            earnBadge('first-quiz');
+
+            if (quizScore === shuffledQuestions.length) {
+                earnBadge('perfect-score');
+            }
+        }
+
         // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             init();
@@ -4999,6 +5581,9 @@
             initComparisonTool();
             initQuiz();
             initSpotlight();
+            initTodayHistory();
+            initMap();
+            initBadges();
         });
     </script>
 
