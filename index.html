@@ -2911,6 +2911,353 @@
                 text-align: center;
             }
         }
+
+        /* ========== FEATURED INVENTORS CAROUSEL ========== */
+        .carousel-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .carousel-header {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-header p {
+            opacity: 0.8;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-card {
+            flex: 0 0 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .carousel-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-card .invention {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-card .year {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .carousel-card .view-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .carousel-card .view-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* ========== FUN FACTS TICKER ========== */
+        .ticker-section {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            padding: 0 3rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ticker-item::after {
+            content: '✦';
+            margin-left: 3rem;
+            opacity: 0.5;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-section:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        /* ========== PRINT CARD MODAL ========== */
+        .print-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .print-modal.active {
+            display: flex;
+        }
+
+        .print-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .print-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: -3rem -3rem 2rem -3rem;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            color: #ffffff;
+        }
+
+        .print-card-emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .print-card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .print-card-header .country {
+            opacity: 0.9;
+        }
+
+        .print-card-body {
+            text-align: left;
+        }
+
+        .print-card-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .print-card-row:last-child {
+            border-bottom: none;
+        }
+
+        .print-card-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .print-card-value {
+            color: #1a1a1a;
+        }
+
+        .print-card-bio {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #667eea;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+        }
+
+        .print-card-footer {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .print-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #764ba2;
+        }
+
+        .print-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        @media print {
+            .print-modal {
+                position: static;
+                background: none;
+                padding: 0;
+            }
+            .print-actions, .print-close {
+                display: none;
+            }
+            .print-card {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        /* ========== QUICK STATS BAR ========== */
+        .quick-stats-bar {
+            background: var(--bg-tertiary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .quick-stat {
+            text-align: center;
+        }
+
+        .quick-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .quick-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 </style>
 
     <script type="application/ld+json">
@@ -3054,6 +3401,28 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
         </div>
     </nav>
+
+    <!-- Fun Facts Ticker -->
+    <div class="ticker-section" id="funFactsTicker">
+        <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-item">💡 Lewis Latimer's carbon filament made light bulbs last 10x longer</div>
+            <div class="ticker-item">🚦 Garrett Morgan's traffic signal saved countless lives</div>
+            <div class="ticker-item">📺 Color TV was invented by a 23-year-old Mexican engineer</div>
+            <div class="ticker-item">🚀 Katherine Johnson's calculations put the first Americans in space</div>
+            <div class="ticker-item">💊 The birth control pill was co-created by a 26-year-old Mexican chemist</div>
+            <div class="ticker-item">👁️ Dr. Patricia Bath invented laser cataract surgery</div>
+            <div class="ticker-item">🥜 George Washington Carver developed 300+ peanut products</div>
+            <div class="ticker-item">💧 Super Soaker inventor Lonnie Johnson was a NASA engineer</div>
+            <div class="ticker-item">💡 Lewis Latimer's carbon filament made light bulbs last 10x longer</div>
+            <div class="ticker-item">🚦 Garrett Morgan's traffic signal saved countless lives</div>
+            <div class="ticker-item">📺 Color TV was invented by a 23-year-old Mexican engineer</div>
+            <div class="ticker-item">🚀 Katherine Johnson's calculations put the first Americans in space</div>
+            <div class="ticker-item">💊 The birth control pill was co-created by a 26-year-old Mexican chemist</div>
+            <div class="ticker-item">👁️ Dr. Patricia Bath invented laser cataract surgery</div>
+            <div class="ticker-item">🥜 George Washington Carver developed 300+ peanut products</div>
+            <div class="ticker-item">💧 Super Soaker inventor Lonnie Johnson was a NASA engineer</div>
+        </div>
+    </div>
 
     <header>
         <div class="container">
@@ -3294,6 +3663,28 @@
             </div>
         </div>
     </div>
+
+    <!-- ========== FEATURED INVENTORS CAROUSEL ========== -->
+    <section class="carousel-section" id="carouselSection">
+        <div class="container">
+            <div class="carousel-header">
+                <h2>Featured Inventors</h2>
+                <p>Discover some of the most influential innovators in American history</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Cards populated by JavaScript -->
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dots populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ========== INVENTOR OF THE WEEK SPOTLIGHT ========== -->
     <section class="inventor-spotlight" id="spotlightSection">
@@ -7139,6 +7530,169 @@
         initTopNavbarMobile();
     }
 
+    // ========== FEATURED CAROUSEL ==========
+    let carouselIndex = 0;
+    const featuredInventors = [
+        { id: 'lewis-latimer', name: 'Lewis Latimer', emoji: '💡', invention: 'Carbon Filament', year: 1882 },
+        { id: 'garrett-morgan', name: 'Garrett Morgan', emoji: '🚦', invention: 'Traffic Signal', year: 1923 },
+        { id: 'madam-cj-walker', name: 'Madam C.J. Walker', emoji: '💇', invention: 'Hair Care Products', year: 1905 },
+        { id: 'george-washington-carver', name: 'George Washington Carver', emoji: '🥜', invention: 'Peanut Products', year: 1896 },
+        { id: 'patricia-bath', name: 'Dr. Patricia Bath', emoji: '👁️', invention: 'Laserphaco Probe', year: 1986 },
+        { id: 'guillermo-gonzalez-camarena', name: 'Guillermo González Camarena', emoji: '📺', invention: 'Color Television', year: 1940 },
+        { id: 'lonnie-johnson', name: 'Lonnie Johnson', emoji: '💧', invention: 'Super Soaker', year: 1990 },
+        { id: 'granville-woods', name: 'Granville Woods', emoji: '🚂', invention: 'Railway Telegraph', year: 1887 }
+    ];
+
+    function initCarousel() {
+        const track = document.getElementById('carouselTrack');
+        const dots = document.getElementById('carouselDots');
+
+        if (!track) return;
+
+        track.innerHTML = featuredInventors.map(inv => `
+            <div class="carousel-card">
+                <div class="carousel-emoji">${inv.emoji}</div>
+                <h3>${inv.name}</h3>
+                <div class="invention">${inv.invention}</div>
+                <div class="year">${inv.year}</div>
+                <a href="inventor/${inv.id}.html" class="view-btn">View Profile</a>
+            </div>
+        `).join('');
+
+        // Create dots
+        const numDots = Math.ceil(featuredInventors.length / 3);
+        dots.innerHTML = Array(numDots).fill(0).map((_, i) =>
+            `<div class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
+        ).join('');
+    }
+
+    function moveCarousel(direction) {
+        const track = document.getElementById('carouselTrack');
+        const maxIndex = Math.ceil(featuredInventors.length / 3) - 1;
+
+        carouselIndex += direction;
+        if (carouselIndex < 0) carouselIndex = maxIndex;
+        if (carouselIndex > maxIndex) carouselIndex = 0;
+
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        carouselIndex = index;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const track = document.getElementById('carouselTrack');
+        const offset = carouselIndex * (300 + 32) * 3; // card width + gap
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Update dots
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === carouselIndex);
+        });
+    }
+
+    // ========== PRINT CARD ==========
+    let currentPrintInventor = null;
+
+    function openPrintCard(inventorId) {
+        const inventor = inventorsDatabase.getAll().find(inv => inv.id === inventorId);
+        if (!inventor) return;
+
+        currentPrintInventor = inventor;
+
+        document.getElementById('printCardEmoji').textContent = inventor.inventionEmoji;
+        document.getElementById('printCardName').textContent = inventor.name;
+        document.getElementById('printCardCountry').textContent = `${inventor.flag} ${inventor.country}`;
+        document.getElementById('printCardInvention').textContent = inventor.primaryInvention;
+        document.getElementById('printCardYear').textContent = inventor.inventionYear;
+        document.getElementById('printCardCategory').textContent = inventor.category;
+        document.getElementById('printCardLifespan').textContent = `${inventor.birthYear} - ${inventor.deathYear}`;
+        document.getElementById('printCardBio').textContent = inventor.shortBio;
+
+        document.getElementById('printModal').classList.add('active');
+    }
+
+    function closePrintCard() {
+        document.getElementById('printModal').classList.remove('active');
+    }
+
+    function printCard() {
+        window.print();
+    }
+
+    function downloadCard() {
+        // Create a simple text version for download
+        if (!currentPrintInventor) return;
+        const inv = currentPrintInventor;
+        const text = `
+HEROES OF INNOVATION - Inventor Card
+=====================================
+${inv.name}
+${inv.flag} ${inv.country}
+
+Invention: ${inv.primaryInvention} (${inv.inventionYear})
+Category: ${inv.category}
+Lifespan: ${inv.birthYear} - ${inv.deathYear}
+
+${inv.shortBio}
+
+Learn more at: americaninventions.org/inventor/${inv.id}.html
+        `.trim();
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${inv.id}-inventor-card.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Initialize carousel on load
+    document.addEventListener('DOMContentLoaded', initCarousel);
+
     </script>
+
+    <!-- Print Card Modal -->
+    <div class="print-modal" id="printModal" onclick="if(event.target === this) closePrintCard()">
+        <div class="print-card">
+            <button class="print-close" onclick="closePrintCard()">×</button>
+            <div class="print-card-header">
+                <div class="print-card-emoji" id="printCardEmoji">💡</div>
+                <h2 id="printCardName">Inventor Name</h2>
+                <div class="country" id="printCardCountry">Country</div>
+            </div>
+            <div class="print-card-body">
+                <div class="print-card-row">
+                    <span class="print-card-label">Invention</span>
+                    <span class="print-card-value" id="printCardInvention">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Year</span>
+                    <span class="print-card-value" id="printCardYear">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Category</span>
+                    <span class="print-card-value" id="printCardCategory">-</span>
+                </div>
+                <div class="print-card-row">
+                    <span class="print-card-label">Lifespan</span>
+                    <span class="print-card-value" id="printCardLifespan">-</span>
+                </div>
+            </div>
+            <div class="print-card-bio" id="printCardBio">
+                Biography text here...
+            </div>
+            <div class="print-card-footer">
+                americaninventions.org | Heroes of Innovation
+            </div>
+            <div class="print-actions">
+                <button class="print-btn" onclick="printCard()">🖨️ Print</button>
+                <button class="print-btn" onclick="downloadCard()">📥 Download</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
